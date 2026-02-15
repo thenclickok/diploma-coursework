@@ -3,11 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Let's Get Organised</title>
 </head>
 <body>
-
-    Under construction.
-    
+    <div class="grid-container">
+        <header class="header">
+            <h1>Let's Get Organised</h1>
+            <p>We can help customers get their lives in order!</p>
+        </header>
+        <main class="main">
+            <div class="iframe-container">
+                <h2>Find us on Google Maps</h2>
+                <p>We operate from the beautiful Greenwich Park.</p>
+                <iframe     
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.978471279611!2d-0.001110623180420626!3d51.476909471806394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a829827bcf73%3A0x77a747a4284a243c!2sQueen%20Elizabeth%20I%20Oak!5e0!3m2!1sen!2suk!4v1770991214359!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                    title="Based in Greewich Park"
+                    width="600"
+                    height="450"
+                    loading="lazy"
+                    allowfullscreen=""
+                    referrerpolicy="no-referrer-when-downgrade"
+                    sandbox="allow-scripts allow-same-origin allow-popups">
+                <p>Your browser does not support iframes. Please visit our <a href="https://maps.app.goo.gl/kn9AqhqXcuNQsHHBA">location page</a>.</p>
+                </iframe>
+                <div class="iframe-controls">
+                    <button onclick="reloadFrame()">Reload Content</button>
+                    <button onclick="toggleFullscreen()">Fullscreen</button>
+                </div>
+            </div>    
+        </main>
+        <aside class="aside">
+            <h2>We got you covered!</h2>
+            <h3>List of services</h3>
+            <p>Stuff we sell</p>
+            <ul>
+                <li>Planners and Notebooks</li>
+                <li>Desk and Workspace Organisers</li>
+                <li>Labels and colour-coding stickers</li>
+                <li>Decluttering guides</li>
+            </ul>
+            <p>Services we offer</p>
+            <ul>
+                <li>Professional consultations</li>
+                <li>Personalised organisation plans</li>
+                <li>Webinars and tutorials</li>
+                <li>Motivational guidance</li>
+            </ul>
+        </aside>
+        <footer class="footer">
+            <h1><span><i class="fa-solid fa-table-list" style="color: rgba(73, 30, 80, 1.00);"></i></span>Let's Get Organised &copy; All rights reserved.</h1>
+            <address>
+                Head Office<br>
+                Greenwich Park<br>
+                London<br>
+                SE10 9NN<br>
+                United Kingdom
+            </address>
+            <button>Contact Us!</button>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
