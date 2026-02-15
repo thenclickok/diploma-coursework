@@ -28,11 +28,10 @@
                     sandbox="allow-scripts allow-same-origin allow-popups">
                 <p>Your browser does not support iframes. Please visit our <a href="https://maps.app.goo.gl/kn9AqhqXcuNQsHHBA">location page</a>.</p>
                 </iframe>
-                <div class="iframe-controls">
-                    <button onclick="reloadFrame()">Reload Content</button>
-                    <button onclick="toggleFullscreen()">Fullscreen</button>
-                </div>
-            </div>    
+            </div>  
+            <div class="iframe-controls">
+                <button onclick="reloadFrame()">Reload Content</button>
+            </div>  
         </main>
         <aside class="aside">
             <h2>We got you covered!</h2>
@@ -64,7 +63,12 @@
             <button>Contact Us!</button>
         </footer>
     </div>
-    <script src="js/scripts.js"></script>
+    <script>
+        function reloadFrame() {
+        const frame = document.querySelector("iframe");
+        frame.src = frame.src;
+        }
+    </script>
 </body>
 </html>
 
