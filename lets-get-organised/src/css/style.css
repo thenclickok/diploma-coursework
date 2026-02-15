@@ -29,29 +29,42 @@ body {
     }
 }
 
+/*To do: add media query for grid container for mobile column stacking and figure out why I can't see 
+the reload and full screen buttons*/
+
+
 .grid-container {
   display: grid;
   grid-template-areas:
     "header header"
     "main aside"
     "footer footer";
-  grid-template-columns: 3fr 1fr;
-  gap: 3px;
-  background-color: dodgerblue;
+  grid-template-columns: 2fr 2fr;
+  gap: 10px;
+  border: 2px solid black;
   padding: 5px;
 }
 
 .header {
   grid-area: header;
   text-align: center;
+  border: 2px solid black;
+  padding: 10px;
 }
+
 .aside {
   grid-area: aside;
+  border: 2px solid black;
+  padding: 10px;;
 }
 .main {
   grid-area: main;
+  border: 2px solid black;
+  padding: 10px;
 }
 .footer {
   grid-area: footer;
-  text-align: center;  
+  text-align: center; 
+  border: 2px solid black;
+  padding: 10px; 
 }
