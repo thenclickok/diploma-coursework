@@ -13,26 +13,6 @@
             <h1>Let's Get Organised</h1>
             <p>We can help customers get their lives in order!</p>
         </header>
-        <main class="main">
-            <div class="iframe-container">
-                <h2>Find us on Google Maps</h2>
-                <p>We operate from the beautiful Greenwich Park.</p>
-                <iframe     
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.978471279611!2d-0.001110623180420626!3d51.476909471806394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a829827bcf73%3A0x77a747a4284a243c!2sQueen%20Elizabeth%20I%20Oak!5e0!3m2!1sen!2suk!4v1770991214359!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-                    title="Based in Greewich Park"
-                    width="300"
-                    height="225"
-                    loading="lazy"
-                    allowfullscreen=""
-                    referrerpolicy="no-referrer-when-downgrade"
-                    sandbox="allow-scripts allow-same-origin allow-popups">
-                <p>Your browser does not support iframes. Please visit our <a href="https://maps.app.goo.gl/kn9AqhqXcuNQsHHBA">location page</a>.</p>
-                </iframe>
-            </div>  
-            <div class="iframe-controls">
-                <button onclick="reloadFrame()">Reload Content</button>
-            </div>  
-        </main>
         <aside class="aside">
             <h2>We got you covered!</h2>
             <h3>List of services</h3>
@@ -51,8 +31,24 @@
                 <li>Motivational guidance</li>
             </ul>
         </aside>
+        <main class="main">
+                <h2>Find us on Google Maps</h2>
+                <p>We operate from the beautiful Greenwich Park.</p>
+                <iframe         
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.978471279611!2d-0.001110623180420626!3d51.476909471806394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a829827bcf73%3A0x77a747a4284a243c!2sQueen%20Elizabeth%20I%20Oak!5e0!3m2!1sen!2suk!4v1770991214359!5m2!1sen!2suk" 
+                    width="300"
+                    height="225"
+                    loading="lazy"
+                    allowfullscreen=""
+                    referrerpolicy="no-referrer-when-downgrade"
+                    sandbox="allow-scripts allow-same-origin allow-popups">
+                <p>Your browser does not support iframes. Please visit our <a href="https://maps.app.goo.gl/kn9AqhqXcuNQsHHBA">location page</a>.</p>
+                </iframe>  
+                <button onclick="reloadFrame()">Reload Content</button>
+                <button onclick="toggleFullscreen()">Fullscreen</button>  
+        </main>
         <footer class="footer">
-            <h3><span><i class="fa-solid fa-table-list" style="color: rgba(73, 30, 80, 1.00);"></i></span>Let's Get Organised &copy; All rights reserved.</h3>
+            <h3><span><i class="fa-solid fa-table-list" style="color: rgba(73, 30, 80, 1.00);"></i></span>   Let's Get Organised &copy; All rights reserved.</h3>
             <address>
                 Head Office<br>
                 Greenwich Park<br>
@@ -60,14 +56,23 @@
                 SE10 9NN<br>
                 United Kingdom
             </address>
-            <button>Contact Us!</button>
+            <a href="mailto:contact@lets-get-organised.com">
+                <button>Contact Us</button>
+            </a>
         </footer>
     </div>
     <script>
-        function reloadFrame() {
-        const frame = document.querySelector("iframe");
-        frame.src = frame.src;
+    function reloadFrame() {
+    const frame = document.querySelector("iframe");
+    frame.src = frame.src;
+    }
+
+    function toggleFullscreen() {
+    const frame = document.querySelector('iframe');
+    if (frame.requestFullscreen) {
+        frame.requestFullscreen();
         }
+    }
     </script>
 </body>
 </html>
