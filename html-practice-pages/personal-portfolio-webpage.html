@@ -7,12 +7,136 @@
     <!--1. Challenge: Create a personal portfolio webpage showcasing your skills, projects, and contact information using HTML and CSS.
     Requirements: Include a navigation menu, sections for About Me, Projects, Contact, and any other relevant information. Use CSS to style the layout and design.-->
 </head>
+<style>
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  /*Header section*/
+
+  #my-logo {
+    float: left;
+    border-radius: 10px;
+  } 
+
+  details {
+    float: left;
+    margin: 10px;
+    position: relative;
+  }
+
+  #other-projects-div {
+    width: 120px;
+    height: 120px;
+    align-content: center;
+    background-color: #6730EC;
+    border-radius: 10px;
+  }
+
+  #other-projects-button > a {
+    text-decoration: none;
+    color: #6730EC;
+  }
+
+  #other-projects-button {
+    float: right;
+    margin: 15px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .dropdown-content {
+    position:absolute;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 10px;
+  }
+
+  /* main section */
+
+ .hero-image {
+  background-image: url("hero-image.jpg");
+  height: 100vh; /* This makes it 100% of the viewport height */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-size: cover; /* Resizes the image to fill the whole box */
+}
+
+ .hero-text {
+  margin: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+ }
+
+</style>
 <body>
-  <p>I'll work on this assignment tomorrow</p>  
-   <div>
-      <button>
-        <a href="./index.html">Index Page</a>
+<!--header section-->
+<header>
+<div>
+  <img id="my-logo" src="my-logo.png" alt="My Logo" width="120px" height="120px">
+</div>
+<nav>
+  <details>
+    <summary>About Me</summary>
+    <div class="dropdown-content">
+      <p>I have always loved learning.</p><p>Coming from a nursing background, I now embark on a journey into web development.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Skills</summary>
+    <div class="dropdown-content">
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Contact</summary>
+    <div class="dropdown-content">
+      <email>email@example.com</email>
+    </div>
+  </details>
+</nav>
+<div id="other-projects-div">
+      <button id="other-projects-button">
+        <a href="./index.html">View other projects</a>
       </button>
+</div>
+</header>
+
+<!--main section-->
+<main>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>Nice to meet you!</h1>
+    <p>I'm <strong>Jess</strong>, an aspiring <strong>web developer.</strong></p>
   </div>
+</div>
+</main>
+
+<!--footer section-->
+<footer>
+
+</footer>
+   
 </body>
 </html>
