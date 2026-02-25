@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio Webpage</title>
     <!--1. Challenge: Create a personal portfolio webpage showcasing your skills, projects, and contact information using HTML and CSS.
     Requirements: Include a navigation menu, sections for About Me, Projects, Contact, and any other relevant information. Use CSS to style the layout and design.-->
-</head>
+
+  </head>
+
 <style>
+
   body {
     box-sizing: border-box;
     margin: 0;
@@ -22,10 +26,11 @@
     border-radius: 10px;
   } 
 
-  details {
+  .header-nav {
     float: left;
     margin: 10px;
     position: relative;
+    padding: 25px;
   }
 
   #other-projects-div {
@@ -46,6 +51,22 @@
     margin: 15px;
     border-radius: 10px;
     padding: 5px;
+    box-shadow: 5px 5px;
+    background-color: #e9daf2;
+    font-weight: bold;
+  }
+
+   #other-projects-button:hover {
+    background-color: #cc90f0;
+  }
+
+  #other-projects-button:active {
+    box-shadow: 2px 2px;
+    background-color: #b357eb;
+  }
+
+  #other-projects-button:active > a {
+    color: black;
   }
 
   header {
@@ -86,20 +107,25 @@
  }
 
 </style>
+
 <body>
+
 <!--header section-->
+
 <header>
+
 <div>
   <img id="my-logo" src="my-logo.png" alt="My Logo" width="120px" height="120px">
 </div>
+
 <nav>
-  <details>
+  <details class="header-nav">
     <summary>About Me</summary>
     <div class="dropdown-content">
       <p>I have always loved learning.</p><p>Coming from a nursing background, I now embark on a journey into web development.</p>
     </div>
   </details>
-  <details>
+  <details class="header-nav">
     <summary>Skills</summary>
     <div class="dropdown-content">
       <ul>
@@ -109,34 +135,34 @@
       </ul>
     </div>
   </details>
-  <details>
+  <details class="header-nav">
     <summary>Contact</summary>
     <div class="dropdown-content">
       <email>email@example.com</email>
     </div>
   </details>
 </nav>
+
 <div id="other-projects-div">
       <button id="other-projects-button">
         <a href="./index.html">View other projects</a>
       </button>
 </div>
+
 </header>
 
 <!--main section-->
+
 <main>
+
 <div class="hero-image">
   <div class="hero-text">
     <h1>Nice to meet you!</h1>
     <p>I'm <strong>Jess</strong>, an aspiring <strong>web developer.</strong></p>
   </div>
 </div>
+
 </main>
-
-<!--footer section-->
-<footer>
-
-</footer>
    
 </body>
 </html>
