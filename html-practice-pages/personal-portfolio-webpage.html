@@ -1,168 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio Webpage</title>
     <!--1. Challenge: Create a personal portfolio webpage showcasing your skills, projects, and contact information using HTML and CSS.
-    Requirements: Include a navigation menu, sections for About Me, Projects, Contact, and any other relevant information. Use CSS to style the layout and design.-->
+Requirements: Include a navigation menu, sections for About Me, Projects, Contact, and any other relevant information. Use CSS to style the layout and design.-->
 
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      /*Header section*/
+
+      #my-logo {
+        float: left;
+        border-radius: 10px;
+      }
+
+      .header-nav {
+        float: left;
+        margin: 10px;
+        position: relative;
+        padding: 25px;
+      }
+
+      #other-projects-div {
+        width: 120px;
+        height: 120px;
+        align-content: center;
+        background-color: #6730ec;
+        border-radius: 10px;
+      }
+
+      #other-projects-button > a {
+        text-decoration: none;
+        color: #6730ec;
+      }
+
+      #other-projects-button {
+        float: right;
+        margin: 15px;
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: 5px 5px;
+        background-color: #e9daf2;
+        font-weight: bold;
+      }
+
+      #other-projects-button:hover {
+        background-color: #cc90f0;
+      }
+
+      #other-projects-button:active {
+        box-shadow: 2px 2px;
+        background-color: #b357eb;
+      }
+
+      #other-projects-button:active > a {
+        color: black;
+      }
+
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: white;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 10px;
+      }
+
+      /* main section */
+
+      .hero-image {
+        background-image: url("hero-image.jpg");
+        height: 100vh; /* This makes it 100% of the viewport height */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents tiling */
+        background-size: cover; /* Resizes the image to fill the whole box */
+      }
+
+      .hero-text {
+        margin: 40px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 20px;
+      }
+    </style>
   </head>
 
-<style>
+  <body>
+    <!--header section-->
 
-  body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+    <header>
+      <div>
+        <img
+          id="my-logo"
+          src="my-logo.png"
+          alt="My Logo"
+          width="120px"
+          height="120px"
+        />
+      </div>
 
-  /*Header section*/
+      <nav>
+        <details class="header-nav">
+          <summary>About Me</summary>
+          <div class="dropdown-content">
+            <p>I have always loved learning.</p>
+            <p>
+              Coming from a nursing background, I now embark on a journey into
+              web development.
+            </p>
+          </div>
+        </details>
+        <details class="header-nav">
+          <summary>Skills</summary>
+          <div class="dropdown-content">
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+        </details>
+        <details class="header-nav">
+          <summary>Contact</summary>
+          <div class="dropdown-content">
+            <email>email@example.com</email>
+          </div>
+        </details>
+      </nav>
 
-  #my-logo {
-    float: left;
-    border-radius: 10px;
-  } 
+      <div id="other-projects-div">
+        <button id="other-projects-button">
+          <a href="./index.html">View other projects</a>
+        </button>
+      </div>
+    </header>
 
-  .header-nav {
-    float: left;
-    margin: 10px;
-    position: relative;
-    padding: 25px;
-  }
+    <!--main section-->
 
-  #other-projects-div {
-    width: 120px;
-    height: 120px;
-    align-content: center;
-    background-color: #6730EC;
-    border-radius: 10px;
-  }
-
-  #other-projects-button > a {
-    text-decoration: none;
-    color: #6730EC;
-  }
-
-  #other-projects-button {
-    float: right;
-    margin: 15px;
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 5px 5px;
-    background-color: #e9daf2;
-    font-weight: bold;
-  }
-
-   #other-projects-button:hover {
-    background-color: #cc90f0;
-  }
-
-  #other-projects-button:active {
-    box-shadow: 2px 2px;
-    background-color: #b357eb;
-  }
-
-  #other-projects-button:active > a {
-    color: black;
-  }
-
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px;
-  }
-
-  .dropdown-content {
-    position:absolute;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: white;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 10px;
-  }
-
-  /* main section */
-
- .hero-image {
-  background-image: url("hero-image.jpg");
-  height: 100vh; /* This makes it 100% of the viewport height */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents tiling */
-  background-size: cover; /* Resizes the image to fill the whole box */
-}
-
- .hero-text {
-  margin: 40px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 20px;
- }
-
-</style>
-
-<body>
-
-<!--header section-->
-
-<header>
-
-<div>
-  <img id="my-logo" src="my-logo.png" alt="My Logo" width="120px" height="120px">
-</div>
-
-<nav>
-  <details class="header-nav">
-    <summary>About Me</summary>
-    <div class="dropdown-content">
-      <p>I have always loved learning.</p><p>Coming from a nursing background, I now embark on a journey into web development.</p>
-    </div>
-  </details>
-  <details class="header-nav">
-    <summary>Skills</summary>
-    <div class="dropdown-content">
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-      </ul>
-    </div>
-  </details>
-  <details class="header-nav">
-    <summary>Contact</summary>
-    <div class="dropdown-content">
-      <email>email@example.com</email>
-    </div>
-  </details>
-</nav>
-
-<div id="other-projects-div">
-      <button id="other-projects-button">
-        <a href="./index.html">View other projects</a>
-      </button>
-</div>
-
-</header>
-
-<!--main section-->
-
-<main>
-
-<div class="hero-image">
-  <div class="hero-text">
-    <h1>Nice to meet you!</h1>
-    <p>I'm <strong>Jess</strong>, an aspiring <strong>web developer.</strong></p>
-  </div>
-</div>
-
-</main>
-   
-</body>
+    <main>
+      <div class="hero-image">
+        <div class="hero-text">
+          <h1>Nice to meet you!</h1>
+          <p>
+            I'm <strong>Jess</strong>, an aspiring
+            <strong>web developer.</strong>
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
