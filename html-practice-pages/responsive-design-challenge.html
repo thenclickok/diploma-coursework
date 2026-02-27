@@ -4,31 +4,338 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Design Challenge</title>
-    <!--Challenge: Develop a webpage that adapts to different screen sizes, ensuring it looks good on desktop, tablet, and mobile devices.
+    <!--Challenge: Develop a webpage that adapts to different screen sizes, 
+    ensuring it looks good on desktop, tablet, and mobile devices. Requirements: 
+    Use media queries to adjust layout, font sizes, and other elements 
+    for various screen sizes. Test the responsiveness across different devices.-->
 
-Requirements: Use media queries to adjust layout, font sizes, and other elements for various screen sizes. Test the responsiveness across different devices.-->
-    <style></style>
+    <style>
+      /*page layout*/
+
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "content menu"
+          "image info"
+          "thumbnails thumbnails"
+          "photo facts";
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .container > div {
+        border: 1px solid darkgreen;
+        padding: 15px;
+      }
+
+      /*grid areas*/
+
+      .container div.header {
+        grid-area: header;
+        text-align: center;
+        background-color: rgb(195, 237, 195);
+        font-size: larger;
+      }
+
+      .container div.content1 {
+        grid-area: content;
+      }
+
+      .container div.menu {
+        grid-area: menu;
+      }
+
+      .container div.image1 {
+        grid-area: image;
+      }
+
+      .container div.content2 {
+        grid-area: info;
+      }
+
+      .container div.thumbnails {
+        grid-area: thumbnails;
+      }
+
+      .container div.image2 {
+        grid-area: photo;
+      }
+
+      .container div.content3 {
+        grid-area: facts;
+      }
+
+      /*image one and two as background-images*/
+
+      .image1 {
+        background-image: url("images/sweet-chestnut.png");
+        background-size: cover;
+        background-position: center;
+        aspect-ratio: 1/1;
+        /*if i don't specify the aspect ratio the browser won't save space for the background 
+        image when i have no div content. 1/1 means i get a square image*/
+      }
+
+      .image2 {
+        background-image: url("images/ancient-tree.png");
+        background-size: cover;
+        background-position: center;
+        aspect-ratio: 1/1;
+      }
+
+      /*styling for the links*/
+
+      .menu {
+        display: flex;
+        /*to make all the links line up and not take a lot of horizontal space*/
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu ul {
+        padding: 5px;
+      }
+
+      .menu li {
+        list-style-type: none;
+        border: 1px solid black;
+        border-radius: 8px;
+        text-align: center;
+        padding: 5px;
+        background-color: rgb(195, 237, 195);
+      }
+
+      .menu a {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: black;
+        padding: 5px;
+      }
+
+      /*styling the thumbnails*/
+
+      .thumbnails {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        align-items: center;
+      }
+
+      .thumbnails img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .thumbnails img:hover {
+        transform: scale(1.5);
+      }
+
+      /*media query for phone screen size - only include the modified stuff*/
+
+      @media only screen and (max-width: 600px) {
+        .container {
+          grid-template-areas:
+            "header"
+            "content"
+            "menu"
+            "image"
+            "info"
+            "thumbnails"
+            "photo"
+            "facts";
+          grid-template-columns: 1fr;
+        }
+        .thumbnails {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+      }
+
+      /*media query for pc screen size*/
+
+      @media only screen and (min-width: 992px) {
+        .container {
+          grid-template-areas:
+            "header header header"
+            "content image menu"
+            "thumbnails thumbnails thumbnails"
+            "info photo facts";
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+      /*styling the content divs*/
+
+      .content1 h2,
+      .content1 h3,
+      .content2 h2,
+      .content3 h2 {
+        text-align: center;
+      }
+
+      .content1 li,
+      .content2 p,
+      .content3 li {
+        text-align: justify;
+        padding: 2px;
+      }
+    </style>
   </head>
   <body>
-    <div id="container">
-      <!--find out how to insert a hamburger menu in header-->
-      <header></header>
+    <div class="container">
+      <div class="header"><h1>All About Trees</h1></div>
 
-      <section id="first-text-section"></section>
+      <div class="content1">
+        <h2>What makes a tree a tree?</h2>
+        <h3>
+          A plant is generally considered a tree if it meets these criteria:
+        </h3>
+        <ul>
+          <li>
+            A Single Main Stem: Unlike shrubs, which have multiple stems near
+            the ground, a tree typically grows a single, dominant Trunk.
+          </li>
+          <br />
+          <li>
+            Secondary Growth (Wood): Most "true" trees have a Vascular Cambium,
+            a layer of cells that allows the trunk to get wider every year,
+            creating rings of wood (xylem).
+          </li>
+          <br />
+          <li>
+            Perennial Lifecycle: Trees are long-lived plants that don't die off
+            after one season. They continue to grow and add biomass for many
+            years, sometimes for millennia.
+          </li>
+          <br />
+          <li>
+            Height: Most organisations, like the Food and Agriculture
+            Organization (FAO), define a tree as a plant that can reach at least
+            5 metres (16 feet) at maturity.
+          </li>
+        </ul>
+      </div>
 
-      <nav id="links">
-        <ul></ul>
-      </nav>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="https://www.rhs.org.uk/plants/types/trees/evergreen"
+              >Evergreen Trees</a
+            >
+          </li>
+          <br />
+          <li>
+            <a href="https://www.rhs.org.uk/plants/types/trees/deciduous"
+              >Deciduous Trees</a
+            >
+          </li>
+          <br />
+          <li>
+            <a
+              href="https://www.nationalgeographic.com/travel/article/iconic-trees-around-the-world"
+              >Famous Trees</a
+            >
+          </li>
+          <br />
+          <li>
+            <a
+              href="https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/benefits/"
+              >Why Trees are Important</a
+            >
+          </li>
+        </ul>
+      </div>
 
-      <section id="first-image-section"></section>
+      <div class="image1"></div>
 
-      <section id="second-text-section"></section>
+      <div class="content2">
+        <h2>How old can trees live?</h2>
+        <p>
+          Some trees can live a very long time.The oldest verified individual
+          trees are Great Basin bristlecone pines in the White Mountains of
+          California.
+        </p>
+        <p>
+          A bristlecone pine was verified to be over 4,850 years old. Another
+          bristlecone pine that was accidentally cut down in 1964 was later
+          determined to be 4,960 years old.
+        </p>
+        <p>
+          A Patagonian cypress in Chile recently estimated to be roughly 5,400
+          years old, though this age is still being debated among scientists.
+        </p>
+        <p>
+          There is a Norway Spruce in Sweden with a root system dated to 9,550
+          years old, though the individual trunk visible today is much younger.
+        </p>
+      </div>
 
-      <section id="thumbnails"></section>
+      <div class="thumbnails">
+        <img
+          src="images/tree-thumbnail-1.png"
+          alt="Orange-coloured tree leaves"
+          width="200px"
+          height="200px"
+        />
+        <img
+          src="images/tree-thumbnail-2.png"
+          alt="Yellow-coloured tree leaves"
+          width="200px"
+          height="200px"
+        />
+        <img
+          src="images/tree-thumbnail-3.png"
+          alt="Purple-coloured tree leaves"
+          width="200px"
+          height="200px"
+        />
+        <img
+          src="images/tree-thumbnail-4.png"
+          alt="Green-coloured tree leaves"
+          width="200px"
+          height="200px"
+        />
+      </div>
 
-      <section id="second-image-section"></section>
+      <div class="image2"></div>
 
-      <section id="third-text-section"></section>
+      <div class="content3">
+        <h2>Interesting Facts About Trees</h2>
+        <ul>
+          <li>There are over 3 trillion trees on Earth</li>
+          <br />
+          <li>
+            Trees communicate and share nutrients through an underground network
+            of fungi, often called the "wood wide web".
+          </li>
+          <br />
+          <li>
+            Spending time around trees, or "forest bathing," is proven to lower
+            blood pressure, reduce stress, and improve mood.
+          </li>
+          <br />
+          <li>
+            Trees trap dust, ash, and smoke, improving air quality. A mature
+            tree can absorb over 48 pounds of carbon dioxide annually.
+          </li>
+          <br />
+          <li>Around 5-15 billion trees are cut down annually.</li>
+          <br />
+          <li>
+            Leaves change color in autumn because they produce less chlorophyll
+            due to reduced sunlight.
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

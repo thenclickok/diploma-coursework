@@ -1,16 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page</title>
-</head>
-<body>
-  <p>This page will link all the html challenge pages together</p>  
-  <div>
-    <button>
-      <a href="./personal-portfolio-webpage.html">Personal Portfolio Webpage</a>
-    </button>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Essentials course challenges</title>
+
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        color: black;
+        background-image: url("index-background-image.jpg");
+        background-size: cover;
+      }
+
+      .container {
+        align-content: center;
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .container p {
+        font-style: italic;
+        font-size: large;
+      }
+
+      .button-group button {
+        border-radius: 8px;
+        margin: 10px;
+      }
+
+      .button-group a {
+        text-decoration: none;
+        font-size: large;
+        color: black;
+        padding: 10px;
+      }
+
+      .button-group button:hover {
+        background-color: rgb(223, 202, 244);
+      }
+
+      footer a {
+        text-decoration: none;
+        float: left;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>HTML Essentials: Course Challenges</h1>
+      <h2>Contents Page</h2>
+      <p>Click a button to view a project</p>
+      <div class="button-group">
+        <button>
+          <a href="./personal-portfolio-webpage.html"
+            >Personal Portfolio Webpage</a
+          >
+        </button>
+        <br />
+        <button>
+          <a href="./responsive-design-challenge.html"
+            >Response Design Webpage</a
+          >
+        </button>
+      </div>
+    </div>
+    <footer class="footer">
+      <a
+        href="https://www.freepik.com/free-vector/white-minimal-hexagons-background_13107746.htm"
+        >Image by coolvector on Freepik</a
+      >
+    </footer>
+  </body>
 </html>
