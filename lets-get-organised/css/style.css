@@ -9,11 +9,10 @@ iframe {
     border: none;
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
     
 button {
-    background-color:rgba(87, 199, 133, 1);
+    background-color:#88faa7;
     color: black;
     border: 1px solid black;
     border-radius: 8px;
@@ -23,7 +22,7 @@ button {
 }
 
 button:hover {
-    background-color: yellow;
+    background-color: #EFAFDD;
 }
 
 .grid-container {
@@ -42,29 +41,38 @@ button:hover {
   grid-area: header;
   text-align: center;
   border: 2px solid black;
+  border-radius: 8px;
   padding: 10px;
-  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  background: linear-gradient(90deg, rgba(175, 239, 192, 1) 13%, rgba(239, 175, 221, 1) 83%);
 }
 
 .aside {
   grid-area: aside;
   border: 2px solid black;
+  border-radius: 8px;
   padding: 20px;
-  background: linear-gradient(90deg,rgba(87, 199, 133, 1) 25%, rgba(237, 221, 83, 1) 63%);
 }
+
 .main {
   grid-area: main;
   border: 2px solid black;
+  border-radius: 8px;
   padding: 20px;
   text-align: center;
-  background: linear-gradient(90deg,rgba(87, 199, 133, 1) 25%, rgba(237, 221, 83, 1) 63%);
+}
+
+.pink {
+  background-color: #EFAFDD;
+  display:inline-block;
+
 }
 .footer {
   grid-area: footer;
   text-align: center; 
   border: 2px solid black;
+  border-radius: 8px;
   padding: 10px; 
-  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  background: linear-gradient(90deg, rgba(175, 239, 192, 1) 13%, rgba(239, 175, 221, 1) 83%);
 }
 
 h1, h2, h3 {
@@ -73,4 +81,6 @@ h1, h2, h3 {
 
 p {
   font-weight: bold;
+  padding: 5px;
+  border-radius: 8px;
 }

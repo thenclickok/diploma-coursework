@@ -17,16 +17,19 @@ Requirements: Include a navigation menu, sections for About Me, Projects, Contac
 
       /*Header section*/
 
+      header {
+        background-image: url("images/personal-portfolio-header-background.jpg");
+        background-position: center; /* Centers the image */
+        background-size: cover; /* Resizes the image to fill the whole box */
+      }
+
       #my-logo {
         float: left;
         border-radius: 10px;
       }
 
       .header-nav {
-        float: left;
-        margin: 10px;
-        position: relative;
-        padding: 25px;
+        padding: 5px;
       }
 
       #other-projects-div {
@@ -67,7 +70,6 @@ Requirements: Include a navigation menu, sections for About Me, Projects, Contac
 
       header {
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
         margin: 10px;
@@ -90,7 +92,7 @@ Requirements: Include a navigation menu, sections for About Me, Projects, Contac
 
       .hero-image {
         background-image: url("images/hero-image.jpg");
-        height: 100vh; /* This makes it 100% of the viewport height */
+        height: 95vh; /* This makes it 100% of the viewport height */
         background-position: center; /* Centers the image */
         background-repeat: no-repeat; /* Prevents tiling */
         background-size: cover; /* Resizes the image to fill the whole box */
@@ -124,8 +126,8 @@ Requirements: Include a navigation menu, sections for About Me, Projects, Contac
           <div class="dropdown-content">
             <p>I have always loved learning.</p>
             <p>
-              Coming from a nursing background, I now embark on a journey into
-              web development.
+              Coming from a nursing background, <br />I now embark on a journey
+              <br />into web development.
             </p>
           </div>
         </details>
@@ -159,7 +161,7 @@ Requirements: Include a navigation menu, sections for About Me, Projects, Contac
     <main>
       <div class="hero-image">
         <div class="hero-text">
-          <h1>Nice to meet you!</h1>
+          <h2>Nice to meet you!</h2>
           <p>
             I'm <strong>Jess</strong>, an aspiring
             <strong>web developer.</strong>

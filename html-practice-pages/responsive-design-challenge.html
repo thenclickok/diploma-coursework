@@ -39,9 +39,6 @@
 
       .container div.header {
         grid-area: header;
-        text-align: center;
-        background-color: rgb(195, 237, 195);
-        font-size: larger;
       }
 
       .container div.content1 {
@@ -72,6 +69,27 @@
         grid-area: facts;
       }
 
+      /*header and button*/
+
+      .header {
+        text-align: center;
+        background-color: rgb(195, 237, 195);
+        font-size: larger;
+      }
+
+      .header button {
+        border-radius: 5px;
+      }
+
+      .header button:hover {
+        background-color: rgb(129, 229, 129);
+      }
+
+      .header a {
+        color: black;
+        text-decoration: none;
+      }
+
       /*image one and two as background-images*/
 
       .image1 {
@@ -79,7 +97,7 @@
         background-size: cover;
         background-position: center;
         aspect-ratio: 1/1;
-        /*if i don't specify the aspect ratio the browser won't save space for the background 
+        /*if i don't specify the aspect ratio the browser won't save space for the background
         image when i have no div content. 1/1 means i get a square image*/
       }
 
@@ -136,7 +154,7 @@
       }
 
       .thumbnails img:hover {
-        transform: scale(1.5);
+        transform: scale(1.2);
       }
 
       /*media query for phone screen size - only include the modified stuff*/
@@ -192,7 +210,14 @@
   </head>
   <body>
     <div class="container">
-      <div class="header"><h1>All About Trees</h1></div>
+      <div class="header">
+        <h1>All About Trees</h1>
+        <div id="other-projects-div">
+          <button id="other-projects-button">
+            <a href="./index.html">View other projects</a>
+          </button>
+        </div>
+      </div>
 
       <div class="content1">
         <h2>What makes a tree a tree?</h2>
