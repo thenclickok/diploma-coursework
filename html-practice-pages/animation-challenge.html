@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Challenge</title>
+    <!--Challenge: Add animations to elements on a webpage using CSS. Requirements: Create animations 
+    for hover effects, page transitions, or any other elements to enhance user interaction and 
+    visual appeal.-->
+
+    <style>
+      /*Google Font*/
+
+      @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+
+      /*Page layout*/
+
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Shadows Into Light Two", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      /*header*/
+
+      .container.header button {
+        border: 1px solid black;
+        border-radius: 10px;
+      }
+
+      .header {
+        background-image: url("images/animation-background-image.jpg");
+        background-size: cover;
+        background-position: center;
+        border: 1px solid black;
+        border-radius: 10px;
+      }
+
+      #other-projects-button a {
+        font-family: "Shadows Into Light Two", cursive;
+        text-decoration: none;
+        color: black;
+      }
+
+      #other-projects-button {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+
+        transition:
+          font-size 1s,
+          background-color 2s;
+      }
+
+      #other-projects-button:hover {
+        font-size: large;
+        background-color: rgb(218, 199, 236);
+      }
+
+      #my-logo {
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+
+      #top-left {
+        float: left;
+        border: none;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      #page-title {
+        display: inline-block;
+        border: none;
+      }
+
+      .nav-bar {
+        float: right;
+        margin: 10px;
+        padding-right: 30px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+      }
+
+      .nav-bar ul {
+        display: flex;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .nav-bar ul {
+          display: block;
+        }
+      }
+
+      .nav-bar a {
+        text-decoration: none;
+        color: black;
+        font-size: large;
+      }
+
+      .nav-bar li {
+        list-style-type: none;
+        padding: 10px;
+        border-radius: 8px;
+        transition:
+          font-size 1s,
+          background-color 2s;
+      }
+
+      .nav-bar li:hover {
+        font-size: large;
+        background-color: rgb(218, 199, 236);
+      }
+
+      /*carousel*/
+
+      .carousel-wrapper {
+        position: relative;
+        width: 100%;
+      }
+
+      .carousel-items {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: rgb(241, 222, 240);
+      }
+
+      .carousel-items::-webkit-scrollbar {
+        display: none;
+      }
+
+      .item {
+        flex: 0 0 100%;
+        min-width: 100%;
+        scroll-snap-align: start;
+        text-align: left;
+        font-size: x-large;
+        padding: 40px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item img {
+        border-radius: 10px;
+        display: block;
+      }
+
+      .carousel-nav {
+        position: absolute;
+        bottom: 15px; /* Distance from the bottom of the carousel */
+        left: 50%; /* Move to middle */
+        transform: translateX(-50%); /* Perfectly center it */
+        display: flex;
+        gap: 10px;
+        z-index: 10; /* Make sure it sits on top of images */
+      }
+
+      .carousel-nav a {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ccc;
+        text-decoration: none;
+      }
+
+      .carousel-nav a:hover {
+        background-color: #333;
+      }
+
+      .item img {
+        transition: transform 0.3s ease;
+      }
+
+      .item img:hover {
+        transform: scale(1.3);
+      }
+
+      /*keyframes animation*/
+
+      .keyframes {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(245, 154, 228);
+        border-radius: 50%;
+        position: relative;
+        animation-name: myAnimation;
+        animation-duration: 4s;
+        animation-iteration-count: 20;
+      }
+
+      @keyframes myAnimation {
+        0% {
+          left: 0px;
+          background-color: rgb(225, 147, 224);
+          width: 70px;
+          height: 70px;
+        }
+        25% {
+          left: 350px;
+          background-color: rgb(148, 55, 148);
+          width: 100px;
+          height: 100px;
+        }
+        50% {
+          left: 700px;
+          background-color: rgb(225, 147, 224);
+          width: 175px;
+          height: 175px;
+        }
+        75% {
+          left: 1400px;
+          background-color: rgb(148, 55, 148);
+          width: 100px;
+          height: 100px;
+        }
+        100% {
+          left: 0px;
+          background-color: rgb(225, 147, 224);
+          width: 70px;
+          height: 70px;
+        }
+      }
+
+      /*footer*/
+
+      .container footer {
+        border: 1px solid black;
+        border-radius: 10px;
+        background-image: url("images/animation-background-image.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .footer a {
+        text-decoration: none;
+        color: black;
+        font-size: small;
+        padding: 10px;
+      }
+
+      .footer img {
+        transition: transform 0.3s ease;
+        background-color: white;
+      }
+
+      .footer img:hover {
+        background-color: rgb(218, 199, 236);
+        transform: scale(1.3);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <div id="top-left">
+          <img
+            id="my-logo"
+            src="images/my-logo.png"
+            alt="My Logo"
+            width="120px"
+            height="120px"
+          />
+          <br />
+          <button id="other-projects-button">
+            <a href="./index.html">View other projects</a>
+          </button>
+          <br />
+          <div id="page-title"><h1>Animation Challenge</h1></div>
+        </div>
+        <nav class="nav-bar">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Purchase</a></li>
+            <li><a href="#">Featured</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="carousel-wrapper">
+        <div class="carousel-items">
+          <div class="item" id="item1">
+            <img
+              src="images/animation-carousel-image-1.jpg"
+              width="300px"
+              height="200px"
+            />
+          </div>
+
+          <div class="item" id="item2">
+            <img
+              src="images/animation-carousel-image-2.jpg"
+              width="300px"
+              height="200px"
+            />
+          </div>
+
+          <div class="item" id="item3">
+            <img
+              src="images/animation-carousel-image-3.jpg"
+              width="300px"
+              height="200px"
+            />
+          </div>
+        </div>
+
+        <div class="carousel-nav">
+          <a href="#item1"></a>
+          <a href="#item2"></a>
+          <a href="#item3"></a>
+        </div>
+      </div>
+      <div class="keyframes"></div>
+      <footer class="footer">
+        <p>Freepik used for images including by Kjpargeter and Katemangostar</p>
+        <a
+          href="https://www.freepik.com/free-photo/christmas-background-bokeh-lights_33580828.htm"
+          ><img
+            src="images/animation-footer-icon.png"
+            width="40px"
+            height="40px"
+        /></a>
+
+        <a
+          href="https://www.freepik.com/free-photo/cropped-shot-young-people-with-burning-bengal-lights-male-hands-holding-sparkles-concept-celebration_5546224.htm"
+          ><img
+            src="images/animation-footer-icon.png"
+            width="40px"
+            height="40px"
+        /></a>
+
+        <a
+          href="https://www.freepik.com/free-photo/programming-background-collage_34089154.htm"
+          ><img
+            src="images/animation-footer-icon.png"
+            width="40px"
+            height="40px"
+        /></a>
+
+        <a
+          href="https://www.freepik.com/free-photo/party-girl-side-view_1152923.htm"
+          ><img
+            src="images/animation-footer-icon.png"
+            width="40px"
+            height="40px"
+        /></a>
+
+        <a href="https://www.flaticon.com/free-icons/picture"
+          ><img
+            src="images/animation-footer-icon.png"
+            width="40px"
+            height="40px"
+        /></a>
+      </footer>
+    </div>
+  </body>
+</html>
