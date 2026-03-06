@@ -20,15 +20,33 @@
       }
 
       .container {
+        display: grid;
+        grid-template-areas: "header header header" "button-group";
+        place-items: center;
         align-content: center;
         text-align: center;
         height: 100vh;
         width: 100vw;
       }
 
+      .header {
+        grid-area: "header";
+        margin-bottom: 30px;
+      }
+
+      .button-group {
+        grid-area: "button-group";
+      }
+
       .container p {
         font-style: italic;
         font-size: large;
+      }
+
+      .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .button-group button {
@@ -56,25 +74,64 @@
   </head>
   <body>
     <div class="container">
-      <h1>HTML Essentials: Course Challenges</h1>
-      <h2>Contents Page</h2>
+      <div class="header">
+        <h1>HTML Essentials: Course Challenges</h1>
+        <br />
+        <h3><i>Click a button to view a project</i></h3>
+      </div>
       <br />
-      <p>Click a button to view a project</p>
-      <br />
+      <br|>
       <div class="button-group">
         <button>
-          <a href="./personal-portfolio-webpage.html">Personal Portfolio</a>
+          <a href="./personal-portfolio-webpage.html">1. Personal Portfolio</a>
         </button>
-        <br />
+
         <button>
-          <a href="./responsive-design-challenge.html">Responsive Design</a>
+          <a href="./responsive-design-challenge.html">2. Responsive Design</a>
         </button>
-        <br />
+
         <button>
-          <a href="./animation-challenge.html">Animation Challenge</a></button
-        ><br />
+          <a href="./animation-challenge.html">3. Animation Challenge</a>
+        </button>
+
         <button>
-          <a href="./form-styling.html">Form Styling</a>
+          <a href="./form-styling.html">4. Form Styling</a>
+        </button>
+
+        <button>
+          <a href="./flex-and-grid-layout.html">5. Flex and Grid Layout</a>
+        </button>
+
+        <button>
+          <a href="./typography-challenge.html">6. Typography Challenge</a>
+        </button>
+
+        <button>
+          <a href="./image-gallery.html">7. Image Gallery</a>
+        </button>
+
+        <button>
+          <a href="./css-framework-challenge.html"
+            >8. CSS Framework Challenge</a
+          >
+        </button>
+
+        <button>
+          <a href="./map-page-build.html">9. Map Page Build</a>
+        </button>
+        <button>
+          <a href="./accessibility-challenge.html"
+            >10. Accessibility Challenge</a
+          >
+        </button>
+        <button>
+          <a href="./psd-challenge.html">11. Photoshop Document Challenge</a>
+        </button>
+        <button>
+          <a href="./email-template.html">12. Email Template</a>
+        </button>
+        <button>
+          <a href="./web-app-user-interface.html">13. Web App User Interface</a>
         </button>
       </div>
     </div>
