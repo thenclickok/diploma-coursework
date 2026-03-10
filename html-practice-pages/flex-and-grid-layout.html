@@ -102,23 +102,134 @@
       /*bottom half of page - inviting volunteers*/
 
       .invite {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
         max-width: 100vw;
         border-top: 1px solid black;
+      }
+
+      .invite-top {
+        display: flex;
+        align-items: left;
+        background-color: rgb(139, 255, 139);
       }
 
       /*top part of invite section*/
 
       #logo {
-        float: left;
         margin: 5px;
       }
+
+      /*navigation menu*/
+
+      .navigation {
+        margin: 40px;
+        ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+        li {
+          margin: 5px;
+          text-align: center;
+          font-size: large;
+        }
+        a {
+          text-decoration: none;
+          background-color: white;
+          border: 1px solid black;
+          color: black;
+          padding: 5px;
+          display: inline-block;
+          border-radius: 8px;
+        }
+
+        a.active {
+          color: black;
+          font-weight: bold;
+        }
+        a:hover {
+          font-weight: 600;
+          background-color: rgb(90, 169, 90);
+        }
+      }
+
+      /*hidden message*/
+
+      .hidden {
+        display: none;
+        border: 1px solid black;
+        width: 400px;
+        height: 100px;
+        background-color: white;
+        text-align: center;
+        padding: 30px;
+        margin-left: calc(50% - 200px);
+font-size: x-large;
+      }
+
+      #thanks:target {
+       display: block;
+      }
+
+      .close-button {
+        position:absolute;  
+        top: 0px;
+        right: calc(50% - 200px);
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 2px 4px 2px 4px;
+        margin: 5px;
+        background-color: rgb(157, 218, 157);
+        font-weight: bold;
+      }
+
+      /*bottom part of invite section*/
+  
+      .invite-bottom {
+        display: flex;        
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 20px;
+        padding: 20px;
+      .box {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 8px;
+        margin: 20px;
+        padding: 20px;
+        font-size: large;
+    }
+  }
+
+    .form input {
+      font-size: 1rem;     
+      padding: 10px; 
+      margin-top: 10px;   
+      margin-bottom: 10px;
+      width: 100%;           
+    }
+
+    .form button {
+      font-size: 20px;
+      background-color: rgb(122, 212, 122);
+      border-radius: 8px;
+      padding: 5px;
+    }
+    
+    
+
     </style>
   </head>
   <body>
-    <!--IDEA: SAVE THE EARTH, recruiting cleanup volunteers-->
+<!--Idea is Save the Earth and recruitment of cleanup volunteers-->
+  
+
+<div id="thanks" class="hidden"><div>Thanks for your help!<a href="#" class="close-button">&times;</a></div></div>
 
     <div class="container">
       <img
@@ -194,7 +305,7 @@
       />
     </div>
     <footer class="invite">
-      <div>
+      <div class="invite-top">
         <img
           id="logo"
           src="images/my-logo.png"
@@ -202,8 +313,37 @@
           width="100"
           height="100"
         />
+
+        <nav class="navigation">
+          <ul>
+            <li><a href="#" class="button active">Home</a></li>
+            <li><a href="#" class="button">About Us</a></li>
+            <li><a href="#" class="button">Donate</a></li>
+            <li><a href="./index.html" class="button">Other Projects</a></li>
+            <li>
+              <a href="mailto: eco-warriors@example.com" class="button"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div></div>
+      
+      <div class="invite-bottom">
+        <div class="box">
+        <form action="#thanks" class="form">
+          <h1>Invite Others to Volunteer</h1>
+          <h3>Let's clean up our planet together!</h3>
+          <br>
+          <input type="email" placeholder="email address" required/><br>
+          <input type="email" placeholder="email address"/><br>
+          <input type="email" placeholder="email address"/><br>
+          <input type="email" placeholder="email address"/><br>
+          <button type="submit">Send</button><br><br>
+          <a href="#">Skip this option</button><br><br>
+        </form>
+        </div>
+    </div>
     </footer>
   </body>
 </html>
