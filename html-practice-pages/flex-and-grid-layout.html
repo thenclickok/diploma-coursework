@@ -9,6 +9,14 @@
     with responsive design. Experiment with different alignment, spacing, 
     and distribution options.-->
 
+    <!--Note to self: for laptop screen I specified both columns and rows 
+    for my grid, using span for both (on each image item) and specified the 
+    width of each img in the html. Media query for 1250px screen then gets the 
+    browser to fit images together responsively. I had to add to regular CSS for 
+    images: max-width: 100%/height: auto/display: block; AND I used auto-fit and 
+    minmax in media query. Long photos aspect ratio got wonky on smaller
+    screen but will avoid mixed methods next time -->
+
     <style>
       /*page layout*/
 
@@ -97,6 +105,9 @@
       .container img {
         border: 2px solid green;
         border-radius: 5px;
+        max-width: 100%;
+        height: auto;
+        display: block;
       }
 
       /*bottom half of page - inviting volunteers*/
@@ -168,7 +179,7 @@
         text-align: center;
         padding: 30px;
         margin-left: calc(50% - 200px);
-font-size: x-large;
+        font-size: x-large;
       }
 
       #thanks:target {
@@ -196,15 +207,16 @@ font-size: x-large;
         text-align: center;
         margin: 20px;
         padding: 20px;
-      .box {
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 8px;
-        margin: 20px;
-        padding: 20px;
-        font-size: large;
-    }
-  }
+          .box {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 8px;
+            margin: 20px;
+            padding: 20px;
+            font-size: large;
+            min-width: 400px;
+        }
+      }
 
     .form input {
       font-size: 1rem;     
@@ -221,8 +233,29 @@ font-size: x-large;
       padding: 5px;
     }
     
-    
+    /*media queries*/
 
+    @media only screen and (max-width: 1250px) {
+    .container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*browser decides column number, min 200px each pic*/
+      grid-template-rows: auto; /*reset rows to auto*/
+      height: auto; 
+    }
+
+    .container > img { /*all items must stop following the span rules*/
+      grid-column: auto !important;
+      grid-row: auto !important;
+      width: 100%;
+      height: 300px; /* Or whatever height looks best on mobile */
+    }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .navigation ul {
+        display: block;
+        justify-items: left;
+      }
+    }
     </style>
   </head>
   <body>
@@ -338,7 +371,7 @@ font-size: x-large;
           <input type="email" placeholder="email address" required/><br>
           <input type="email" placeholder="email address"/><br>
           <input type="email" placeholder="email address"/><br>
-          <input type="email" placeholder="email address"/><br>
+          <input type="email" placeholder="email address"/><br><br>
           <button type="submit">Send</button><br><br>
           <a href="#">Skip this option</button><br><br>
         </form>
