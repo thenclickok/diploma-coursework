@@ -4,12 +4,118 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typography Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+
     <!--6.Challenge: Focus on typography by styling headings, paragraphs, and other text elements.
 Requirements: Experiment with different font families, sizes, weights, line heights, and 
-spacing to create visually appealing text layouts.
--->
+spacing to create visually appealing text layouts.-->
+
+    <style>
+      /*page layout*/
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --heading-font: "Playfair Display", serif; /*font-weight 400 or 700*/
+        --body-font: "Lato", sans-serif; /*font-weight 400 or 700*/
+        --accent-font: "Bebas Neue", sans-serif; /*font-weight 400 only*/
+        --mono-font: "Space Mono", monospace; /*font-weight 400 or 700*/
+      }
+
+      .tagline {
+        font-family: var(--accent-font);
+        font-weight: 400;
+        color: red;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .logo {
+      }
+
+      .tagline {
+      }
+
+      .nav {
+      }
+
+      .icons {
+      }
+
+      .item-1 {
+      }
+
+      .item-2 {
+      }
+
+      .item-3 {
+      }
+
+      .item-4 {
+      }
+
+      .item-5 {
+      }
+
+      .item-6 {
+      }
+    </style>
   </head>
   <body>
     <!--IDEA: inspirational website with quotes and positivity-->
+    <div class="container">
+      <div class="logo"></div>
+
+      <div class="tagline">Life is short - live it up.</div>
+
+      <div class="nav"></div>
+
+      <div class="icons"></div>
+
+      <div class="item-1">"All</div>
+
+      <div class="item-2">we have is NOW."<cite>Andy Whitfield</cite></div>
+
+      <div class="item-3">
+        <q>You miss 100% of the shots you don't take.</q
+        ><cite>Wayne Gretzky</cite>
+      </div>
+
+      <div class="item-4">
+        <q>Believe you can, and you're halfway there.</q
+        ><cite>Theodore Roosevelt</cite>
+      </div>
+
+      <div class="item-5">
+        <q
+          >Why, Sir, you find no man, at all intellectual, who is willing to
+          leave London. No, Sir, when a man is tired of London, he is tired of
+          life; for there is in London all that life can afford."</q
+        ><cite
+          >Samuel Johnson<a
+            href="https://www.samueljohnson.com/tiredlon.html"
+          ></a
+        ></cite>
+      </div>
+
+      <div class="item-6">
+        <q
+          >Everything will be ok in the end. If it's not ok, it's not the
+          end.</q
+        ><cite>John Lennon</cite>
+      </div>
+    </div>
   </body>
 </html>
