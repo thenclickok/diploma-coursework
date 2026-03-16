@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/ef92c49664.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!--6.Challenge: Focus on typography by styling headings, paragraphs, and other text elements.
 Requirements: Experiment with different font families, sizes, weights, line heights, and 
@@ -25,73 +29,376 @@ spacing to create visually appealing text layouts.-->
       }
 
       :root {
-        --heading-font: "Playfair Display", serif; /*font-weight 400 or 700*/
-        --body-font: "Lato", sans-serif; /*font-weight 400 or 700*/
-        --accent-font: "Bebas Neue", sans-serif; /*font-weight 400 only*/
-        --mono-font: "Space Mono", monospace; /*font-weight 400 or 700*/
-      }
-
-      .tagline {
-        font-family: var(--accent-font);
-        font-weight: 400;
-        color: red;
+        --playfair-font: "Playfair Display", serif; /*font-weight 400 or 700*/
+        --lato-font: "Lato", sans-serif; /*font-weight 400 or 700*/
+        --bebas-font: "Bebas Neue", sans-serif; /*font-weight 400 only*/
+        --space-font: "Space Mono", monospace; /*font-weight 400 or 700*/
       }
 
       .container {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        width: 100%;
+        max-width: 100%; /*instead of 100vw so I don't get horizontal scroll bar*/
+        min-height: 100vh;
+        background-color: lightgrey;
+        overflow-x: hidden;
       }
 
-      .logo {
+      .logo-tagline {
+        grid-column: 1 / span 2;
+        display: flex;
+        margin-left: 5px;
+        margin-top: 5px;
       }
 
-      .tagline {
-      }
-
-      .nav {
+      .nav-bar {
+        grid-column: 3 / span 3;
       }
 
       .icons {
+        grid-column: 6 / span 1;
       }
 
       .item-1 {
+        grid-column: 1 / span 2;
+        font-family: var(--bebas-font);
+        font-size: clamp(4rem, 10vw, 10rem);
+        letter-spacing: clamp(1rem, 2vw, 3rem);/* Use clamp so the text scales with the screen size */
+        line-height: 80%;
+        margin-left: 40px;
       }
 
       .item-2 {
+        grid-column: 3 / span 4;
+        font-family: var(--lato-font);
+        font-weight: 700;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
       }
 
       .item-3 {
+        grid-column: 1 / span 6;
+        font-family: var(--bebas-font);
+        font-size: clamp(4rem, 10vw, 10rem);
+        letter-spacing: clamp(1rem, 2vw, 3rem);/* Use clamp so the text scales with the screen size */
+        text-indent: 3rem; /* Letter spacing adds space after characters, so there's a massive
+        gap at end. Text-indent can balance the spacing on both sides if equal to the letter spacing */
+        line-height: 80%;
+        display: flex;
+        justify-content: center;
       }
 
       .item-4 {
+        grid-column: 1 / span 6;
+        font-family: var(--playfair-font);
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.5rem;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
       }
 
       .item-5 {
+        grid-column: 1 / span 4;
+        font-family: var(--space-font);
+        font-weight: 700;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        margin: 0 30px 0 30px;
+        padding: 10px;
+        line-height: 80%;
       }
 
       .item-6 {
+        grid-column: 5 / span 2;
+        font-family: var(--bebas-font);
+        font-size: 1.5rem;
+        border-left: 3px solid black;
+        margin: 30px;
+        padding-left: 30px;
+        display: flex;
       }
+
+      /*tagline*/
+
+       .tagline {
+        font-family: var(--bebas-font);
+        font-size: 2rem;
+        font-weight: 400;
+        color: black;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      /*nav*/
+
+       .nav-bar ul {
+        font-family: var(--space-font );
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 20px;
+        a, label {
+          text-decoration: none; 
+          padding: 5px;
+          color: black;
+        }
+        }
+
+        .nav-bar a:hover {
+          color: orange;
+        }
+
+        .nav-bar label:hover {
+          color: orange;
+        }
+
+      /*contact button inside nav - code from FAB (floating action button) but 
+      user clicks the word Contact instead as I put it in the nav*/
+
+      .checkbox {
+        display: none;
+      }
+
+      .options {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        margin-bottom: 15px;
+        display: flex;
+      }
+
+      .checkbox:checked ~ .options {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .option {
+        width: 40px;
+        height: 40px;
+        background-color: rgb(105, 13, 233);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        text-decoration: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      /*icons*/
+
+      .icons {
+        display: flex;
+        justify-content: end;
+        padding: 20px;
+        font-size: 3rem;
+      a {
+        text-decoration: none;
+        i {
+          color: orange;
+        }
+      }
+    }
+
+      /*quote citations*/
+
+     cite {
+        font-size: 15px;
+        line-height: normal;
+        letter-spacing: normal;
+        display: flex;
+        align-items:flex-end;
+        text-shadow: 2px 2px orange;
+      }
+
+      /*media queries*/
+
+      @media only screen and (max-width: 1250px) {
+        .container {
+          grid-template-columns: repeat(4, minmax( 0, 1fr));
+        }
+
+        .logo-tagline {
+          grid-column: 1 / span 1;
+        }
+
+        .nav-bar {
+          grid-column: 2 / span 2;
+        ul {
+          display:block;
+        }
+        }
+
+        .icons {
+          grid-column: 4 / span 1;
+        }
+
+        .item-1 {
+          grid-column: 1 / span 1;
+          letter-spacing: normal;
+          line-height: 0.7;
+        }
+
+        .item-2 {
+          grid-column: 2 / span 3;
+        }
+
+        .item-3 {
+          grid-column: 1 / span 4;
+          letter-spacing: normal;
+          line-height: 0.7;
+          justify-content: left;
+        }
+
+        .item-4 {
+          grid-column: 1 / span 4;
+        }
+
+        .item-5 {
+          grid-column: 1 / span 3;
+        }
+
+        .item-6 {
+          grid-column: 4 / span 1;
+          margin: 10px;
+        }
+      }
+
+    @media only screen and (max-width: 800px) {
+  
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+        padding-bottom: 50px;
+      }
+
+    .logo-tagline {
+        grid-column: 1 / span 2;
+      }
+
+    .nav-bar {
+      grid-column: 1 / span 1;
+      ul {
+      display:block;
+      }
+     }
+
+    .icons {
+      grid-column: 2 / span 1;
+     }
+
+    .item-1 {
+      grid-column: 1 / span 2;        
+      letter-spacing: 0.5rem;  
+      margin-left: 20px;
+      line-height: 1;
+    }
+
+    .item-2 {
+      grid-column: 1 / span 2; 
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      padding: 0 20px;
+    }
+
+    .item-3 {
+      grid-column: 1 / span 2;
+      font-size: 4rem;
+      letter-spacing: normal;
+      justify-content: center; 
+    }
+
+    .item-4 {
+      grid-column: 1 / span 2;
+      font-size: 0.9rem;
+      letter-spacing: 0.2rem;
+      margin-left: 10px;
+    }
+
+    .item-5 {
+      grid-column: 1 / span 2; 
+      font-size: 1.2rem;
+      margin: 20px;
+    }
+
+    .item-6 {
+      grid-column: 1 / span 2; 
+      border-left: none;
+      border-top: 3px solid black; /* Change border direction for vertical layout */
+      margin: 20px;
+      padding-top: 20px;
+      padding-left: 0;
+      }
+    }
+
     </style>
   </head>
   <body>
     <!--IDEA: inspirational website with quotes and positivity-->
+
     <div class="container">
-      <div class="logo"></div>
-
-      <div class="tagline">Life is short - live it up.</div>
-
-      <div class="nav"></div>
-
-      <div class="icons"></div>
-
+      <div class="logo-tagline">
+        <img
+          id="my-logo"
+          src="images/my-logo.png"
+          alt="My Logo"
+          width="120px"
+          height="120px"
+        />
+        <div class="tagline">Life is short. Live it up.</div>
+      </div>
+      <nav class="nav-bar">
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="./index.html">Projects</a></li>
+          <li><div class="contact-container">
+        <input type="checkbox" id="toggle" class="checkbox" />
+        <label for="toggle">Contact</label>
+        <div class="options">
+          <a href="tel:+123456789" class="option" data-label="Call">&#128222;</a>
+          <a href="mailto:info@site.com" class="option" data-label="Email"
+            >&#9993;</a
+          >
+          <a href="https://wa.me" class="option" data-label="WhatsApp"
+            >&#128172;</a
+          >
+        </div></li>
+        </ul>
+      </nav>
+    
+      <div class="icons">
+        <a href="https://www.facebook.com/">
+          <i
+            class="fa-brands fa-facebook"
+            
+          ></i> </a
+        ><a href="https://www.linkedin.com/">
+          <i
+            class="fa-brands fa-linkedin"
+            
+          ></i> </a
+        ><a href="https://www.instagram.com/">
+          <i class="fa-brands fa-instagram" ></i>
+        </a>
+      </div>
       <div class="item-1">"All</div>
 
-      <div class="item-2">we have is NOW."<cite>Andy Whitfield</cite></div>
-
-      <div class="item-3">
-        <q>You miss 100% of the shots you don't take.</q
-        ><cite>Wayne Gretzky</cite>
+      <div class="item-2">
+        <q>You miss 100% of the shots you don't take.</q><cite>Wayne Gretzky</cite>
       </div>
+
+      <div class="item-3">we have<br> is NOW."<cite>Andy Whitfield</cite></div>
 
       <div class="item-4">
         <q>Believe you can, and you're halfway there.</q
@@ -102,7 +409,7 @@ spacing to create visually appealing text layouts.-->
         <q
           >Why, Sir, you find no man, at all intellectual, who is willing to
           leave London. No, Sir, when a man is tired of London, he is tired of
-          life; for there is in London all that life can afford."</q
+          life; for there is in London all that life can afford.</q
         ><cite
           >Samuel Johnson<a
             href="https://www.samueljohnson.com/tiredlon.html"
@@ -112,9 +419,10 @@ spacing to create visually appealing text layouts.-->
 
       <div class="item-6">
         <q
-          >Everything will be ok in the end. If it's not ok, it's not the
+          >Everything will be ok in the end. <br>If it's not ok, <br>it's not the
           end.</q
         ><cite>John Lennon</cite>
+      </div>
       </div>
     </div>
   </body>
