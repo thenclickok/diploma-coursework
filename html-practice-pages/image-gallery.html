@@ -21,6 +21,7 @@ experience.-->
         box-sizing: border-box;
         padding: 0;
         margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
 
       /*header section*/
@@ -105,14 +106,14 @@ experience.-->
           color: black;
           padding: 5px;
           display: inline-block;
+          transition: transform 0.3s ease;
         }
-
         a.active {
           background-color: rgb(105, 13, 233);
           color: white;
         }
         a:hover {
-          font-weight: 600;
+          transform: scale(1.2);
         }
       }
 
@@ -150,6 +151,17 @@ experience.-->
         }
       }
 
+      .icons button {
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        opacity: 0.8; /* Slightly faded by default */
+      }
+
+      .icons button:hover {
+        transform: scale(1.2); /* Grows by 10% */
+        opacity: 1;            /* Becomes fully bright */
+        cursor: pointer;
+      }
+
       /*gallery section*/
 
       .gallery {
@@ -160,7 +172,6 @@ experience.-->
         gap: 10px;
         margin: 10px;
         }
-
 
       .item-1 {
         grid-column: 1 / span 1;
@@ -271,23 +282,34 @@ experience.-->
 
       /*footer section*/
 
-
-
-      .footer {
+      .footer-top {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        background-color: rgb(67, 64, 64);
         }
+
+      .form-container {
+        grid-column: 1 / span 1;
+      }
+
+      .sitemap {
+        grid-column: 2 / span 1;
+      }
+
+      .logo-icons {
+        grid-column: 3 / span 1;
+      }
 
       /*order form*/
 
       .form-container {
-        background-color: white;
         padding: 2rem;
         border-radius: 8px;
         position: relative;
-        width: 700px;
-        height: 500px;
         text-align: center;
+        h2, h4 {
+            color: white;
+          }
         form {
           display: grid;
           place-items: center;
@@ -296,14 +318,23 @@ experience.-->
           input {
             width: 300px;
             font-size: 1rem;
+            padding: 10px;
+            border: 3px solid black;
+            border-radius: 5px;
           }
         textarea {
           font-size: 1rem;
           width: 300px;
           height: 200px;
+          padding: 10px;
+          border: 3px solid black;
+          border-radius: 5px;
         }
         button {
           font-size: 16px;
+          padding: 10px;
+          border: 3px solid black;
+          border-radius: 5px;
         }
       }
     }
@@ -347,6 +378,60 @@ experience.-->
         display: block;
       }
 
+    /*site-map*/
+
+    .sitemap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      ul {
+        font-size: 1.2rem;
+        margin-top: 40px;
+        margin-bottom: 60px;
+        line-height: 180%;
+        li {
+          padding: 15px;
+        a {
+        text-decoration: none;
+        color: white;
+          }
+        }
+      }
+    }
+
+    /*logo-icons*/
+    .logo-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+      img {
+        margin-bottom: 20px;
+        border: 3px solid black;
+        border-radius: 50%;
+      }
+      a {
+      text-decoration: none;
+    }
+    p {
+      color: white;
+    }
+    }
+
+    .option {
+      display: flex;
+      flex-direction: row;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      a, p {
+        padding: 10px;
+      }
+    }
+
     /*footer bottom*/
 
       .footer-bottom {
@@ -366,6 +451,10 @@ experience.-->
       /*media queries*/
 
       @media only screen and (max-width: 1100px) {
+        .logo {
+          padding-left: 15px;
+        }
+        
         .navigation ul {
           flex-wrap: wrap; /* Allows items to move to the next line */
         }
@@ -374,16 +463,31 @@ experience.-->
           flex: 0 0 50%;
           box-sizing: border-box;
         }
+
+        .footer-top {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .form-container {
+        grid-column: 1 / span 1;
+        }
+
+        .sitemap {
+        grid-column: 1 / span 1;
+        }
+
+        .logo-icons {
+        grid-column: 1 / span 1;
+       }
       }
 
-      @media only screen and (max-width: 850px) {
+   
+      @media only screen and (max-width: 900px) {
         .icons {
           flex-direction: column;
           gap: 10px;
         }
-      }
 
-      @media only screen and (max-width: 700px) {
         .header {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -413,12 +517,7 @@ experience.-->
     </style>
   </head>
   <body>
-    <!--IDEA: inspirational website with quotes and positivity
-    
-    reuse header from form styling 
-but include gallery in middle of nav and make it active 
-(the drawing shows logo, nav with gallery, search bar, question mark and shopping basket)
--->
+    <!--IDEA: inspirational website with quotes and positivity-->
 
     <header class="header">
       <div class="logo">
@@ -426,7 +525,7 @@ but include gallery in middle of nav and make it active
           id="my-logo"
           src="images/my-logo.png"
           alt="my logo"
-          width="120"
+          width="180"
           height="auto"
         />
       </div>
@@ -532,7 +631,6 @@ but include gallery in middle of nav and make it active
         </figure>
       </div> 
 
-
       <a href="#img6" class="item-6">
         <img src="images/gallery-chocolate.jpg" alt="chocolate cake" width="200" height="250"/>
       </a>
@@ -576,7 +674,6 @@ but include gallery in middle of nav and make it active
         </figure>
       </div> 
 
-
       <a href="#img9" class="item-9">
         <img src="images/gallery-valentines.jpg" alt="Valentine's Day cake" width="400" height="250"/>
       </a>
@@ -592,50 +689,63 @@ but include gallery in middle of nav and make it active
       </div>
     </div>
 
-    <footer class="footer">
+    <footer>
       <div class="footer-top">
+          <div class="form-container">
+            <h2>CONTACT US</h2><br/>
+            <h4>SEND US YOUR ORDER</h4>
+            <form action="#success-msg" method="get">
+              <input type="text" placeholder="Name" required />
+              <input type="email" placeholder="Email" required />
+              <textarea placeholder="Message" required></textarea>
+              <button type="submit">Submit</button>
+              <!--clickiing this button makes the url end in #success-msg 
+              (because of the form action) which activates the css rule 
+              #success-msg:target display: block;-->
+            </form>
+          </div>
 
-        <div class="form-container">
-          <h2>Send Us Your Order Request</h2>
-          <form action="#success-msg" method="get">
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">Submit</button>
-            <!--clickiing this button makes the url end in #success-msg 
-            (because of the form action) which activates the css rule 
-            #success-msg:target display: block;
-          (AND clicking the close button at the top of form will cancel 
-          the target rule so it reverts to display:none)-->
-          </form>
-        </div>
-
-        <div id="success-msg" class="success-popup">
-          <h3>Form Submitted!</h3>
-          <br />
-          <p>Thank you <br />for your message.</p>
-          <a href="#" class="close-button">&times;</a>
-        </div>
-
-
-
-        <!--TO DO: sitemap and logo-icons divs plus media queries. 
+          <div id="success-msg" class="success-popup">
+            <h3>Form Submitted!</h3>
+            <br />
+            <p>Thank you <br />for your message.</p>
+            <a href="#" class="close-button">&times;</a>
+          </div>
         
-        instructions:
-        
-        site map in middle of footer 
-        that is the nav but vertically stacked
-        bottom right is logo, phone number (with phone icon to left) 
-        and email (little envelope icon to left)
-        -->
 
-        <div class="sitemap"></div>
+          <nav class="sitemap">
+            <h2>SITEMAP</h2><br>
+            <h4>ALL OF OUR PAGES</h4>
+            <br>
+            <ul>
+              <li><a href="#" class="button">Home</a></li>
+              <li><a href="#" class="button">About Us</a></li>
+              <li><a href="#" class="button active">Gallery</a></li>
+              <li><a href="./index.html" class="button">Other Projects</a></li>
+              <li><a href="#" class="button">Contact Us</a></li>
+            </ul>
+          </nav>
 
-        <div class="logo-icons"></div>
-      </div>
-      <div class="footer-bottom">
-        <p>Copyright 2026. All rights reserved. SCRUMPTIOUS CAKES</p>
-      </div>
+          <div class="logo-icons">
+            <img
+              id="my-logo"
+              src="images/my-logo.png"
+              alt="my logo"
+              width="200"
+              height="200"
+            /><br>
+            <div class="option"><a href="tel:+123456789" data-label="Call">&#128222;</a>
+            <p>020 1234 5678</p></div>
+            <div class="option"><a href="scrumptious_cakes@example.com" data-label="Email"
+              >&#9993;</a>
+            <p>scrumptious_cakes@example.com</p>
+            </div>
+          </div>
+       
+        </div>
+        <div class="footer-bottom">
+          <p>Copyright 2026. All rights reserved. SCRUMPTIOUS CAKES</p>
+        </div>
     </footer>
   </body>
 </html>
