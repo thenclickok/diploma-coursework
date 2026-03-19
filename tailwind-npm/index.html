@@ -4,8 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
+    <title>CSS Framework Challenge</title>
+    <!--I am using a custom font from Google called Quintessential. I put it
+    in my input.css file. I got the url and the font-family from Google. The url 
+    goes in the import statement in the input.css file. The name of the font 
+    is just --font- and then a custom name, which I then use in the html 
+    utility class. Example tailwind for body font is <body class="font-fancy">. 
+    Also, I need the link with href being the output.css file 
+    located in my head section. For custom colours I choose any hex value, then
+    give it a name in my input.css file and use it in my html utility class.
+    Example tailwind for an h1 element is <h1 class="text-3xl font-bold underline text-seablue">-->
+    <script
+      src="https://kit.fontawesome.com/ef92c49664.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body class="font-brand">
-    <h1 class="text-3xl font-bold underline text-clifford">Hello world!</h1>
+  <body class="font-fancy">
+    <!--flower image by stockking on freepik, camera image by wirestock on freepik-->
+    <header
+      class="flex flex-col justify-end items-center relative bg-[url(/css-framework-branches.jpg)] bg-cover bg-center text-white h-64"
+    >
+      <img
+        src="my-logo.png"
+        class="absolute top-0 left-0 w-1/6 mt-2 ml-2 border-2 border-solid border-black rounded-2xl"
+      />
+      <h1 class="text-3xl tracking-wider font-fancy">
+        Super Snaps Photography
+      </h1>
+      <h3 class="tracking-wider m-3">Capturing beauty in the moment</h3>
+      <button
+        class="text-gray-800 border-2 border-black border-solid rounded-2xl p-2 mb-8 tracking-wider bg-seablue hover:bg-paleorange hover:font-bold"
+      >
+        Click to discover more
+      </button>
+      <p class="absolute bottom-0 left-0 text-xs tracking-widest">
+        Header image by Freepik
+      </p>
+    </header>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-10">
+      <div class="flex flex-col items-center text-center">
+        <div
+          class="inline-flex items-center justify-center rounded-full border border-gray-900 p-6 mb-4"
+        >
+          <i class="fa-solid fa-ring text-5xl"></i>
+        </div>
+        <div>
+          <p class="font-bold text-lg mb-2">Weddings</p>
+          <p class="text-justify">
+            We can help you achieve the wedding of your dreams. We will capture
+            all the important moments so the memories last a lifetime.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center text-center">
+        <div
+          class="inline-flex items-center justify-center rounded-full border border-gray-900 p-6 mb-4"
+        >
+          <i class="fa-solid fa-cake-candles text-5xl"></i>
+        </div>
+        <div>
+          <p class="font-bold text-lg mb-2">Birthdays</p>
+          <p class="text-justify">
+            Let us manage the photos while you enjoy those special moments with
+            friends and family.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center text-center">
+        <div
+          class="inline-flex items-center justify-center rounded-full border border-gray-900 p-6 mb-4"
+        >
+          <i class="fa-solid fa-briefcase text-5xl"></i>
+        </div>
+        <div>
+          <p class="font-bold text-lg mb-2">Professional</p>
+          <p class="text-justify">
+            Need some professional photos for your company in print or online?
+            We've got you covered!
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center text-center">
+        <div
+          class="inline-flex items-center justify-center rounded-full border border-gray-900 p-6 mb-4"
+        >
+          <i class="fa-solid fa-film text-5xl"></i>
+        </div>
+        <div>
+          <p class="font-bold text-lg mb-2">Head Shots</p>
+          <p class="text-justify">
+            Hoping to make it in Hollywood? We offer high-quality head shots to
+            showcase your best features.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer></footer>
   </body>
 </html>
