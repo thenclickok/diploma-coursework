@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <title>Map Page Build</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!--9. Challenge: Build a map page resembling Google Maps using HTML 
     and CSS. Requirements: Utilize the features of the selected CSS 
@@ -13,5 +18,100 @@
   </head>
 
   <!--IDEA make it look like Google Maps page using chosen framework-->
-  <body></body>
+
+  <body class="font-sans tracking-tight">
+    <div class="relative w-screen h-screen overflow-hidden">
+      <iframe
+        class="absolute inset-0 w-full h-full border-0 z-0"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.256877413444!2d-0.1306782233777893!3d51.507605610025735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ce3941eb1f%3A0x1a5342f0ff00ad52!2sTrafalgar%20Square!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk"
+        allowfullscreen=""
+        loading="lazy"
+      >
+      </iframe>
+
+      <div class="absolute inset-0 z-10 pointer-events-none p-7">
+        <div
+          class="group relative pointer-events-auto w-full max-w-md bg-white rounded-lg shadow-lg flex items-center p-2 mt-4 ml-4 border border-gray-200"
+        >
+          <button class="p-2 text-gray-500 flex items-center justify-center">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+
+          <input
+            type="text"
+            placeholder="Search Google Maps"
+            class="peer flex-1 px-2 outline-none text-gray-700 bg-transparent"
+          />
+
+          <div
+            class="hidden group-hover:block absolute top-full left-0 w-full bg-white mt-1 p-4 rounded-lg shadow-xl border border-gray-100 overflow-hidden"
+          >
+            <a
+              href="https://maps.app.goo.gl/tnmpzAdayi6EVx7w9"
+              target="_blank"
+              title="Leicester Square"
+              class="hover:bg-gray-200"
+              ><span
+                class="material-symbols-outlined text-[20px] text-gray-400"
+              >
+                history
+              </span>
+              Leicester Square, London WC2H 7DE</a
+            ><br />
+
+            <a
+              href="https://maps.app.goo.gl/3VYEcaDAEmMVL2Vn8"
+              target="_blank"
+              title="The Serpentine"
+              class="hover:bg-gray-200"
+              ><span
+                class="material-symbols-outlined text-[20px] text-gray-400"
+              >
+                history
+              </span>
+              The Serpentine, Hyde Park, London W2 2UH</a
+            ><br />
+
+            <a
+              href="https://maps.app.goo.gl/wwzP9aFPML65MpGc7"
+              target="_blank"
+              title="The British Museum"
+              class="hover:bg-gray-200"
+              ><span
+                class="material-symbols-outlined text-[20px] text-gray-400"
+              >
+                history
+              </span>
+              The British Museum, Great Russell St, London WC1B 3DG</a
+            ><br />
+
+            <a href="#" class="flex justify-center pt-3 hover:bg-gray-200"
+              >More from recent history</a
+            >
+          </div>
+
+          <div class="h-6 w-[1px] bg-gray-300 mx-2"></div>
+
+          <button
+            class="flex items-center gap-1 p-2 text-blue-600 hover:text-blue-800"
+          >
+            <span class="material-symbols-outlined">directions</span>
+          </button>
+        </div>
+
+        <div
+          class="absolute bottom-10 right-10 flex flex-col gap-2 pointer-events-auto"
+        >
+          <button
+            class="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-50"
+          >
+            +
+          </button>
+          <button
+            class="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-50"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
