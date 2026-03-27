@@ -9,6 +9,10 @@
     />
     <title>Map Page Build</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://kit.fontawesome.com/ef92c49664.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!--9. Challenge: Build a map page resembling Google Maps using HTML 
     and CSS. Requirements: Utilize the features of the selected CSS 
@@ -29,9 +33,132 @@
       >
       </iframe>
 
-      <div class="absolute inset-0 z-10 pointer-events-none p-7">
+      <div
+        class="flex flex-col relative bg-gray-300 w-20 h-full text-center z-11"
+      >
+        <input
+          type="checkbox"
+          id="menu-toggle"
+          class="peer sr-only"
+        /><!--sr stands for screen reader-->
+
+        <label for="menu-toggle" class="text-3xl p-4 inline-block"
+          ><i class="fa-solid fa-bars"></i
+        ></label>
+
+        <a href="#" class="mb-3 text-sm"
+          ><i class="fa-regular fa-bookmark"></i>
+          <p class="text-sm">Saved</p></a
+        >
+
+        <a href="#" class="mb-3 text-sm"
+          ><span class="material-symbols-outlined"> history </span>
+          <p class="text-sm">Recents</p></a
+        >
+
         <div
-          class="group relative pointer-events-auto w-full max-w-md bg-white rounded-lg shadow-lg flex items-center p-2 mt-4 ml-4 border border-gray-200"
+          class="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl transition-transform duration-300 ease-in-out -translate-x-full peer-checked:translate-x-0"
+        >
+          <ul class="flex flex-col">
+            <label for="menu-toggle" class="absolute left-0"
+              ><i class="fa-solid fa-xmark"></i
+            ></label>
+            <li class="text-2xl tracking-tighter mt-5 mb-5">
+              <span class="text-blue-500">G</span>
+              <span class="text-red-500">o</span>
+              <span class="text-yellow-500">o</span>
+              <span class="text-blue-500">g</span>
+              <span class="text-green-500">l</span>
+              <span class="text-red-500">e</span>
+              <span>Maps</span>
+            </li>
+            <li class="flex justify-left:text-blue-600 text-xl ml-5 mb-3">
+              <a href="#"
+                ><i class="fa-regular fa-bookmark" aria-hidden="true"></i
+                ><span>Saved</span></a
+              >
+            </li>
+
+            <li class="flex justify-left hover:text-blue-600 text-lg ml-5 mb-3">
+              <a href="#"
+                ><span class="material-symbols-outlined" aria-hidden="true">
+                  history </span
+                ><span>Recents</span></a
+              >
+            </li>
+
+            <li class="flex justify-left hover:text-blue-600 text-lg ml-5 mb-3">
+              <a href="#">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >reviews</span
+                >
+                <span>Your contributions</span>
+              </a>
+            </li>
+
+            <li class="flex justify-left hover:text-blue-600 text-lg ml-5 mb-3">
+              <a href="#">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >share_location</span
+                >
+                <span>Location sharing</span>
+              </a>
+            </li>
+
+            <li class="flex justify-left hover:text-blue-600 text-lg ml-5 mb-3">
+              <a href="#">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >timeline</span
+                >
+                <span>Your timeline</span>
+              </a>
+            </li>
+
+            <li class="flex justify-left hover:text-blue-600 text-lg ml-5 mb-3">
+              <a href="#">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >shield_person</span
+                >
+                <span>Your data in Maps</span>
+              </a>
+            </li>
+
+            <li class="flex justify-left hover:text-blue-600 text-lg ml-5 mb-3">
+              <a href="#">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >ios_share</span
+                >
+                <span>Share or embed map</span>
+              </a>
+            </li>
+
+            <li class="flex justify-left hover:text-blue-600 text-lg ml-5 mb-3">
+              <a href="#">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >print</span
+                >
+                <span>Print</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-auto mb-5">
+          <!--the margin top auto works to 
+          push the get app text to the bottom only because the container is 
+          a flex box-->
+          <a
+            href="https://play.google.com/store/apps/details?id=com.google.android.apps.maps&hl=en_GB"
+            class="flex flex-col justify-center items-center"
+            ><i class="fa fa-mobile" aria-hidden="true"></i>
+            <p>Get app</p></a
+          >
+        </div>
+      </div>
+
+      <div class="absolute top-0 left-20 z-10 pointer-events-none">
+        <div
+          class="group relative rounded-br-lg pointer-events-auto w-full max-w-md bg-white shadow-lg flex items-center p-2 border border-gray-200"
         >
           <button class="p-2 text-gray-500 flex items-center justify-center">
             <span class="material-symbols-outlined">search</span>
@@ -44,7 +171,7 @@
           />
 
           <div
-            class="hidden group-hover:block absolute top-full left-0 w-full bg-white mt-1 p-4 rounded-lg shadow-xl border border-gray-100 overflow-hidden"
+            class="hidden group-hover:block absolute top-full left-0 w-full bg-white mt-1 p-4 rounded-tr-lg shadow-xl border border-gray-100 overflow-hidden"
           >
             <a
               href="https://maps.app.goo.gl/tnmpzAdayi6EVx7w9"
@@ -53,6 +180,7 @@
               class="hover:bg-gray-200"
               ><span
                 class="material-symbols-outlined text-[20px] text-gray-400"
+                aria-hidden="true"
               >
                 history
               </span>
@@ -66,6 +194,7 @@
               class="hover:bg-gray-200"
               ><span
                 class="material-symbols-outlined text-[20px] text-gray-400"
+                aria-hidden="true"
               >
                 history
               </span>
@@ -79,6 +208,7 @@
               class="hover:bg-gray-200"
               ><span
                 class="material-symbols-outlined text-[20px] text-gray-400"
+                aria-hidden="true"
               >
                 history
               </span>
@@ -90,6 +220,28 @@
             >
           </div>
 
+          <div
+            class="hidden group-hover:block absolute top-65 left-0 w-full bg-white mt-1 p-4 rounded-br-lg shadow-xl border border-gray-100 overflow-hidden"
+          >
+            <div class="flex justify-between mb-3">
+              <h3>Trafalgar Square</h3>
+              <div>
+                <span>9&deg;</span>
+                <i class="fa-regular fa-cloud" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i
+                class="fa-solid fa-car m-4 text-red-500"
+                aria-hidden="true"
+              ></i>
+              <div>
+                <h3>Heavy traffic in this area</h3>
+                <h5 class="text-sm">Slower than usual</h5>
+              </div>
+            </div>
+          </div>
+
           <div class="h-6 w-[1px] bg-gray-300 mx-2"></div>
 
           <button
@@ -97,19 +249,6 @@
           >
             <span class="material-symbols-outlined">directions</span>
           </button>
-        </div>
-
-        <div
-          class="absolute bottom-10 right-10 flex flex-col gap-2 pointer-events-auto"
-        >
-          <button
-            class="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-50"
-          >
-            +
-          </button>
-          <button
-            class="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-50"
-          ></button>
         </div>
       </div>
     </div>
