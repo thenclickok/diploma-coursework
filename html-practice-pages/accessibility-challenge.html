@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ef92c49664.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Accessibility Challenge</title>
 
     <!--10.Challenge: Ensure your webpage is accessible to all users, including 
@@ -10,15 +14,91 @@ those with disabilities. Requirements: Follow accessibility best practices
 such as using semantic HTML, providing alternative text for images, ensuring 
 keyboard navigation, and testing with screen readers.-->
     <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
       body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
       }
 
       a:focus,
-      button:focus,
-      input:focus {
+      button:focus {
         outline: 2px solid orange;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(images/accessibility-british-flag.jpg);
+        background-size: cover;
+        padding: 10px;
+      }
+
+      header h1 {
+        background-color: white;
+        border-radius: 10px;
+        border: 3px solid black;
+        padding: 0 10px;
+      }
+
+      /* header menu*/
+
+      nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      #hamburger-menu {
+        display: none;
+      }
+
+      .hamburger-links {
+        display: none;
+      }
+
+      #hamburger-menu:checked ~ .hamburger-links {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+      }
+
+      .hamburger-links a {
+        text-decoration: none;
+        color: black;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 5px;
+        font-weight: bold;
+      }
+
+      .hamburger-links a:hover {
+        background-color: rgb(61, 61, 239);
+        color: white;
+      }
+
+      nav {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+      }
+
+      /* header logo */
+
+      #my-logo {
+        width: 75px;
+        height: auto;
+        aspect-ratio: 1320 / 1000;
+        border-radius: 50%;
+        margin: 0 30px;
+        border: 2px solid black;
       }
     </style>
   </head>
@@ -26,8 +106,24 @@ keyboard navigation, and testing with screen readers.-->
     <!--IDEA: London Tourism page-->
     <header>
       <!--top ten tourist attractions-->
-      <nav><!--hamburger menu--></nav>
-      <img src="" alt="" /><!--logo-->
+      <nav>
+        <input type="checkbox" id="hamburger-menu" />
+        <label for="hamburger-menu"
+          ><i class="fa-solid fa-bars fa-2xl"></i
+        ></label>
+        <ul class="hamburger-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">FAQs</a>
+        </ul>
+      </nav>
+      <img
+        id="my-logo"
+        src="images/my-logo.png"
+        alt="my logo"
+        width="1320"
+        height="1000"
+      /><!--logo-->
       <h1>London Tourism</h1>
       <!--only use ONE h1 per page-->
     </header>
