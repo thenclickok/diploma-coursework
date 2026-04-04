@@ -21,9 +21,8 @@
 
       .container {
         display: grid;
-        grid-template-areas: "header header header" "button-group";
+        grid-template-areas: "header header header" "link-group";
         place-items: center;
-        align-content: center;
         text-align: center;
         height: 100vh;
         width: 100vw;
@@ -31,11 +30,11 @@
 
       .header {
         grid-area: "header";
-        margin-bottom: 30px;
+        margin-top: 50px;
       }
 
-      .button-group {
-        grid-area: "button-group";
+      .link-group {
+        grid-area: "link-group";
       }
 
       .container p {
@@ -43,25 +42,25 @@
         font-size: large;
       }
 
-      .button-group {
+      .link-group {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: 40px;
       }
 
-      .button-group button {
+      .link-group a {
         border-radius: 8px;
-        margin: 10px;
-      }
-
-      .button-group a {
+        margin: 2px;
         text-decoration: none;
         font-size: large;
         color: black;
-        padding: 10px;
+        padding: 5px 10px;
+        border: 1px solid black;
+        background-color: rgb(246, 244, 244);
       }
 
-      .button-group button:hover {
+      .link-group a:hover {
         background-color: rgb(223, 202, 244);
       }
 
@@ -79,60 +78,22 @@
         <br />
         <h3><i>Click a button to view a project</i></h3>
       </div>
-      <br />
-      <br|>
-      <div class="button-group">
-        <button>
-          <a href="./personal-portfolio-webpage.html">1. Personal Portfolio</a>
-        </button>
-
-        <button>
-          <a href="./responsive-design-challenge.html">2. Responsive Design</a>
-        </button>
-
-        <button>
-          <a href="./animation-challenge.html">3. Animation Challenge</a>
-        </button>
-
-        <button>
-          <a href="./form-styling.html">4. Form Styling</a>
-        </button>
-
-        <button>
-          <a href="./flex-and-grid-layout.html">5. Flex and Grid Layout</a>
-        </button>
-
-        <button>
-          <a href="./typography-challenge.html">6. Typography Challenge</a>
-        </button>
-
-        <button>
-          <a href="./image-gallery.html">7. Image Gallery</a>
-        </button>
-
-        <button>
-          <a href="https://tailwind-npm.netlify.app/">8. CSS Framework Challenge</a>
-        </button>
-
-        <button>
-          <a href="./map-page-build.html">9. Map Page Build</a>
-        </button>
-
-        <button>
-          <a href="./accessibility-challenge.html">10. Accessibility Challenge</a>
-        </button>
-
-        <button>
-          <a href="./psd-challenge.html">11. Photoshop Document Challenge</a>
-        </button>
-
-        <button>
-          <a href="./email-template.html">12. Email Template</a>
-        </button>
-
-        <button>
-          <a href="./web-app-user-interface.html">13. Web App User Interface</a>
-        </button>
+      <div class="link-group">
+        <a href="./personal-portfolio-webpage.html">1. Personal Portfolio</a>
+        <a href="./responsive-design-challenge.html">2. Responsive Design</a>
+        <a href="./animation-challenge.html">3. Animation Challenge</a>
+        <a href="./form-styling.html">4. Form Styling</a>
+        <a href="./flex-and-grid-layout.html">5. Flex and Grid Layout</a>
+        <a href="./typography-challenge.html">6. Typography Challenge</a>
+        <a href="./image-gallery.html">7. Image Gallery</a>
+        <a href="https://tailwind-npm.netlify.app/"
+          >8. CSS Framework Challenge</a
+        >
+        <a href="./map-page-build.html">9. Map Page Build</a>
+        <a href="./accessibility-challenge.html">10. Accessibility Challenge</a>
+        <a href="./psd-challenge.html">11. Photoshop Document Challenge</a>
+        <a href="./email-template.html">12. Email Template</a>
+        <a href="./web-app-user-interface.html">13. Web App User Interface</a>
       </div>
     </div>
     <footer class="footer">
