@@ -15,8 +15,10 @@
       body {
         font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
         color: black;
-        background-image: url("images/index-background-image.jpg");
+        background-image: url("images/index-background-image-m.jpg");
         background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
       }
 
       .container {
@@ -64,10 +66,22 @@
         background-color: rgb(223, 202, 244);
       }
 
-      footer a {
-        text-decoration: none;
+      footer p {
         float: left;
-        color: black;
+
+        margin-left: 10px;
+        a {
+          text-decoration: none;
+          color: black;
+          font-style: italic;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        body {
+          background-image: url("images/index-background-image.jpg");
+          /* My horizontal image for desktop */
+        }
       }
     </style>
   </head>
@@ -97,10 +111,10 @@
       </div>
     </div>
     <footer class="footer">
-      <a
-        href="https://www.freepik.com/free-vector/white-minimal-hexagons-background_13107746.htm"
-        >Image by coolvector on Freepik</a
-      >
+      <p>
+        Background images by pikisuperstar (mobile) and coolvector (desktop) on
+        <a href="https://www.freepik.com/app">Freepik</a>
+      </p>
     </footer>
   </body>
 </html>
