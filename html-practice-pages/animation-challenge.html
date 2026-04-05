@@ -210,31 +210,32 @@
 
       @keyframes myAnimation {
         0% {
-          left: 0px;
+          left: 0;
           background-color: rgb(225, 147, 224);
           width: 70px;
           height: 70px;
         }
         25% {
-          left: 350px;
+          left: 25%; /* Moves a quarter of the way across */
           background-color: rgb(148, 55, 148);
           width: 100px;
           height: 100px;
         }
         50% {
-          left: 700px;
+          left: 50%; /* Halfway across */
           background-color: rgb(225, 147, 224);
           width: 175px;
           height: 175px;
         }
         75% {
-          left: 1400px;
+          /* calc(100% - ballWidth) keeps it perfectly at the right edge */
+          left: calc(100% - 100px);
           background-color: rgb(148, 55, 148);
           width: 100px;
           height: 100px;
         }
         100% {
-          left: 0px;
+          left: 0;
           background-color: rgb(225, 147, 224);
           width: 70px;
           height: 70px;
