@@ -23,6 +23,7 @@ keyboard navigation, and testing with screen readers.-->
       body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
+        overflow-x: hidden;
       }
 
       /*header including title and citation*/
@@ -123,17 +124,30 @@ keyboard navigation, and testing with screen readers.-->
         justify-content: space-between;
         align-items: flex-start;
         margin: 20px 0 20px 5px;
-        overflow: hidden;
         width: 100%;
+        position: relative;
+        z-index: 5;
       }
 
       #top-ten-info {
         flex: 0 0 40%;
         padding: 10px;
         margin: 10px;
+        position: relative;
         ol {
           margin-left: 30px;
         }
+      }
+
+      details {
+        position: absolute;
+        z-index: 10;
+        background-color: white;
+      }
+
+      details[open] {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        border: 1px solid #ccc;
       }
 
       #figure-1 {
@@ -183,6 +197,13 @@ keyboard navigation, and testing with screen readers.-->
           text-decoration: none;
           color: black;
         }
+      }
+
+      /*section 2*/
+
+      #museums {
+        position: relative;
+        z-index: 1;
       }
     </style>
   </head>
@@ -292,7 +313,15 @@ keyboard navigation, and testing with screen readers.-->
       </figure>
     </section>
 
-    <section></section>
+    <section id="museums">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </section>
 
     <footer></footer>
   </body>
