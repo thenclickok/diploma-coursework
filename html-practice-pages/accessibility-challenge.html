@@ -25,19 +25,17 @@ keyboard navigation, and testing with screen readers.-->
         line-height: 1.6;
       }
 
-      a:focus,
-      button:focus {
-        outline: 2px solid orange;
-      }
+      /*header including title and citation*/
 
       header {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         background-image: url(images/accessibility-british-flag.jpg);
         background-size: cover;
-        padding: 10px;
         border-bottom: 3px solid black;
+        height: 150px;
       }
 
       header h1 {
@@ -45,16 +43,37 @@ keyboard navigation, and testing with screen readers.-->
         border-radius: 10px;
         border: 3px solid black;
         padding: 0 10px;
+        white-space: nowrap;
+      }
+
+      header cite {
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        font-size: small;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 3px;
+        border-radius: 5px;
+        font-weight: bold;
+        z-index: 1;
       }
 
       /* header menu*/
 
       nav {
         position: absolute;
-        top: 0;
-        left: 0;
-        margin: 10px;
-        padding: 10px;
+        top: 40px;
+        left: 10px;
+        padding: 13px;
+        background-color: white;
+        border: 3px solid black;
+        border-radius: 10px;
+        z-index: 3;
+      }
+
+      nav:hover {
+        color: white;
+        background-color: rgb(8, 8, 116);
       }
 
       #hamburger-menu {
@@ -80,26 +99,90 @@ keyboard navigation, and testing with screen readers.-->
         font-weight: bold;
       }
 
-      .hamburger-links a:hover {
-        background-color: rgb(61, 61, 239);
+      .hamburger-links a:hover,
+      .button:hover {
+        background-color: rgb(8, 8, 116);
         color: white;
-      }
-
-      nav {
-        background-color: white;
-        border: 3px solid black;
-        border-radius: 10px;
       }
 
       /* header logo */
 
       #my-logo {
-        width: 75px;
+        width: 100px;
         height: auto;
-        aspect-ratio: 1320 / 1000;
         border-radius: 50%;
-        margin: 0 30px;
+        margin: 15px;
         border: 3px solid black;
+        z-index: 2;
+      }
+
+      /*section 1*/
+
+      #top-ten {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 20px 0 20px 5px;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      #top-ten-info {
+        flex: 0 0 40%;
+        padding: 10px;
+        margin: 10px;
+        ol {
+          margin-left: 30px;
+        }
+      }
+
+      #figure-1 {
+        flex: 0 0 40%;
+        padding: 10px;
+        img {
+          border: 2px solid black;
+          border-radius: 10px;
+        }
+      }
+
+      #figure-2 {
+        flex: 0 0 40%;
+        padding: 10px;
+        img {
+          border: 2px solid black;
+          border-radius: 10px;
+        }
+      }
+
+      #top-ten img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        display: block;
+      }
+
+      .button {
+        border: 2px solid black;
+        border-radius: 8px;
+        padding: 3px;
+        text-align: center;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      ol a {
+        text-decoration: none;
+        color: black;
+      }
+
+      figcaption {
+        font-size: small;
+        text-align: center;
+        font-weight: bold;
+        a {
+          text-decoration: none;
+          color: black;
+        }
       }
     </style>
   </head>
@@ -121,17 +204,93 @@ keyboard navigation, and testing with screen readers.-->
       <img
         id="my-logo"
         src="images/my-logo.png"
-        aria-label="Jessica Azzopardi's logo describing her as a Life-long Learner"
+        aria-label="logo indicating Jessica Azzopardi is a life-long learner"
         alt="my logo"
         width="1320"
         height="1000"
-      /><!--logo-->
+      />
       <h1>London Tourism</h1>
       <!--only use ONE h1 per page-->
       <cite>Header background image of British flag by rawpixel.com</cite>
     </header>
 
-    <section></section>
+    <section id="top-ten">
+      <div id="top-ten-info">
+        <h3>
+          London has so much to offer, you never run out of things to do here!
+        </h3>
+        <h2>Check out the list below to discover your next adventure</h2>
+        <details>
+          <summary class="button">Top Ten London Sights</summary>
+          <ol>
+            <li>
+              <a href="https://www.sciencemuseum.org.uk/">The Science Museum</a>
+            </li>
+            <li><a href="https://skygarden.london/">Sky Garden</a></li>
+            <li>
+              <a
+                href="https://www.visitlondon.com/things-to-do/place/283774-trafalgar-square"
+                >Trafalgar Square</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.royalparks.org.uk/visit/parks/victoria-tower-gardens"
+                >Victoria Tower Gardens</a
+              >
+            </li>
+            <li>
+              <a href="https://www.rct.uk/visit/buckingham-palace"
+                >Buckingham Palace</a
+              >
+            </li>
+            <li>
+              <a href="https://www.royalparks.org.uk/visit/parks/hyde-park"
+                >Hyde Park</a
+              >
+            </li>
+            <li><a href="https://www.nhm.ac.uk/">Natural History Museum</a></li>
+            <li><a href="https://www.oxfordstreet.co.uk/">Oxford Street</a></li>
+            <li><a href="https://camdenmarket.com/">Camden Market</a></li>
+            <li><a href="https://www.britishmuseum.org/">British Museum</a></li>
+          </ol>
+        </details>
+      </div>
+
+      <figure id="figure-1">
+        <img
+          src="images/accessibility-science-museum.jpg"
+          alt="London Science Museum"
+          width="450"
+          height="300"
+        />
+        <figcaption>
+          Photos by
+          <a
+            href="https://unsplash.com/@johenredman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Johen Redman</a
+          >
+          and
+          <a
+            href="https://unsplash.com/@rossanodan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Rossano D'Angelo</a
+          >
+          on
+          <a
+            href="https://unsplash.com/photos/red-and-white-stop-sign-QH38fN0DLLg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Unsplash</a
+          >
+        </figcaption>
+      </figure>
+      <figure id="figure-2">
+        <img
+          src="images/accessibility-skygarden.jpg"
+          alt="Sky Garden"
+          width="396"
+          height="300"
+        />
+      </figure>
+    </section>
 
     <section></section>
 
