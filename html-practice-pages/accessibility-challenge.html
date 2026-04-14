@@ -35,6 +35,8 @@ keyboard navigation, and testing with screen readers.-->
         justify-content: center;
         background-image: url(images/accessibility-british-flag.jpg);
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         border-bottom: 3px solid black;
         height: 150px;
       }
@@ -66,23 +68,42 @@ keyboard navigation, and testing with screen readers.-->
         top: 40px;
         left: 10px;
         padding: 13px;
-        background-color: white;
+        background-color: yellow;
         border: 3px solid black;
         border-radius: 10px;
         z-index: 3;
       }
 
+      nav:focus,
       nav:hover {
         color: white;
         background-color: rgb(8, 8, 116);
+        outline: 3px solid blue;
+      }
+
+      #hamburger-menu:focus + label {
+        outline: 3px solid blue; /*even the label needs an outline
+        when focused on with the keyboard*/
+      }
+
+      /* Make the label a block so it can hold padding */
+      nav label {
+        display: inline-block;
+        cursor: pointer;
+        padding: 8px 0; /* Adds "breathing room" around the icon */
+        border-radius: 8px; /* Rounds the corners of the focus box */
       }
 
       #hamburger-menu {
-        display: none;
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
       }
 
       .hamburger-links {
         display: none;
+        list-style: none;
       }
 
       #hamburger-menu:checked ~ .hamburger-links {
@@ -91,8 +112,13 @@ keyboard navigation, and testing with screen readers.-->
         padding-top: 10px;
       }
 
+      .hamburger-links:focus-within {
+        display: flex;
+      }
+
       .hamburger-links a {
         text-decoration: none;
+        background-color: white;
         color: black;
         margin: 5px;
         border-radius: 5px;
@@ -100,11 +126,33 @@ keyboard navigation, and testing with screen readers.-->
         font-weight: bold;
       }
 
-      .hamburger-links a:hover,
+      .hamburger-links li {
+        line-height: 2;
+      }
+
       .button:hover,
-      #museums-button a:hover {
+      #museums-button a:hover,
+      .button:focus,
+      #museums-button a:focus {
         background-color: rgb(8, 8, 116);
         color: white;
+        outline: 3px solid blue;
+        cursor: pointer;
+      }
+
+      .hamburger-links a:hover,
+      .hamburger-links a:focus {
+        background-color: yellow;
+        color: black;
+        outline: 3px solid blue;
+        cursor: pointer;
+      }
+
+      summary a:hover,
+      summary a:focus {
+        background-color: yellow;
+        outline: 3px solid blue;
+        cursor: pointer;
       }
 
       /* header logo */
@@ -127,7 +175,6 @@ keyboard navigation, and testing with screen readers.-->
         margin: 20px 0 20px 5px;
         width: 100%;
         position: relative;
-        z-index: 5;
         border-bottom: 2px solid black;
       }
 
@@ -151,6 +198,9 @@ keyboard navigation, and testing with screen readers.-->
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         border: 1px solid #ccc;
         border-radius: 12px;
+        li:hover {
+          background-color: yellow;
+        }
       }
 
       #figure-1 {
@@ -181,10 +231,12 @@ keyboard navigation, and testing with screen readers.-->
       .button {
         border: 2px solid black;
         border-radius: 15px;
+        background-color: yellow;
         padding: 2px 6px;
         text-align: center;
         font-weight: 500;
         white-space: nowrap;
+        width: 230px;
       }
 
       ol a {
@@ -250,9 +302,10 @@ keyboard navigation, and testing with screen readers.-->
         a {
           text-decoration: none;
           color: black;
+          background-color: yellow;
           border: 2px solid black;
           border-radius: 15px;
-          padding: 5px;
+          padding: 5px 20px;
           white-space: nowrap;
         }
       }
@@ -318,7 +371,11 @@ keyboard navigation, and testing with screen readers.-->
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         align-items: end;
-        margin-top: 20px;
+        margin: 20px;
+        img {
+          border: 2px solid black;
+          border-radius: 10px;
+        }
       }
 
       #nature-1 {
@@ -329,12 +386,14 @@ keyboard navigation, and testing with screen readers.-->
       #nature-intro {
         grid-column: 3 / span 2;
         grid-row: 1 / span 2;
+        text-align: center;
       }
 
       #nature-2 {
         grid-column: 3 / span 1;
         grid-row: 3;
       }
+
       #nature-3 {
         grid-column: 4 / span 1;
         grid-row: 3;
@@ -366,19 +425,121 @@ keyboard navigation, and testing with screen readers.-->
           white-space: nowrap;
         }
       }
+
+      @media (max-width: 630px) {
+        header img {
+          display: none;
+        }
+
+        #dining {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #nature {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        #nature-1 {
+          display: none;
+        }
+      }
+
+      @media (max-width: 800px) {
+        #top-ten {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #museums,
+        #dining,
+        #top-ten {
+          border-bottom: none;
+        }
+
+        #top-ten-info,
+        #figure-1,
+        #figure-2 {
+          flex: 1 1 100%; /* Makes each section fill the full width */
+          width: 100%;
+          margin: 10px 0; /* Adjusts spacing for vertical layout */
+        }
+      }
+
+      @media (max-width: 1000px) {
+        #museums {
+          display: flex;
+          flex-direction: column;
+          #museums-intro {
+            padding: 0 20%;
+          }
+        }
+
+        #nature {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        #nature-intro {
+          grid-column: 1 / span 2;
+          grid-row: 1 / span 1;
+        }
+
+        #nature-1 {
+          grid-column: 1 / span 2;
+          grid-row: 2 / span 1;
+        }
+
+        #nature-2 {
+          grid-column: 1 / span 1;
+          grid-row: 3 / span 1;
+        }
+
+        #nature-3 {
+          grid-column: 2 / span 1;
+          grid-row: 3 / span 1;
+        }
+
+        #nature-4 {
+          grid-column: 1;
+          grid-row: 4 / span 1;
+        }
+
+        #nature-5 {
+          grid-column: 2;
+          grid-row: 4 / span 1;
+        }
+
+        #nature-6 {
+          grid-column: 1;
+          grid-row: 5 / span 1;
+        }
+
+        #nature-7 {
+          grid-column: 2;
+          grid-row: 5 / span 1;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
-      <nav>
-        <input type="checkbox" id="hamburger-menu" />
-        <label for="hamburger-menu"
+      <nav role="navigation" aria-label="main menu">
+        <input
+          type="checkbox"
+          id="hamburger-menu"
+          aria-label="Open navigation menu"
+        />
+        <label for="hamburger-menu" aria-hidden="true"
           ><i class="fa-solid fa-bars fa-2xl"></i
         ></label>
         <ul class="hamburger-links">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">FAQs</a>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">FAQs</a></li>
         </ul>
       </nav>
       <img
@@ -396,11 +557,14 @@ keyboard navigation, and testing with screen readers.-->
 
     <section id="top-ten">
       <div id="top-ten-info">
-        <h3>
+        <h2>
           With so much to offer, you'll find that you never run out of things to
           do here in London!
-        </h3>
-        <h2>Check out the list below to discover your next adventure.</h2>
+        </h2>
+        <br />
+
+        <h3>Check out the list below to discover your next adventure.</h3>
+        <br />
         <details>
           <summary class="button">Top Ten London Sights</summary>
           <ol>
@@ -446,19 +610,13 @@ keyboard navigation, and testing with screen readers.-->
           height="300"
         />
         <figcaption>
-          Photos by
           <a
             href="https://unsplash.com/@johenredman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            >Johen Redman</a
+            >Photo of Science Museum: Johen Redman</a
           >
-          and <br /><a
+          <br /><a
             href="https://unsplash.com/@fouldsmatt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            >Matthew Foulds</a
-          >
-          on
-          <a
-            href="https://unsplash.com/photos/group-of-people-in-building-JDud9_DJXh0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            >Unsplash</a
+            >Photo of Sky Garden: Matthew Foulds</a
           >
         </figcaption>
       </figure>
@@ -478,8 +636,8 @@ keyboard navigation, and testing with screen readers.-->
         <br />
         <p>
           Come to London to explore a range of museums at zero cost. It's one of
-          the great benefits that London has to offer. <br />They do welcome a
-          small donation to support their ongoing work.
+          the great benefits that London has to offer. <br /><br />Note: They do
+          welcome a small donation to support their ongoing work.
         </p>
         <br />
       </div>
@@ -491,15 +649,10 @@ keyboard navigation, and testing with screen readers.-->
           height="300"
         />
         <figcaption>
-          Image by
           <a
             href="https://pixabay.com/users/jorisamonen-82792/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=255445"
-            >Jori Samonen</a
-          >
-          from
-          <a
-            href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=255445"
-            >Pixabay</a
+            >Photo of <abbr title="Victoria and Albert Museum">V&A</abbr
+            ><br />by Jori Samonen on Pixabay</a
           >
         </figcaption>
       </figure>
@@ -511,15 +664,9 @@ keyboard navigation, and testing with screen readers.-->
           height="300"
         />
         <figcaption>
-          Photo by
           <a
             href="https://unsplash.com/@hannahcsmithcurio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            >Hannah Smith</a
-          >
-          on
-          <a
-            href="https://unsplash.com/photos/a-large-building-with-columns-and-banners-on-it-KV1THgUhw-E?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            >Unsplash</a
+            >Photo of Tate Britain <br />by Hannah Smith on Unsplash</a
           >
         </figcaption>
       </figure>
@@ -534,12 +681,7 @@ keyboard navigation, and testing with screen readers.-->
           Image by
           <a
             href="https://pixabay.com/users/drdevience-18354/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=89977"
-            >Lori Leidig</a
-          >
-          from
-          <a
-            href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=89977"
-            >Pixabay</a
+            >Photo of National Galleries <br />by Lori Leidig on Pixabay</a
           >
         </figcaption>
       </figure>
@@ -547,6 +689,7 @@ keyboard navigation, and testing with screen readers.-->
       <p id="museums-button">
         <a
           href="https://www.tripadvisor.co.uk/ShowTopic-g186338-i17-k13984427-Free_Museums-London_England.html"
+          target="_blank"
           >Tripadvisor for more ideas</a
         >
       </p>
@@ -594,7 +737,9 @@ keyboard navigation, and testing with screen readers.-->
           height="400"
         />
         <figcaption>
-          Photo courtesy of <a href="https://www.freepik.com/">Freepik</a>
+          <a href="https://www.freepik.com/"
+            >Image of a pizza restaurant by Freepik</a
+          >
         </figcaption>
       </figure>
     </section>
@@ -608,8 +753,9 @@ keyboard navigation, and testing with screen readers.-->
           height="310"
         />
         <figcaption>
-          Photo of a cherry blossom by
-          <a href="https://www.freepik.com/">wirestock</a>
+          <a href="https://www.freepik.com/"
+            >Photo of a cherry blossom <br />by wirestock on Freepik</a
+          >
         </figcaption>
       </figure>
 
@@ -635,8 +781,9 @@ keyboard navigation, and testing with screen readers.-->
           height="103"
         />
         <figcaption>
-          Photo of St James Park by
-          <a href="https://www.freepik.com/">wirestock</a>
+          <a href="https://www.freepik.com/"
+            >Photo of St James Park <br />by wirestock on Freepik</a
+          >
         </figcaption>
       </figure>
 
@@ -648,8 +795,9 @@ keyboard navigation, and testing with screen readers.-->
           height="103"
         />
         <figcaption>
-          Photo of Greenwich Park by
-          <a href="https://www.freepik.com/">wirestock</a>
+          <a href="https://www.freepik.com/"
+            >Photo of Greenwich Park <br />by wirestock on Freepik</a
+          >
         </figcaption>
       </figure>
 
@@ -661,8 +809,9 @@ keyboard navigation, and testing with screen readers.-->
           height="103"
         />
         <figcaption>
-          Photo of a red fox <br />by
-          <a href="https://www.freepik.com/">wirestock</a>
+          <a href="https://www.freepik.com/"
+            >Photo of a red fox <br />by wirestock on Freepik</a
+          >
         </figcaption>
       </figure>
 
@@ -674,8 +823,9 @@ keyboard navigation, and testing with screen readers.-->
           height="103"
         />
         <figcaption>
-          Photo of a black bird <br />by
-          <a href="https://www.freepik.com/">wirestock</a>
+          <a href="https://www.freepik.com/"
+            >Photo of a black bird <br />by wirestock on Freepik</a
+          >
         </figcaption>
       </figure>
 
@@ -687,8 +837,9 @@ keyboard navigation, and testing with screen readers.-->
           height="103"
         />
         <figcaption>
-          Photo of The Serpentine <br />by
-          <a href="https://www.geograph.org.uk/profile/15341">Steve Fareham</a>
+          <a href="https://www.geograph.org.uk/profile/15341"
+            >Photo of The Serpentine <br />by Steve Fareham</a
+          >
         </figcaption>
       </figure>
 
@@ -700,8 +851,10 @@ keyboard navigation, and testing with screen readers.-->
           height="103"
         />
         <figcaption>
-          Photo of an oak tree <br />by
-          <a href="https://www.freepik.com/">freepik</a>
+          <a href="https://www.freepik.com/"
+            >Photo of an oak tree <br />
+            by freepik</a
+          >
         </figcaption>
       </figure>
     </footer>
