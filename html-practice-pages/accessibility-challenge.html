@@ -83,7 +83,7 @@ keyboard navigation, and testing with screen readers.-->
 
       #hamburger-menu:focus + label {
         outline: 3px solid blue; /*even the label needs an outline
-        when focused on with the keyboard*/
+              when focused on with the keyboard*/
       }
 
       /* Make the label a block so it can hold padding */
@@ -431,10 +431,37 @@ keyboard navigation, and testing with screen readers.-->
           display: none;
         }
 
+        header {
+          justify-content: end;
+        }
+
+        header h1 {
+          white-space: wrap;
+        }
+
         #dining {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+        }
+
+        #dining-text {
+          width: 100%; /* Take up full width instead of 50% */
+          display: flex; /* Switch from grid to flex for easier centering */
+          flex-direction: column;
+          align-items: center; /* Centers the items horizontally */
+          padding: 10px;
+        }
+
+        #quick-bites,
+        #fine-dining {
+          width: 100%; /* Ensure the inner divs also span the width */
+          margin-bottom: 20px; /* Add some space between the sections */
+        }
+
+        #dining-image {
+          width: 90%; /* Make the image larger on mobile */
+          margin: 0 auto; /* Center the image container */
         }
 
         #nature {
