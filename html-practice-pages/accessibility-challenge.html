@@ -23,7 +23,6 @@ keyboard navigation, and testing with screen readers.-->
       body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
-        overflow-x: hidden;
       }
 
       /*header including title and citation*/
@@ -46,7 +45,6 @@ keyboard navigation, and testing with screen readers.-->
         border-radius: 10px;
         border: 3px solid black;
         padding: 0 10px;
-        white-space: nowrap;
       }
 
       header cite {
@@ -172,14 +170,12 @@ keyboard navigation, and testing with screen readers.-->
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin: 20px 0 20px 5px;
-        width: 100%;
-        position: relative;
+        margin: 20px 0;
+        padding-left: 5px;
         border-bottom: 2px solid black;
       }
 
       #top-ten-info {
-        flex: 0 0 40%;
         padding: 15px;
         margin: 10px;
         position: relative;
@@ -203,8 +199,10 @@ keyboard navigation, and testing with screen readers.-->
         }
       }
 
+      #figure-2,
       #figure-1 {
-        flex: 0 0 40%;
+        padding: 10px;
+        flex: 0 0 80%; /* Don't grow, don't shrink, and take up 80% of the container width */
         padding: 10px;
         img {
           border: 2px solid black;
@@ -212,20 +210,18 @@ keyboard navigation, and testing with screen readers.-->
         }
       }
 
-      #figure-2 {
-        flex: 0 0 40%;
-        padding: 10px;
-        img {
-          border: 2px solid black;
-          border-radius: 10px;
-        }
+      #scrollable-pics {
+        display: flex;
+        overflow-x: auto; /* 'auto' is usually cleaner than 'scroll' */
+        white-space: nowrap; /* Prevents wrapping if you add more items */
+        flex: 1; /* This tells the right div to take up the remaining space */
+        min-width: 0; /* CRITICAL: Allows a flex item to be smaller than its content */
       }
 
       #top-ten img {
         width: 100%;
         aspect-ratio: 3 / 2;
         object-fit: cover;
-        display: block;
       }
 
       .button {
@@ -482,6 +478,14 @@ keyboard navigation, and testing with screen readers.-->
           justify-content: center;
         }
 
+        #top-ten-info {
+          text-align: center;
+        }
+
+        details {
+          right: calc(50% - (230px / 2));
+        }
+
         #museums,
         #dining,
         #top-ten {
@@ -491,8 +495,6 @@ keyboard navigation, and testing with screen readers.-->
         #top-ten-info,
         #figure-1,
         #figure-2 {
-          flex: 1 1 100%; /* Makes each section fill the full width */
-          width: 100%;
           margin: 10px 0; /* Adjusts spacing for vertical layout */
         }
       }
@@ -585,8 +587,8 @@ keyboard navigation, and testing with screen readers.-->
     <section id="top-ten">
       <div id="top-ten-info">
         <h2>
-          With so much to offer, you'll find that you never run out of things to
-          do here in London!
+          With so much to offer, you'll find that you <br />never run out of
+          things to do here in London!
         </h2>
         <br />
 
@@ -654,34 +656,39 @@ keyboard navigation, and testing with screen readers.-->
           </ol>
         </details>
       </div>
+      <div id="scrollable-pics">
+        <figure id="figure-1">
+          <img
+            src="images/accessibility-science-museum.jpg"
+            alt="London Science Museum"
+            width="450"
+            height="300"
+          />
+          <figcaption>
+            <a
+              href="https://unsplash.com/@johenredman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              >Photo of Science Museum: Johen Redman</a
+            >
+          </figcaption>
+        </figure>
 
-      <figure id="figure-1">
-        <img
-          src="images/accessibility-science-museum.jpg"
-          alt="London Science Museum"
-          width="450"
-          height="300"
-        />
-        <figcaption>
-          <a
-            href="https://unsplash.com/@johenredman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            target="_blank"
-            >Photo of Science Museum: Johen Redman</a
-          ><br /><a
-            href="https://unsplash.com/@fouldsmatt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            target="_blank"
-            >Photo of Sky Garden: Matthew Foulds</a
-          >
-        </figcaption>
-      </figure>
-      <figure id="figure-2">
-        <img
-          src="images/accessibility-skygarden.jpg"
-          alt="Sky Garden"
-          width="447"
-          height="300"
-        />
-      </figure>
+        <figure id="figure-2">
+          <img
+            src="images/accessibility-skygarden.jpg"
+            alt="Sky Garden"
+            width="447"
+            height="300"
+          />
+          <figcaption>
+            <a
+              href="https://unsplash.com/@fouldsmatt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              >Photo of Sky Garden: Matthew Foulds</a
+            >
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
     <section id="museums">
