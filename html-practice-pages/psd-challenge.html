@@ -3,6 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ef92c49664.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Photoshop Document Challenge</title>
 
     <!--11. Challenge: Convert a provided PSD (Photoshop) file or image design 
@@ -10,8 +20,346 @@ into a fully functional HTML webpage. Requirements: Pay attention to layout
 accuracy, typography, spacing, and visual fidelity. Use HTML and CSS to 
 replicate the design as closely as possible while maintaining 
 responsiveness.-->
+
+    <style>
+      /*WEB PAGE COLORS
+      the teal color is #2da09b
+      the black color is #222832
+      the white font color is #fffeff
+
+
+      /*fonts*/
+
+      .plain-font {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .fancy-font {
+        font-family: "Style Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      /*body*/
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      /*header*/
+
+      header {
+        color: #fffeff;
+        background-color: #222832;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        padding: 10px;
+        font-size: medium;
+      }
+
+      .header-nav ul {
+        display: flex;
+        li {
+          list-style-type: none;
+          a {
+            text-decoration: none;
+            color: #fffeff;
+            padding: 10px;
+          }
+        }
+      }
+
+      .active {
+        text-decoration: underline;
+        text-decoration-color: #2da09b;
+        text-underline-offset: 5px;
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+
+      /*waves*/
+
+      .black {
+        background-color: #222832;
+        color: #fffeff;
+        position: relative; /* Essential for positioning the wave */
+        padding-bottom: 100px;
+      }
+
+      .teal {
+        background-color: #2da09b;
+        color: #fffeff;
+        padding: 50px;
+      }
+
+      .wave-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        line-height: 0;
+        z-index: 2;
+      }
+
+      .wave-container svg {
+        width: 100%;
+        height: 100px; /* Adjust height for "waviness" intensity */
+      }
+
+      .wave-container path {
+        fill: #2da09b; /* Must match the Teal section background */
+      }
+
+      /*section1*/
+
+      #section1 {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        position: relative;
+        img {
+          border-radius: 50% 50% 0;
+          z-index: 1;
+        }
+      }
+
+      #icon1 {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        font-size: 30px;
+      }
+
+      #icon2 {
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        font-size: 40px;
+      }
+
+      #icon3 {
+        position: absolute;
+        top: 70%;
+        left: 30%;
+      }
+
+      #section1-text {
+        display: flex;
+        flex-direction: column;
+        button {
+          width: fit-content;
+          padding: 5px;
+          color: #fffeff;
+          background-color: #2da09b;
+          border-radius: 8px;
+          font-weight: bold;
+          border: 1px solid #222832;
+        }
+        h1 {
+          font-size: 4rem;
+          text-wrap: nowrap;
+        }
+        p {
+          font-weight: bold;
+          font-size: small;
+          max-width: 300px;
+          padding-bottom: 10px;
+        }
+      }
+
+      /*section2*/
+
+      .scallop {
+        /* 1. Dimensions: MUST be a square for the shape to not stretch */
+        width: 250px;
+        height: 250px;
+
+        /* 2. Optional: Center the image within the container if it's larger */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Keeps the square container rigid */
+
+        /* 3. The Mask: This is the exact 12-lobed flower path */
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 A50 50 0 0 1 75 6.7 A15 15 0 0 1 75 18 A15 15 0 0 1 87 18 A50 50 0 0 1 100 50 A50 50 0 0 1 87 82 A15 15 0 0 1 75 82 A15 15 0 0 1 75 93.3 A50 50 0 0 1 50 100 A50 50 0 0 1 25 93.3 A15 15 0 0 1 25 82 A15 15 0 0 1 13 82 A50 50 0 0 1 0 50 A50 50 0 0 1 13 18 A15 15 0 0 1 25 18 A15 15 0 0 1 25 6.7 A50 50 0 0 1 50 0 Z" fill="black"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 A50 50 0 0 1 75 6.7 A15 15 0 0 1 75 18 A15 15 0 0 1 87 18 A50 50 0 0 1 100 50 A50 50 0 0 1 87 82 A15 15 0 0 1 75 82 A15 15 0 0 1 75 93.3 A50 50 0 0 1 50 100 A50 50 0 0 1 25 93.3 A15 15 0 0 1 25 82 A15 15 0 0 1 13 82 A50 50 0 0 1 0 50 A50 50 0 0 1 13 18 A15 15 0 0 1 25 18 A15 15 0 0 1 25 6.7 A50 50 0 0 1 50 0 Z" fill="black"/></svg>');
+
+        /* 4. Mask properties: Ensure it covers and centers */
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+      }
+
+      /* Ensure the image fills the container before being masked */
+      .scallop img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Important to keep image aspect ratio */
+      }
+
+      #section2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #section2-left {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        button {
+          width: fit-content;
+          padding: 5px;
+          color: #fffeff;
+          background-color: #222832;
+          border-radius: 8px;
+          font-weight: bold;
+          border: 1px solid #222832;
+        }
+        h2 {
+          font-size: 3.5rem;
+          line-height: 0.9;
+        }
+      }
+
+      #section2-right {
+      }
+
+      .scallop-text {
+      }
+
+      /*media queries*/
+
+      @media screen and (max-width: 600px) {
+        .header-nav ul {
+          flex-direction: column;
+        }
+
+        #section1 {
+          flex-direction: column;
+          align-items: center;
+          img {
+            border-radius: 50%;
+          }
+        }
+
+        #section1-text {
+          gap: 20px;
+        }
+
+        #icon1 {
+          position: absolute;
+          top: 10%;
+          left: 80%;
+        }
+
+        #icon2 {
+          position: absolute;
+          top: 20%;
+          left: 60%;
+        }
+
+        #icon3 {
+          position: absolute;
+          top: calc(40%);
+          left: calc(15%);
+        }
+      }
+    </style>
   </head>
   <body>
-    <!--IDEA:    TBC    -->
+    <header class="plain-font">
+      <nav class="header-nav">
+        <ul>
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-logo">
+        <img
+          src="images/psd-coffee-bean.png"
+          alt="coffee bean icon"
+          width="20"
+          height="26"
+        />
+        <p>YOUR LOGO</p>
+      </div>
+    </header>
+
+    <section id="section1" class="black">
+      <div id="section1-text" class="plain-font">
+        <h1 class="fancy-font">Coffee Time</h1>
+        <p>YOUR HEADLINE</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button>Order Now</button>
+      </div>
+
+      <div>
+        <img
+          src="images/psd-section1.png"
+          alt="A photo of two coffees"
+          width="300"
+          height="257"
+        />
+      </div>
+
+      <i id="icon1" class="fa-solid fa-mug-hot" style="color: #fffeff"></i>
+      <i id="icon2" class="fa-brands fa-java" style="color: #fffeff"></i>
+      <img
+        id="icon3"
+        src="images/psd-coffee-bean.png"
+        alt="coffee bean icon"
+        width="25"
+        height="32"
+      />
+
+      <div class="wave-container">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="section2" class="teal">
+      <div id="section2-left" class="plain-font">
+        <h2 class="fancy-font">Black <br />Coffees</h2>
+        <br />
+        <button>Order Now</button>
+      </div>
+      <section id="section2-right">
+        <div class="scallop">
+          <img
+            src="images/psd-section2.png"
+            alt="Glass of coffee and a glass coffee press"
+            width="250"
+            height="250"
+          />
+        </div>
+        <div class="scallop-text"></div>
+      </section>
+    </section>
   </body>
 </html>
