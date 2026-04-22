@@ -127,57 +127,147 @@ responsiveness.-->
         justify-content: space-between;
         padding: 10px;
         position: relative;
-        img {
-          border-radius: 50% 50% 0;
-          z-index: 1;
-        }
+        min-height: 350px;
+      }
+
+      #section1-image {
+        z-index: 1;
+        border-radius: 50% 30% 0 50%;
       }
 
       #icon1 {
         position: absolute;
         top: 10%;
-        left: 50%;
+        left: 40%;
         font-size: 30px;
       }
 
       #icon2 {
         position: absolute;
-        top: 30%;
-        left: 40%;
+        top: 42%;
+        left: 35%;
         font-size: 40px;
       }
 
       #icon3 {
         position: absolute;
         top: 70%;
-        left: 30%;
+        left: 40%;
+      }
+
+      #icon4 {
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        font-size: 30px;
+      }
+
+      #icon5 {
+        position: absolute;
+        top: 42%;
+        left: 35%;
+        font-size: 40px;
+      }
+
+      #icon6 {
+        position: absolute;
+        top: 70%;
+        left: 40%;
+        border-radius: 50%;
+      }
+
+      #icon7 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 30px;
+      }
+
+      #icon8 {
+        position: absolute;
+        top: 2%;
+        left: 75%;
+        font-size: 40px;
+      }
+      #icon9 {
+        position: absolute;
+        top: 5%;
+        left: 95%;
+        border-radius: 50%;
       }
 
       #section1-text {
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-top: 60px;
+        letter-spacing: 2px;
         button {
           width: fit-content;
-          padding: 5px;
+          padding: 8px 12px;
           color: #fffeff;
           background-color: #2da09b;
           border-radius: 8px;
           font-weight: bold;
           border: 1px solid #222832;
+          font-size: medium;
         }
         h1 {
-          font-size: 4rem;
+          font-size: 6rem;
           text-wrap: nowrap;
         }
         p {
-          font-weight: bold;
           font-size: small;
-          max-width: 300px;
+          max-width: 500px;
           padding-bottom: 10px;
         }
       }
 
       /*section2*/
+
+      #section2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        min-height: 500px;
+      }
+
+      #section2-left {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        button {
+          width: fit-content;
+          padding: 8px 12px;
+          color: #fffeff;
+          background-color: #222832;
+          border-radius: 8px;
+          font-weight: bold;
+          border: 1px solid #2da09b;
+          font-size: medium;
+        }
+        h2 {
+          font-size: 4rem;
+          line-height: 0.9;
+        }
+      }
+
+      #section2-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        max-width: 300px;
+      }
+
+      .scallop-text {
+        font-size: small;
+        letter-spacing: 2px;
+        text-align: right;
+      }
 
       .scallop {
         /* 1. Dimensions: MUST be a square for the shape to not stretch */
@@ -210,38 +300,6 @@ responsiveness.-->
         object-fit: cover; /* Important to keep image aspect ratio */
       }
 
-      #section2 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-      }
-
-      #section2-left {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        button {
-          width: fit-content;
-          padding: 5px;
-          color: #fffeff;
-          background-color: #222832;
-          border-radius: 8px;
-          font-weight: bold;
-          border: 1px solid #222832;
-        }
-        h2 {
-          font-size: 3.5rem;
-          line-height: 0.9;
-        }
-      }
-
-      #section2-right {
-      }
-
-      .scallop-text {
-      }
-
       /*media queries*/
 
       @media screen and (max-width: 600px) {
@@ -252,9 +310,6 @@ responsiveness.-->
         #section1 {
           flex-direction: column;
           align-items: center;
-          img {
-            border-radius: 50%;
-          }
         }
 
         #section1-text {
@@ -263,20 +318,20 @@ responsiveness.-->
 
         #icon1 {
           position: absolute;
-          top: 10%;
-          left: 80%;
+          top: 20%;
+          left: 50%;
         }
 
         #icon2 {
           position: absolute;
-          top: 20%;
-          left: 60%;
+          top: 30%;
+          left: 40%;
         }
 
         #icon3 {
           position: absolute;
-          top: calc(40%);
-          left: calc(15%);
+          top: 30%;
+          left: 5%;
         }
       }
     </style>
@@ -307,7 +362,8 @@ responsiveness.-->
     <section id="section1" class="black">
       <div id="section1-text" class="plain-font">
         <h1 class="fancy-font">Coffee Time</h1>
-        <p>YOUR HEADLINE</p>
+        <h4>YOUR HEADLINE</h4>
+        <br />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -315,14 +371,13 @@ responsiveness.-->
         <button>Order Now</button>
       </div>
 
-      <div>
-        <img
-          src="images/psd-section1.png"
-          alt="A photo of two coffees"
-          width="300"
-          height="257"
-        />
-      </div>
+      <img
+        id="section1-image"
+        src="images/psd-section1.png"
+        alt="A photo of two coffees"
+        width="600"
+        height="469"
+      />
 
       <i id="icon1" class="fa-solid fa-mug-hot" style="color: #fffeff"></i>
       <i id="icon2" class="fa-brands fa-java" style="color: #fffeff"></i>
@@ -349,7 +404,8 @@ responsiveness.-->
         <br />
         <button>Order Now</button>
       </div>
-      <section id="section2-right">
+
+      <div id="section2-right">
         <div class="scallop">
           <img
             src="images/psd-section2.png"
@@ -358,8 +414,32 @@ responsiveness.-->
             height="250"
           />
         </div>
-        <div class="scallop-text"></div>
-      </section>
+        <p class="scallop-text plain-font">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation
+        </p>
+      </div>
+
+      <i id="icon4" class="fa-solid fa-mug-hot" style="color: #fffeff"></i>
+      <i id="icon5" class="fa-brands fa-java" style="color: #fffeff"></i>
+      <img
+        id="icon6"
+        src="images/psd-coffee-bean.png"
+        alt="coffee bean icon"
+        width="25"
+        height="32"
+      />
+
+      <i id="icon7" class="fa-solid fa-mug-hot" style="color: #fffeff"></i>
+      <i id="icon8" class="fa-brands fa-java" style="color: #fffeff"></i>
+      <img
+        id="icon9"
+        src="images/psd-coffee-bean.png"
+        alt="coffee bean icon"
+        width="25"
+        height="32"
+      />
     </section>
   </body>
 </html>
