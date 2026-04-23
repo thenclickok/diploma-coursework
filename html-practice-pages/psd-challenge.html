@@ -21,6 +21,16 @@ accuracy, typography, spacing, and visual fidelity. Use HTML and CSS to
 replicate the design as closely as possible while maintaining 
 responsiveness.-->
 
+    <!-- credit for the PSD image: 
+     Template for social media with coffee
+     Freepik
+
+     TO DO: put in the footer "Images and template elements sourced from Freepik."
+ 
+https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#fromView=search&page=1&position=0&uuid=7a5899c1-d382-48df-a631-f04f3e03ff40&query=Website+templates
+
+-->
+
     <style>
       /*WEB PAGE COLORS
       the teal color is #2da09b
@@ -99,10 +109,17 @@ responsiveness.-->
       .teal {
         background-color: #2da09b;
         color: #fffeff;
-        padding: 50px;
+        position: relative;
+        padding-bottom: 150px;
       }
 
-      .wave-container {
+      .flat-bottom-section {
+        background-color: #2da09b;
+        color: #fffeff;
+      }
+
+      .wave-container-teal,
+      .wave-container-black {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -111,13 +128,22 @@ responsiveness.-->
         z-index: 2;
       }
 
-      .wave-container svg {
+      .wave-container-teal svg {
         width: 100%;
         height: 200px; /* Adjust height for "waviness" intensity */
       }
 
-      .wave-container path {
+      .wave-container-black svg {
+        width: 100%;
+        height: 300px; /* Adjust height for "waviness" intensity */
+      }
+
+      .wave-container-teal path {
         fill: #2da09b; /* Must match the Teal section background */
+      }
+
+      .wave-container-black path {
+        fill: #222832;
       }
 
       /*section1*/
@@ -185,10 +211,11 @@ responsiveness.-->
 
       #icon8 {
         position: absolute;
-        top: 2%;
-        left: 75%;
+        top: 0;
+        left: 65%;
         font-size: 40px;
       }
+
       #icon9 {
         position: absolute;
         top: 5%;
@@ -214,7 +241,7 @@ responsiveness.-->
           font-size: medium;
         }
         h1 {
-          font-size: 6rem;
+          font-size: 7rem;
           text-wrap: nowrap;
         }
         p {
@@ -240,7 +267,7 @@ responsiveness.-->
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        padding-left: 30px;
+        padding-left: 100px;
         button {
           width: fit-content;
           padding: 8px 12px;
@@ -252,7 +279,7 @@ responsiveness.-->
           font-size: medium;
         }
         h2 {
-          font-size: 5rem;
+          font-size: 6rem;
           line-height: 0.9;
         }
       }
@@ -262,7 +289,8 @@ responsiveness.-->
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        padding-right: 50px;
+        min-height: 700px;
         p {
           max-width: 500px;
         }
@@ -290,6 +318,32 @@ responsiveness.-->
         height: 100%;
         object-fit: cover;
       }
+
+      /*section3*/
+
+      #section3 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        h2 {
+          font-size: 6rem;
+          line-height: 0.9;
+        }
+      }
+
+      #section3-text1 {
+        font-size: small;
+        letter-spacing: 2px;
+        text-align: left;
+      }
+
+      /*section4*/
+
+      /*section5*/
+
+      /*section6*/
+
+      /*footer*/
 
       /*media queries*/
 
@@ -423,7 +477,7 @@ responsiveness.-->
         height="32"
       />
 
-      <div class="wave-container">
+      <div class="wave-container-teal">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
           <path
             d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
@@ -474,8 +528,63 @@ responsiveness.-->
         width="25"
         height="32"
       />
+
+      <div class="wave-container-black">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          ></path>
+        </svg>
+      </div>
     </section>
 
-    <section id="section3"></section>
+    <section id="section3" class="black">
+      <div class="scallop">
+        <img
+          src="images/psd-section3.png"
+          alt="Glass of coffee and a glass coffee press"
+          width="500"
+          height="500"
+        />
+      </div>
+      <h2 class="fancy-font">Hot <br />Coffees</h2>
+      <p class="section3-text1 plain-font">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation
+      </p>
+
+      <div class="wave-container-teal">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="section4" class="teal">
+      <div class="wave-container-black">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="section5" class="black">
+      <div class="wave-container-teal">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="section6" class="flat-bottom-section"></section>
+
+    <footer></footer>
   </body>
 </html>
