@@ -58,7 +58,7 @@ responsiveness.-->
         display: flex;
         justify-content: space-between;
         text-align: center;
-        align-items: center;
+
         padding: 10px;
         font-size: medium;
       }
@@ -83,7 +83,7 @@ responsiveness.-->
 
       .header-logo {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 2px;
       }
 
@@ -113,7 +113,7 @@ responsiveness.-->
 
       .wave-container svg {
         width: 100%;
-        height: 100px; /* Adjust height for "waviness" intensity */
+        height: 200px; /* Adjust height for "waviness" intensity */
       }
 
       .wave-container path {
@@ -152,13 +152,13 @@ responsiveness.-->
       #icon3 {
         position: absolute;
         top: 70%;
-        left: 40%;
+        left: 30%;
       }
 
       #icon4 {
         position: absolute;
         top: 10%;
-        left: 40%;
+        left: 30%;
         font-size: 30px;
       }
 
@@ -172,14 +172,14 @@ responsiveness.-->
       #icon6 {
         position: absolute;
         top: 70%;
-        left: 40%;
+        left: 30%;
         border-radius: 50%;
       }
 
       #icon7 {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 60%;
+        left: 45%;
         font-size: 30px;
       }
 
@@ -238,7 +238,9 @@ responsiveness.-->
       #section2-left {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 10px;
+        padding-left: 30px;
         button {
           width: fit-content;
           padding: 8px 12px;
@@ -250,7 +252,7 @@ responsiveness.-->
           font-size: medium;
         }
         h2 {
-          font-size: 4rem;
+          font-size: 5rem;
           line-height: 0.9;
         }
       }
@@ -258,9 +260,12 @@ responsiveness.-->
       #section2-right {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: center;
         gap: 10px;
-        max-width: 300px;
+        p {
+          max-width: 500px;
+        }
       }
 
       .scallop-text {
@@ -270,34 +275,20 @@ responsiveness.-->
       }
 
       .scallop {
-        /* 1. Dimensions: MUST be a square for the shape to not stretch */
-        width: 250px;
-        height: 250px;
+        /* Dimensions: Keep these to define the 500x500 canvas for your path */
+        width: 500px;
+        height: 500px;
 
-        /* 2. Optional: Center the image within the container if it's larger */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* Keeps the square container rigid */
-
-        /* 3. The Mask: This is the exact 12-lobed flower path */
-        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 A50 50 0 0 1 75 6.7 A15 15 0 0 1 75 18 A15 15 0 0 1 87 18 A50 50 0 0 1 100 50 A50 50 0 0 1 87 82 A15 15 0 0 1 75 82 A15 15 0 0 1 75 93.3 A50 50 0 0 1 50 100 A50 50 0 0 1 25 93.3 A15 15 0 0 1 25 82 A15 15 0 0 1 13 82 A50 50 0 0 1 0 50 A50 50 0 0 1 13 18 A15 15 0 0 1 25 18 A15 15 0 0 1 25 6.7 A50 50 0 0 1 50 0 Z" fill="black"/></svg>');
-        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 A50 50 0 0 1 75 6.7 A15 15 0 0 1 75 18 A15 15 0 0 1 87 18 A50 50 0 0 1 100 50 A50 50 0 0 1 87 82 A15 15 0 0 1 75 82 A15 15 0 0 1 75 93.3 A50 50 0 0 1 50 100 A50 50 0 0 1 25 93.3 A15 15 0 0 1 25 82 A15 15 0 0 1 13 82 A50 50 0 0 1 0 50 A50 50 0 0 1 13 18 A15 15 0 0 1 25 18 A15 15 0 0 1 25 6.7 A50 50 0 0 1 50 0 Z" fill="black"/></svg>');
-
-        /* 4. Mask properties: Ensure it covers and centers */
-        -webkit-mask-size: contain;
-        mask-size: contain;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        mask-position: center;
+        /* The Shape - use the original JS code in the console to get a path for other image sizes*/
+        clip-path: path(
+          "M 443.19,301.76 Q 457.85,370.00 391.42,391.42 Q 370.00,457.85 301.76,443.19 Q 250.00,490.00 198.24,443.19 Q 130.00,457.85 108.58,391.42 Q 42.15,370.00 56.81,301.76 Q 10.00,250.00 56.81,198.24 Q 42.15,130.00 108.58,108.58 Q 130.00,42.15 198.24,56.81 Q 250.00,10.00 301.76,56.81 Q 370.00,42.15 391.42,108.58 Q 457.85,130.00 443.19,198.24 Q 490.00,250.00 443.19,301.76 Z"
+        );
       }
 
-      /* Ensure the image fills the container before being masked */
       .scallop img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Important to keep image aspect ratio */
+        object-fit: cover;
       }
 
       /*media queries*/
@@ -305,8 +296,14 @@ responsiveness.-->
       @media screen and (max-width: 600px) {
         .header-nav ul {
           flex-direction: column;
+          li {
+            padding: 5px;
+            font-size: large;
+          }
         }
+      }
 
+      @media screen and (max-width: 1024px) {
         #section1 {
           flex-direction: column;
           align-items: center;
@@ -316,22 +313,59 @@ responsiveness.-->
           gap: 20px;
         }
 
+        #section1-image {
+          border-radius: 60% 60% 60% 60%;
+        }
+
         #icon1 {
-          position: absolute;
           top: 20%;
-          left: 50%;
+          left: 80%;
         }
 
         #icon2 {
-          position: absolute;
-          top: 30%;
+          top: 40%;
           left: 40%;
         }
 
         #icon3 {
-          position: absolute;
           top: 30%;
           left: 5%;
+        }
+
+        #icon4 {
+          top: 10%;
+          left: 10%;
+        }
+
+        #icon5 {
+          top: 30%;
+          left: 30%;
+        }
+
+        #icon6 {
+          top: 70%;
+          left: 10%;
+        }
+
+        #icon7 {
+          top: 50%;
+          left: 90%;
+        }
+
+        #icon8 {
+          top: 5%;
+          left: 80%;
+        }
+        #icon9 {
+          position: absolute;
+          top: 30%;
+          left: 85%;
+          border-radius: 50%;
+        }
+
+        #section2 {
+          flex-direction: column;
+          align-items: center;
         }
       }
     </style>
@@ -410,8 +444,8 @@ responsiveness.-->
           <img
             src="images/psd-section2.png"
             alt="Glass of coffee and a glass coffee press"
-            width="250"
-            height="250"
+            width="500"
+            height="500"
           />
         </div>
         <p class="scallop-text plain-font">
@@ -441,5 +475,7 @@ responsiveness.-->
         height="32"
       />
     </section>
+
+    <section id="section3"></section>
   </body>
 </html>
