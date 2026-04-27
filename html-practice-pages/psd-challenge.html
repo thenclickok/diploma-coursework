@@ -21,26 +21,6 @@ accuracy, typography, spacing, and visual fidelity. Use HTML and CSS to
 replicate the design as closely as possible while maintaining 
 responsiveness.-->
 
-    <!-- credit for the PSD image: 
-     Template for social media with coffee
-     Freepik
-
-     TO DO: put in the footer "Images and template elements sourced from Freepik."
- 
-https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#fromView=search&page=1&position=0&uuid=7a5899c1-d382-48df-a631-f04f3e03ff40&query=Website+templates
-
-
-   TO DO:
-   check blob with absolute positioning for edge of main photo
-   flex column for section6 and footer
-   credit for freepik
-   remove comments 
-   other projects button (AND to the accessibility challenge)
-   github then netlify
-   check on mobile
-   email tutor
--->
-
     <style>
       /*WEB PAGE COLORS
       the teal color is #2da09b
@@ -135,7 +115,7 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
         left: 0;
         width: 100%;
         line-height: 0;
-        z-index: 8;
+        z-index: 7;
       }
 
       .wave-container-teal svg {
@@ -168,8 +148,8 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
       }
 
       #section1-image {
-        z-index: 3;
-        border-radius: 50% 30% 0 50%;
+        z-index: 2;
+        border-radius: 50%;
       }
 
       #blob1 {
@@ -312,10 +292,11 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
       #section2-left {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         gap: 10px;
         padding-left: 100px;
-        z-index: 7;
+        z-index: 8;
         button {
           width: fit-content;
           padding: 8px 12px;
@@ -516,6 +497,11 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
         }
       }
 
+      #section6-cite {
+        grid-column: 1 / span 2;
+        padding-left: 20px;
+      }
+
       .image-preview-wrapper #original {
         display: none;
       }
@@ -528,7 +514,7 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
       #original-thumbnail {
         position: absolute;
         top: 40%;
-        left: 5%;
+        left: 20px;
       }
 
       #original {
@@ -558,6 +544,7 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
         text-decoration: none;
         padding: 10px;
       }
+
       .footer-nav ul {
         display: flex;
 
@@ -571,17 +558,14 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
         }
       }
 
-      /*media queries*/
-
-      @media screen and (max-width: 600px) {
-        .header-nav ul {
-          flex-direction: column;
-          li {
-            padding: 5px;
-            font-size: large;
-          }
-        }
+      #other-projects {
+        border: 2px solid white;
+        border-radius: 10px;
+        margin-left: 4px;
+        text-wrap: nowrap;
       }
+
+      /*media queries*/
 
       @media screen and (max-width: 1024px) {
         #section1 {
@@ -668,6 +652,13 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
           padding-left: 0;
         }
 
+        #section2-right {
+          padding-right: 0;
+          p {
+            max-width: 400px;
+          }
+        }
+
         #section3 {
           grid-template-columns: 1fr;
         }
@@ -691,6 +682,102 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
 
         #our-branches {
           grid-column: 1 / span 1;
+        }
+
+        #section6 {
+          grid-template-columns: repeat(2, 1fr);
+          place-items: center;
+          gap: 20px;
+          nav {
+            text-align: center;
+            padding-left: 5px;
+          }
+        }
+
+        #section6-logo h3 {
+          margin-bottom: 40px;
+        }
+
+        #section6-contact-us {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: left;
+          div {
+            display: flex;
+            flex-direction: row;
+            email {
+              font-style: italic;
+              padding-left: 15px;
+            }
+          }
+        }
+
+        #section6-cite {
+          grid-column: 1 / span 2;
+        }
+
+        .image-preview-wrapper {
+          display: none;
+        }
+
+        #section6 nav ul {
+          display: flex;
+          gap: 10px;
+        }
+
+        footer {
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .icons a {
+          padding: 0;
+        }
+
+        .footer-nav li {
+          padding: 5px;
+        }
+      }
+
+      @media screen and (max-width: 670px) {
+        .header-nav ul {
+          flex-direction: column;
+          li {
+            padding: 5px;
+            font-size: large;
+          }
+        }
+
+        #no-mug-mobile {
+          display: none;
+        }
+
+        #section6 {
+          grid-template-columns: repeat(1, 1fr);
+          nav {
+            grid-column: 1 / span 1;
+          }
+        }
+
+        #section6-contact-us {
+          grid-column: 1 / span 1;
+          margin-top: 30px;
+        }
+
+        #section6-cite {
+          grid-column: 1 / span 1;
+        }
+
+        #section6-logo {
+          grid-column: 1 / span 1;
+        }
+
+        .footer-nav ul {
+          flex-direction: row;
+          gap: 5px;
+          margin: 10px;
         }
       }
     </style>
@@ -731,6 +818,7 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
       </div>
 
       <img
+        class="scallop"
         id="section1-image"
         src="images/psd-section1.png"
         alt="A photo of two coffees"
@@ -792,7 +880,11 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
         height="32"
       />
 
-      <i class="fa-solid fa-mug-hot icon7" style="color: #fffeff"></i>
+      <i
+        id="no-mug-mobile"
+        class="fa-solid fa-mug-hot icon7"
+        style="color: #fffeff"
+      ></i>
       <i class="fa-brands fa-java icon8" style="color: #fffeff"></i>
       <img
         class="icon9"
@@ -1010,11 +1102,27 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
           <li><a href="#">Map</a></li>
         </ul>
       </nav>
-      <div>
+      <div id="section6-contact-us">
         <h4>Contact Us.</h4>
         <br /><br />
-        <p>Support</p>
-        <email>your_id@gmail.com</email>
+        <div>
+          <p>Support</p>
+          <email>your_id@gmail.com</email>
+        </div>
+      </div>
+      <div id="section6-cite">
+        <p>
+          Images and template elements sourced from:<br />
+          <cite
+            ><a
+              href="https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#fromView=search&page=1&position=0&uuid=7a5899c1-d382-48df-a631-f04f3e03ff40&query=Website+templates"
+              target="_blank"
+              rel="noopener"
+            >
+              "Template for social media with coffee"</a
+            ></cite
+          >, <br />Designed by Freepik.
+        </p>
       </div>
       <div class="image-preview-wrapper">
         <img
@@ -1037,8 +1145,16 @@ https://www.freepik.com/free-psd/template-social-media-with-coffee_7144898.htm#f
     <footer class="plain-font">
       <nav class="footer-nav">
         <ul>
+          <li>
+            <a
+              href="./index.html"
+              target="_blank"
+              rel="noopener"
+              id="other-projects"
+              >Other projects</a
+            >
+          </li>
           <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
           <li><a href="#">Menu</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Shop</a></li>
