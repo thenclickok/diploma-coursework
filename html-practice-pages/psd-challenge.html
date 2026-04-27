@@ -25,8 +25,7 @@ responsiveness.-->
       /*WEB PAGE COLORS
       the teal color is #2da09b
       the black color is #222832
-      the white font color is #fffeff
-
+      the white font color is #fffeff*/
 
       /*fonts*/
 
@@ -42,12 +41,17 @@ responsiveness.-->
         font-style: normal;
       }
 
-      /*body*/
+      /*whole page*/
 
       * {
         box-sizing: border-box;
         padding: 0;
         margin: 0;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
       }
 
       /*header*/
@@ -57,7 +61,6 @@ responsiveness.-->
         background-color: #222832;
         display: flex;
         justify-content: space-between;
-        text-align: center;
         padding: 10px;
         font-size: medium;
       }
@@ -103,6 +106,12 @@ responsiveness.-->
         padding-bottom: 150px;
       }
 
+      .teal,
+      .black {
+        /* This pulls the section up slightly to cover the gap */
+        margin-top: -1px;
+      }
+
       .flat-bottom-section {
         background-color: #2da09b;
         color: #fffeff;
@@ -125,7 +134,7 @@ responsiveness.-->
 
       .wave-container-black svg {
         width: 100%;
-        height: 300px; /* Adjust height for "waviness" intensity */
+        height: 300px;
       }
 
       .wave-container-teal path {
@@ -196,8 +205,8 @@ responsiveness.-->
 
       .icon5 {
         position: absolute;
-        top: 42%;
-        left: 40%;
+        top: 8%;
+        left: 20%;
         font-size: 40px;
       }
 
@@ -253,7 +262,6 @@ responsiveness.-->
       #section1-text {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
         padding-left: 20px;
         padding-top: 60px;
         letter-spacing: 2px;
@@ -333,19 +341,11 @@ responsiveness.-->
       }
 
       .scallop {
-        /* Dimensions: Keep these to define the 500x500 canvas for your path */
         width: 500px;
         height: 500px;
-
-        /* The Shape - use the original JS code in the console to get a path for other image sizes*/
         clip-path: path(
           "M 443.19,301.76 Q 457.85,370.00 391.42,391.42 Q 370.00,457.85 301.76,443.19 Q 250.00,490.00 198.24,443.19 Q 130.00,457.85 108.58,391.42 Q 42.15,370.00 56.81,301.76 Q 10.00,250.00 56.81,198.24 Q 42.15,130.00 108.58,108.58 Q 130.00,42.15 198.24,56.81 Q 250.00,10.00 301.76,56.81 Q 370.00,42.15 391.42,108.58 Q 457.85,130.00 443.19,198.24 Q 490.00,250.00 443.19,301.76 Z"
         );
-      }
-
-      .scallop img {
-        width: 100%;
-        height: 100%;
         object-fit: cover;
       }
 
@@ -356,7 +356,6 @@ responsiveness.-->
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
         padding: 80px 20px;
-        place-items: center;
         position: relative;
         text-align: center;
         overflow-x: hidden;
@@ -391,16 +390,15 @@ responsiveness.-->
         align-items: center;
       }
 
-      /* Fixes the button being too far away */
       .section3-content-block {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centers items horizontally */
-        gap: 15px; /* Controls space between H2, P, and Button */
+        align-items: center;
+        gap: 15px;
       }
 
       .section3-testimonials {
-        grid-column: span 2; /* Spans across both columns on desktop */
+        grid-column: span 2;
         display: flex;
         justify-content: space-evenly;
         gap: 80px;
@@ -494,6 +492,8 @@ responsiveness.-->
         img {
           border-radius: 50%;
           margin: 10px;
+          width: 30px;
+          height: 39px;
         }
       }
 
@@ -545,9 +545,12 @@ responsiveness.-->
         padding: 10px;
       }
 
+      footer {
+        padding-top: 20px;
+      }
+
       .footer-nav ul {
         display: flex;
-
         li {
           list-style-type: none;
         }
@@ -575,6 +578,17 @@ responsiveness.-->
 
         #section1-text {
           gap: 20px;
+        }
+
+        #section1-text h1 {
+          font-size: 4rem;
+          text-wrap: wrap;
+        }
+
+        #section2-left h2,
+        #section3 h2,
+        #our-branches {
+          font-size: 3.5rem;
         }
 
         #section1-image {
@@ -612,8 +626,8 @@ responsiveness.-->
         }
 
         .icon5 {
-          top: 30%;
-          left: 30%;
+          top: 25%;
+          left: 20%;
         }
 
         .icon6 {
@@ -646,6 +660,7 @@ responsiveness.-->
         #section2 {
           flex-direction: column;
           align-items: center;
+          min-height: unset;
         }
 
         #section2-left {
@@ -654,6 +669,8 @@ responsiveness.-->
 
         #section2-right {
           padding-right: 0;
+          min-height: unset;
+          padding-bottom: 40px;
           p {
             max-width: 400px;
           }
@@ -671,7 +688,7 @@ responsiveness.-->
         }
 
         #section3-text1 {
-          min-width: unset; /* Allows text to shrink on mobile */
+          min-width: unset;
           max-width: 90%;
           padding-bottom: 20px;
         }
@@ -715,7 +732,7 @@ responsiveness.-->
         }
 
         #section6-cite {
-          grid-column: 1 / span 2;
+          text-align: center;
         }
 
         .image-preview-wrapper {
@@ -744,14 +761,52 @@ responsiveness.-->
       @media screen and (max-width: 670px) {
         .header-nav ul {
           flex-direction: column;
+          align-items: center;
+          gap: 5px;
           li {
             padding: 5px;
             font-size: large;
           }
         }
 
-        #no-mug-mobile {
+        header {
+          flex-direction: column-reverse;
+          gap: 15px;
+        }
+
+        .icon1,
+        .icon2,
+        .icon3,
+        .icon4,
+        .icon5,
+        .icon6,
+        .icon7,
+        .icon8,
+        .icon9,
+        .icon10,
+        .icon11,
+        .icon12,
+        #blob1,
+        #blob2,
+        #blob3 {
           display: none;
+        }
+
+        .scallop {
+          width: 250px;
+          height: 250px;
+          clip-path: path(
+            "M 221.59,150.88 Q 228.92,185.00 195.71,195.71 Q 185.00,228.92 150.88,221.59 Q 125.00,245.00 99.12,221.59 Q 65.00,228.92 54.29,195.71 Q 21.08,185.00 28.41,150.88 Q 5.00,125.00 28.41,99.12 Q 21.08,65.00 54.29,54.29 Q 65.00,21.08 99.12,28.41 Q 125.00,5.00 150.88,28.41 Q 185.00,21.08 195.71,54.29 Q 228.92,65.00 221.59,99.12 Q 245.00,125.00 221.59,150.88 Z"
+          );
+        }
+
+        #section1-text {
+          justify-content: center;
+          align-items: center;
+        }
+
+        #section2-right {
+          max-width: 350px;
         }
 
         #section6 {
@@ -775,9 +830,14 @@ responsiveness.-->
         }
 
         .footer-nav ul {
-          flex-direction: row;
-          gap: 5px;
+          flex-direction: column;
+          gap: 10px;
           margin: 10px;
+          align-items: center;
+        }
+
+        footer {
+          padding: 20px;
         }
       }
     </style>
@@ -880,11 +940,7 @@ responsiveness.-->
         height="32"
       />
 
-      <i
-        id="no-mug-mobile"
-        class="fa-solid fa-mug-hot icon7"
-        style="color: #fffeff"
-      ></i>
+      <i class="fa-solid fa-mug-hot icon7" style="color: #fffeff"></i>
       <i class="fa-brands fa-java icon8" style="color: #fffeff"></i>
       <img
         class="icon9"
@@ -1088,6 +1144,7 @@ responsiveness.-->
           alt="coffee bean icon"
           width="30"
           height="39"
+          id="coffee"
         />
         <h3>YOUR LOGO</h3>
       </div>
