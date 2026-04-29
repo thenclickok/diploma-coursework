@@ -42,6 +42,16 @@ switch (favouriteCar) {
     break;
 }
 
+//template literals
+
+const animal = { type: "cat", color: "black", age: 3 };
+const newHTML = `<p>I have a ${animal.color} ${animal.type} who is ${animal.age} years old.</p>`;
+/*FYI: to render newHTML as body innerHTML from a js file 
+I put a script tag in HTML body like this: <script src="main.js"></script> 
+and the page is cleared, only containing the newHTML*/
+
+document.getElementById("template-literal").innerHTML = newHTML;
+
 //arrays and loops
 
 const fruits = ["apple", "orange", "pear", "grapes", "mango"];
