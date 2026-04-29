@@ -4,11 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="projects-logic/practice/main.js" defer></script>
-    <title>Document</title>
+    <title>Various Learning Exercises</title>
   </head>
   <body>
-    <h1 id="demo">Hello World</h1>
-    <button onclick="changeText()">Click Me</button>
-    <p id="fruits-list"></p>
+    <h1>Various Learning Exercises</h1>
+    <br />
+    <div>
+      <h3>Using alert and console.log functions on window.onload:</h3>
+      <p>
+        The alert box shows and a message is logged to the console when page
+        loads.
+      </p>
+      <br />
+      <h3>Using a button to change the text of an element:</h3>
+      <h4 id="demo">Hello World</h4>
+      <button onclick="changeText()">Click Me</button>
+    </div>
+    <br />
+    <div>
+      <h3>If else statement:</h3>
+      <p>A variable called "p" has a value of: <span id="p-variable"></span></p>
+      <p>
+        Console.log: If p is > 14, the statement will read: "The number is more
+        than or equal to 14". Else: the opposite statemtent will show in the
+        console.
+      </p>
+    </div>
+    <br />
+    <div>
+      <h3>Using switch statements</h3>
+      <p>
+        A variable called favouriteCar is assigned the value of:
+        <span id="switch-variable"></span>
+      </p>
+      <p>
+        The case statements include "Honda" and "Ford" with associated
+        console.log statements. In this case, the console reads: "Your favourite
+        car is a Ford".
+      </p>
+      <p>
+        If the value of favouriteCar is neither "Honda" nor "Ford", the default
+        statement would read: "No known car specified".
+      </p>
+    </div>
+    <br />
+    <div>
+      <h3>Creating arrays and looping through them</h3>
+      <p id="fruits-list"></p>
+      <p>
+        A variable called "text" is assigned an empty string and then used
+        inside a "for let" loop. Each item in the fruits array goes inside the
+        string, separated by line breaks until it reaches the final value in the
+        array.
+      </p>
+    </div>
+    <br />
+    <div>
+      <h3>Classes as templates for objects</h3>
+      <p>
+        A class called Person contains the properties: name, gender, age,
+        hairColor, job, hobby.
+      </p>
+      <p>Objects called player1 and player2 are made using class Person.</p>
+      <p>For example, the values of player1 are:</p>
+      <p id="player1"></p>
+      <p>
+        A console.log statement will show on the console to display the
+        properties and their values of player 1 using this statement:
+        console.log("Player 1:", player1);
+      </p>
+    </div>
+    <br /><br /><br /><br /><br /><br />
+    <a href="./index.html">Other Projects</a>
   </body>
 </html>
