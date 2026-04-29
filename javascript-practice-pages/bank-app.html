@@ -8,6 +8,60 @@
     <title>Bank App</title>
   </head>
   <body>
-    <h1>Bank App</h1>
+    <h1>Welcome to the Bank App</h1>
+    <br />
+
+    <div id="account-details">
+      <h2>Account details</h2>
+      <p>Account holder:</p>
+      <p id="account-holder"></p>
+      <br />
+      <p>Account number:</p>
+      <p id="account-number"></p>
+    </div>
+    <br />
+
+    <div id="account-actions">
+      <h2>Account Options</h2>
+      <div id="balance-section">
+        <button id="check-balance">CHECK BALANCE</button>
+        <p>Account balance:</p>
+        <p id="balance"></p>
+      </div>
+      <br />
+
+      <div id="deposit-section">
+        <label for="deposit-input"
+          >Enter deposit amount, then click DEPOSIT</label
+        >
+        <input
+          type="number"
+          id="deposit-input"
+          name="deposit-input"
+          min="1"
+          max="100"
+        />
+        <button type="submit" id="deposit-submit">DEPOSIT</button>
+      </div>
+      <br />
+
+      <div id="withdrawal-section">
+        <label for="withdrawal-input"
+          >Enter withdrawal amount, then click WITHDRAW</label
+        >
+        <input
+          type="number"
+          id="withdrawal-input"
+          name="withdrawal-input"
+          min="1"
+          max="100"
+        />
+        <button type="submit" id="withdrawal-submit">WITHDRAW</button>
+      </div>
+      <br />
+      <p id="message"></p>
+    </div>
+    <br /><br /><br /><br /><br /><br />
+    <a href="./index.html">Other Projects</a>
   </body>
 </html>
