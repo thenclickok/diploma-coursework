@@ -52,6 +52,19 @@ and the page is cleared, only containing the newHTML*/
 
 document.getElementById("template-literal").innerHTML = newHTML;
 
+//OLD WAY (before template literals) - string concatenation
+
+const stringConcat =
+  "I have a " +
+  animal.color +
+  " " +
+  animal.type +
+  " who is " +
+  animal.age +
+  " years old.";
+
+document.getElementById("string-concat").innerHTML = stringConcat;
+
 //arrays and loops
 
 const fruits = ["apple", "orange", "pear", "grapes", "mango"];
