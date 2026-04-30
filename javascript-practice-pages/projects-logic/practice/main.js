@@ -105,3 +105,68 @@ const listItems = Object.values(player1)
   .join(" ");
 
 document.getElementById("player1").innerHTML = listItems;
+
+//using querySelector to change the css of the selected element
+
+const qs = document.querySelector("section p:first-of-type");
+qs.style.border = "2px solid orange";
+qs.style.display = "inline";
+
+/*best practice way of doing the above: two options below
+
+document.addEventListener("DOMContentLoaded", () => {
+  const qs = document.querySelector("section p:first-of-type");
+  
+  if (qs) {
+    qs.style.border = "1px solid orange";
+  }
+});
+
+OR shorthand:
+
+document.addEventListener("DOMContentLoaded", () => {
+  const qs = document.querySelector("section p:first-of-type");
+  
+  // The ?. checks if qs is null before trying to access .style
+  qs?.style.setProperty("border", "1px solid orange");
+});
+
+*/
+
+//Using a loop to change CSS on particular types of tags
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tagName = document.getElementsByTagName("h1");
+  for (let i = 0; i < tagName.length; i++) {
+    tagName[i].style.textDecoration = "underline";
+  }
+});
+
+//Using classlist toggle and eventlistener to click css on and off
+
+const toggle = document.querySelector(".class-list-toggle");
+toggle.addEventListener("click", function () {
+  this.classList.toggle("class-list-off");
+});
+
+//Adding new elements and content with createElement, createTextNode and insertBefore
+
+document.addEventListener("DOMContentLoaded", addElement);
+function addElement() {
+  const newDiv = document.createElement("div"); //making the new div
+  newDiv.classList.add("new-div"); //adding the class to the div
+  const newHeading = document.createElement("h3"); //adding the h3
+  const newParagraph = document.createElement("p"); //adding the p
+  const newHContent = document.createTextNode(
+    "Adding new elements and content with createElement, createTextNode and insertBefore",
+  ); //inserting the h3 text
+  const newPContent = document.createTextNode(
+    "Once the DOM content loads, the new elements are created using createElement (div with h3 and p inside it). The heading and paragraph are given text with createTextNode. Finally, they are linked together using appendChild and inserted after an element with the class called class-list-toggle by specifying it's after the existing div's nextSibling. By using classList.add, the green font color applies from the selected CSS class.",
+  ); //inserting the p text
+  newHeading.appendChild(newHContent); //put heading text inside heading
+  newParagraph.appendChild(newPContent); //put paragraph text inside paragraph
+  newDiv.appendChild(newHeading); //put heading inside div
+  newDiv.appendChild(newParagraph); //put paragraph inside div
+  const existingDiv = document.querySelector(".class-list-toggle"); //get an existing element
+  document.body.insertBefore(newDiv, existingDiv.nextSibling); //insert after new div (it's BEFORE THE NEXT SIBLING OF THE EXISTING DIV)
+} //alternative to insertBefore is insertAdjacentElement

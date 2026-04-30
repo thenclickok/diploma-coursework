@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="projects-logic/practice/main.js" defer></script>
     <title>Various Learning Exercises</title>
+
+    <style>
+      .class-list-toggle {
+        border: 2px dotted purple;
+      }
+
+      .class-list-off {
+        border: none;
+      }
+
+      .new-div {
+        color: green;
+      }
+    </style>
   </head>
   <body>
     <h1>Various Learning Exercises</h1>
@@ -102,6 +116,34 @@
         A console.log statement will show on the console to display the
         properties and their values for player 1 using this statement:
         console.log("Player 1:", player1);
+      </p>
+    </div>
+    <section>
+      <h3>Using querySelector method of document object to change CSS</h3>
+      <p>My text will have an orange border.</p>
+      <p>
+        The orange border is set using querySelector for the "section
+        p:first-of-type" (deriving from the external javascript file).
+      </p>
+    </section>
+    <br />
+    <div>
+      <h3>
+        Using getElementByTagName and using a loop to style each selected
+        element
+      </h3>
+      <p>This was used to underline the h1 heading at the top of this page.</p>
+      <p>
+        Other ways to select HTML include getElementsByClassName,
+        getElementsByName and getElementById.
+      </p>
+    </div>
+    <div class="class-list-toggle">
+      <h3>Using classList toggle and eventlistener to click css on and off</h3>
+      <p>Click this section to toggle the purple dotted border.</p>
+      <p>
+        The classList property includes the following methods: toggle, add and
+        remove.
       </p>
     </div>
     <br /><br /><br /><br /><br /><br />
