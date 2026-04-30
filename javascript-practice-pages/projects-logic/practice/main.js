@@ -170,3 +170,8 @@ function addElement() {
   const existingDiv = document.querySelector(".class-list-toggle"); //get an existing element
   document.body.insertBefore(newDiv, existingDiv.nextSibling); //insert after new div (it's BEFORE THE NEXT SIBLING OF THE EXISTING DIV)
 } //alternative to insertBefore is insertAdjacentElement
+
+//Adding attributes like a class to the selected elements using the setAttribute property
+document
+  .querySelector("#set-attribute-section h3")
+  .setAttribute("class", "new-attribute");
