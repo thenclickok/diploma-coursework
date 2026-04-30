@@ -42,3 +42,6 @@ withdrawalSubmit.addEventListener("click", () => {
     document.getElementById("message").textContent = `Withdrew: £${amount}`;
   }
 });
+
+//
+document.querySelector("h5").style.color = "red";
