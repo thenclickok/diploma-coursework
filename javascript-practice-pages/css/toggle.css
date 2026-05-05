@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* light mode (default)*/
+
+body {
+    background-color: lightgreen;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    color: black;
+    background-color: white;
+    h1 {
+        text-align: center;
+    }
+    button {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 10px 10px 3px grey;
+        background-color: lightgreen;
+        color: black;
+        font-size: medium;
+        transition: all 0.3s;
+    }
+    button:hover {
+        background-color: green;
+        color: white;
+    }
+    button:active {
+        box-shadow: 5px 5px grey;
+        transform: translateY(2px);
+    }
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    line-height: 1.6;
+    color: black;
+    background-color: white;
+}
+
+footer {
+    text-align: center;
+    margin: 20px;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    a {
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 10px 10px 3px grey;
+        background-color: lightgreen;}
+    a:hover {
+        background-color: green;
+        color: white;
+    }
+    a:active {
+        box-shadow: 5px 5px grey;
+        transform: translateY(2px);
+    }
+}
+
+
+/* dark mode*/
+
+body.dark-mode {
+    background-color: grey;
+}
+
+body.dark-mode header{
+    color: white;
+    background-color: black;
+    border-color: white;
+    button {
+        background-color: rgb(251, 89, 170);
+        color: white;
+        font-weight: bold;
+        box-shadow: 10px 10px 3px white;
+    }
+    button:hover {
+        background-color: #b70e69;
+    }
+    button:active {
+        box-shadow: 5px 5px white;
+        transform: translateY(2px);
+    }
+}
+
+body.dark-mode main {
+    color: white;
+    background-color: black;
+    border-color: white;
+}
+
+body.dark-mode footer {
+    color: white;
+    background-color: black;
+    border-color: white;
+    a {
+        background-color: rgb(251, 89, 170);
+        color: white;
+        font-weight: bold;
+        box-shadow: 10px 10px 3px white;
+    }
+    a:hover {
+        background-color: #b70e69;
+    }
+    a:active {
+        box-shadow: 5px 5px white;
+        transform: translateY(2px);
+    }
+}
