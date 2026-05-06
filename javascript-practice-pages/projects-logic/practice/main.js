@@ -180,9 +180,9 @@ document
 let myArray = [4.2, 5.1, 3.8, 4.7, 5.3];
 
 function getAverage(myArray) {
-  sum = 0;
+  let sum = 0;
 
-  for (i = 0; i < myArray.length; i++) {
+  for (let i = 0; i < myArray.length; i++) {
     sum += myArray[i];
   }
   return sum / myArray.length;
@@ -190,10 +190,12 @@ function getAverage(myArray) {
 
 let average = getAverage(myArray);
 let roundedAverage = Math.round(average * 100) / 100;
-
+//a cleaner way: instead of math.round with the extra maths, I could use average.toFixed(2)
+let spacedArray = myArray.join(", ");
+//added .join with the comma and space to separate values in html
 let arrayValues = (document.getElementById("values").innerHTML =
-  `The array's values are ${myArray}`);
+  `The array's values are ${spacedArray}.`);
 let arraySum = (document.getElementById("sum").innerHTML =
-  `The sum of the values is ${sum}`);
+  `The sum of the values is ${average * myArray.length}.`);
 let result = (document.getElementById("result").innerHTML =
-  `The rounded average of the array's values is ${roundedAverage}`);
+  `The rounded average of the array's values is ${roundedAverage}.`);
