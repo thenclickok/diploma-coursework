@@ -175,3 +175,25 @@ function addElement() {
 document
   .querySelector("#set-attribute-section h3")
   .setAttribute("class", "new-attribute");
+
+//Creating a for loop on an array to find the sum and the average
+let myArray = [4.2, 5.1, 3.8, 4.7, 5.3];
+
+function getAverage(myArray) {
+  sum = 0;
+
+  for (i = 0; i < myArray.length; i++) {
+    sum += myArray[i];
+  }
+  return sum / myArray.length;
+}
+
+let average = getAverage(myArray);
+let roundedAverage = Math.round(average * 100) / 100;
+
+let arrayValues = (document.getElementById("values").innerHTML =
+  `The array's values are ${myArray}`);
+let arraySum = (document.getElementById("sum").innerHTML =
+  `The sum of the values is ${sum}`);
+let result = (document.getElementById("result").innerHTML =
+  `The rounded average of the array's values is ${roundedAverage}`);
