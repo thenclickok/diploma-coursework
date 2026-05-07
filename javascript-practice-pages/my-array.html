@@ -3,30 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="projects-logic/my-array/main.js" defer></script>
     <title>My Array</title>
   </head>
-  <body>
+  <body
+    style="
+      border: 2px solid black;
+      text-align: center;
+      padding: 20px;
+      font-family:
+        &quot;Lucida Sans&quot;, &quot;Lucida Sans Regular&quot;,
+        &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Geneva,
+        Verdana, sans-serif;
+    "
+  >
     <h1>My Array: a shopping list</h1>
-    <div id="array-section"></div>
+    <div
+      id="array-section"
+      style="
+        border: 2px solid black;
+        display: inline-block;
+        padding: 10px;
+        margin-bottom: 20px;
+        min-width: 200px;
+        min-height: 200px;
+      "
+    ></div>
     <br />
     <div id="add-top-section">
       <label for="add-top-item">Enter item</label>
       <input type="text" id="add-top-item" max="10" />
-      <button type="submit" id="add-top-button">Add to top</button>
+      <button type="button" id="add-top-button">Add to top</button>
     </div>
     <br />
     <div id="add-bottom-section">
       <label for="add-bottom-item">Enter item</label>
-      <input type="text" id="add-bottom-item" max="10" />
-      <button type="submit" id="add-bottom-button">Add to bottom</button>
+      <input type="text" id="add-bottom-item" maxlength="10" />
+      <button type="button" id="add-bottom-button">Add to bottom</button>
     </div>
     <br />
     <div id="delete-top-section">
-      <button type="submit" id="delete-top-button">Delete from top</button>
+      <button type="button" id="delete-top-button">Delete from top</button>
     </div>
     <br />
     <div id="delete-bottom-section">
-      <button type="submit" id="delete-bottom-button">
+      <button type="button" id="delete-bottom-button">
         Delete from bottom
       </button>
     </div>
