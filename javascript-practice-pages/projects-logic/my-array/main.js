@@ -7,47 +7,61 @@ let deleteBottomButton = document.getElementById("delete-bottom-button");
 
 addTopButton.addEventListener("click", addToTop);
 
+function displayList() {
+  let listHTML = "";
+
+  myArray.forEach((item, index) => {
+    listHTML += `Item ${index + 1}: ${item}<br/>`;
+  });
+  arrayDisplay.innerHTML = listHTML; //update array section so user sees the change
+}
+
 function addToTop() {
-  let addTopItem = document.getElementById("add-top-item");
+  let addTopItem = document.getElementById("add-item");
   let newTopItem = addTopItem.value;
 
   if (newTopItem !== "") {
     myArray.unshift(newTopItem); //add an item
-
-    arrayDisplay.innerHTML = myArray.join("<br/>");
-    //update array section so user sees the change
-    addTopItem.value = "";
-    //clears the input for the next entry
+    displayList();
+    addTopItem.value = ""; //clears the input for the next entry
+  } else {
+    alert("Please enter a valid input.");
   }
 }
 
 addBottomButton.addEventListener("click", addToBottom);
 
 function addToBottom() {
-  let addBottomItem = document.getElementById("add-bottom-item");
+  let addBottomItem = document.getElementById("add-item");
   let newBottomItem = addBottomItem.value;
 
   if (newBottomItem !== "") {
     myArray.push(newBottomItem);
-
-    arrayDisplay.innerHTML = myArray.join("<br/>");
-
+    displayList();
     addBottomItem.value = "";
+  } else {
+    alert("Please enter a valid input.");
   }
 }
 
 deleteTopButton.addEventListener("click", deleteTop);
 
 function deleteTop() {
-  myArray.shift();
-
-  arrayDisplay.innerHTML = myArray.join("<br/>");
+  if (myArray.length !== 0) {
+    myArray.shift();
+    displayList();
+  } else {
+    alert("There are no items to delete.");
+  }
 }
 
 deleteBottomButton.addEventListener("click", deleteBottom);
 
 function deleteBottom() {
-  myArray.pop();
-
-  arrayDisplay.innerHTML = myArray.join("<br>");
+  if (myArray.length !== 0) {
+    myArray.pop();
+    displayList();
+  } else {
+    alert("There are no items to delete.");
+  }
 }
