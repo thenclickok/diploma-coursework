@@ -199,3 +199,15 @@ let arraySum = (document.getElementById("sum").innerHTML =
   `The sum of the values is ${average * myArray.length}.`);
 let result = (document.getElementById("result").innerHTML =
   `The rounded average of the array's values is ${roundedAverage}.`);
+
+//How callbacks and higher order functions work together
+
+const someNumbers = [1, 2, 3, 4, 5];
+const timesTwo = (item) => item * 2;
+const doubleNumbers = someNumbers.map(timesTwo);
+
+document.getElementById("array").innerHTML = JSON.stringify(someNumbers);
+/*I added the json.stringify to include the brackets. If I wanted to add some space 
+between the numbers I could use: `[${someNumbers.join(", ")}]`*/
+document.getElementById("callback-function").innerText = timesTwo;
+document.getElementById("hof-result").innerText = JSON.stringify(doubleNumbers);

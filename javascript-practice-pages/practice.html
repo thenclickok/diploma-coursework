@@ -175,6 +175,39 @@
       <p id="sum"></p>
       <p id="result"></p>
     </div>
+    <br />
+    <div>
+      <h3>How callbacks and higher order functions work together</h3>
+      <p>A callback is a function passed as an argument to another function.</p>
+      <p>
+        A higher order function receives a function as an argument or returns a
+        function as its output.
+      </p>
+      <p>Example:</p>
+      <ol>
+        <li>
+          <b>1st variable</b> is assigned an array: <span id="array"></span>
+        </li>
+        <br />
+        <li>
+          <b>2nd variable</b> is assigned a <b>callback function</b> (like
+          multiple a value by 2):
+          <span id="callback-function"></span>
+        </li>
+        <br />
+        <li>
+          <b>3rd variable</b> is assigned a <b>higher order function</b>: the
+          array's map method has the callback function passed to it as an
+          argument (3rd variable = 1st variable.map(2nd variable)).
+        </li>
+        <br />
+        <li>
+          <b>The result</b> is an array then contains all the original values
+          multiplied by two: <span id="hof-result"></span>
+        </li>
+        <br />
+      </ol>
+    </div>
     <br /><br /><br /><br /><br /><br />
     <a href="./index.html">Other Projects</a>
   </body>
