@@ -112,3 +112,9 @@ button:active,
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-width: 600px){
+    #input-box {
+        flex-direction: column;
+    }
+}
