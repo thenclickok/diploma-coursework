@@ -3,29 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/calculator.css" />
     <title>Calculator</title>
   </head>
   <body>
     <h1>Calculator</h1>
     <div id="calculator-container">
-      <input
-        type="number"
-        id="number1"
-        name="number1"
-        placeholder="Enter the first number"
-      />
-      <input
-        type="number"
-        id="number2"
-        name="nubmer2"
-        placeholder="Enter the second number"
-      />
-      <button type="button" id="add" name="add">+</button>
-      <button type="button" id="subtract" name="subtract">-</button>
-      <button type="button" id="multiply" name="multiply">x</button>
-      <button type="button" id="divide" name="divide">/</button>
-      <div id="result"></div>
+      <div id="input-box">
+        <input
+          type="number"
+          id="number1"
+          name="number1"
+          placeholder="Enter first number"
+        />
+        <input
+          type="number"
+          id="number2"
+          name="nubmer2"
+          placeholder="Enter second number"
+        />
+      </div>
+      <br />
+      <div id="button-group">
+        <button type="button" id="add" name="add">+</button>
+        <button type="button" id="subtract" name="subtract">-</button>
+        <button type="button" id="multiply" name="multiply">x</button>
+        <button type="button" id="divide" name="divide">/</button>
+      </div>
+      <div id="result">Result</div>
+      <div id="clear">Clear</div>
     </div>
+    <br /><br /><br /><br /><br /><br />
+    <a href="./index.html" id="other-projects">Other Projects</a>
     <script src="projects-logic/calculator/main.js"></script>
   </body>
 </html>
