@@ -37,7 +37,7 @@ h1 {
 }
 
 nav {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 20px;
 }
@@ -46,6 +46,12 @@ li {
     font-size: 1.5rem;
     padding: 5px;
     list-style: none;
+}
+
+header a:hover {
+    background-color: blue;
+    border-radius: 8px;
+    padding: 5px;
 }
 
 a {
@@ -58,12 +64,15 @@ a {
 footer {
     text-align: center;
     p {
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
         border-radius: 20px;
-        width: fit-content;
         margin: auto;
+        width: fit-content;
+        padding: 10px;
     }
+    a:hover {
+        color: blue;
+}
 }
 
     
