@@ -1,6 +1,15 @@
+/*whole page formatting*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /*background-image and text*/
-    
+
 body {
+    font-family: 'Courier New', Courier, monospace;
     color: white;
     background-image: url("../images/index-mobile-background.jpg"); 
     /*my vertical background image for mobile screen*/
@@ -10,6 +19,53 @@ body {
     background-position: center;
     background-attachment: fixed;
       }    
+
+/*header*/
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    gap: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+nav {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+li {
+    font-size: 1.5rem;
+    padding: 5px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*footer*/
+
+footer {
+    text-align: center;
+    p {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+        padding: 20px;
+        border-radius: 20px;
+        width: fit-content;
+        margin: auto;
+    }
+}
+
     
 /*media queries*/
 
@@ -18,5 +74,13 @@ body {
           background-image: url("../images/index-large-background.jpg"); 
           /* My horizontal image for desktop */
           /* starting url with ../ to go from root into images folder*/
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    li {
+        font-size: 2rem;
     }
 }
