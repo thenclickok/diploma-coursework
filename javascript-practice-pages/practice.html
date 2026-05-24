@@ -3,210 +3,209 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/practice.css" />
     <script src="projects-logic/practice/main.js" defer></script>
     <title>Various Exercises</title>
-
-    <style>
-      .class-list-toggle {
-        border: 2px dotted purple;
-      }
-
-      .class-list-off {
-        border: none;
-      }
-
-      .new-div {
-        color: green;
-      }
-
-      .new-attribute {
-        font-style: italic;
-      }
-    </style>
   </head>
   <body>
     <h1>Various Learning Exercises</h1>
     <br />
-    <div>
-      <h3>Using alert and console.log functions on window.onload:</h3>
-      <p>
-        The alert box shows and a message is logged to the console when page
-        loads (temporarily disabled while I am regularly updating this page).
-      </p>
-      <br />
-      <h3>Using a button to change the text of an element:</h3>
-      <h4 id="demo">Hello World</h4>
-      <button onclick="changeText()">Click Me</button>
-    </div>
-    <br />
-    <div>
-      <h3>If else statement:</h3>
-      <p>A variable called "p" has a value of: <span id="p-variable"></span></p>
-      <p>
-        Console.log: If p is > 14, the statement will read: "The number is more
-        than or equal to 14". Else: the opposite statemtent will show in the
-        console.
-      </p>
-    </div>
-    <br />
-    <div>
-      <h3>Using switch statements:</h3>
-      <p>
-        A variable called favouriteCar is assigned the value of:
-        <span id="switch-variable"></span>
-      </p>
-      <p>
-        The case statements include "Honda" and "Ford" with associated
-        console.log statements. In this case, the console reads: "Your favourite
-        car is a Ford".
-      </p>
-      <p>
-        If the value of favouriteCar is neither "Honda" nor "Ford", the default
-        statement would read: "No known car specified".
-      </p>
-    </div>
-    <br />
+    <div id="wrapper">
+      <div>
+        <h3>Using alert and console.log functions on window.onload:</h3>
+        <p>
+          The alert box shows and a message is logged to the console when page
+          loads (temporarily disabled while I am regularly updating this page).
+        </p>
+      </div>
 
-    <div>
-      <h3>
-        Using template literals to insert certain object property values into
-        text:
-      </h3>
-      <p id="template-literal"></p>
-      <p>
-        The sentence above was created using an object called "animal",
-        containing three properties whose values were inserted into a template
-        literal.
-      </p>
-      <p>The object: const animal = { type: "cat", color: "black", age: 3 };</p>
-      <p>
-        The template literal: `I have a ${animal.color} ${animal.type} who is
-        ${animal.age} years old.`
-      </p>
-    </div>
-    <br />
-    <div>
-      <h3>Before template literals, there was string concatenation:</h3>
+      <div>
+        <h3>Using a button to change the text of an element:</h3>
+        <h4 id="demo">Hello World</h4>
+        <button onclick="changeText()">Click Me</button>
+      </div>
 
-      <p>
-        It looks like this: <br /><br />"I have a " + animal.color + " " +
-        animal.type + " who is " + animal.age + " years old."
-      </p>
-      <p>It translates to this:</p>
-      <p id="string-concat"></p>
-    </div>
-    <br />
-    <div>
-      <h3>Creating arrays and looping through them:</h3>
-      <p id="fruits-list"></p>
-      <p>
-        A variable called "text" is assigned an empty string and then used
-        inside a "for let" loop. Each item in the fruits array goes inside the
-        string, separated by line breaks until it reaches the final value in the
-        array.
-      </p>
-    </div>
-    <br />
-    <div>
-      <h3>Classes as templates for objects:</h3>
-      <p>
-        A class called Person contains the properties: name, gender, age,
-        hairColor, job, hobby.
-      </p>
-      <p>Objects called player1 and player2 are made using class Person.</p>
-      <p>For example, the values of player1 are:</p>
-      <p id="player1"></p>
-      <p>
-        A console.log statement will show on the console to display the
-        properties and their values for player 1 using this statement:
-        console.log("Player 1:", player1);
-      </p>
-    </div>
-    <section>
-      <h3>Using querySelector method of document object to change CSS</h3>
-      <p>My text will have an orange border.</p>
-      <p>
-        The orange border is set using querySelector for the "section
-        p:first-of-type" (deriving from the external javascript file).
-      </p>
-    </section>
-    <br />
-    <div>
-      <h3>
-        Using getElementByTagName and using a loop to style each selected
-        element
-      </h3>
-      <p>This was used to underline the h1 heading at the top of this page.</p>
-      <p>
-        Other ways to select HTML include getElementsByClassName,
-        getElementsByName and getElementById.
-      </p>
-    </div>
-    <div class="class-list-toggle">
-      <h3>Using classList toggle and eventlistener to click css on and off</h3>
-      <p>Click this section to toggle the purple dotted border.</p>
-      <p>
-        The classList property includes the following methods: toggle, add and
-        remove.
-      </p>
-    </div>
-    <br />
-    <div id="set-attribute-section">
-      <h3>Adding attributes to elements using setAttribute</h3>
-      <p>
-        The above heading is in italics because its class was applied using the
-        setAttribute method.
-      </p>
-      <p>The opposite of setAttribute is removeAttribute.</p>
-      <p>
-        In the console, one can check an element's attributes and their values
-        using hasAttribute and getAttribute.
-      </p>
-      <p>
-        Although the setAttribute is useful for simple attributes (eg alt, src,
-        href, id, target, type, aria-role, placeholder, etc), classList is
-        better for adding classes to elements.
-      </p>
-    </div>
-    <br />
-    <div>
-      <h3>Creating a for loop on an array to find the sum and the average</h3>
-      <p id="values"></p>
-      <p id="sum"></p>
-      <p id="result"></p>
-    </div>
-    <br />
-    <div>
-      <h3>How callbacks and higher order functions work together</h3>
-      <p>A callback is a function passed as an argument to another function.</p>
-      <p>
-        A higher order function receives a function as an argument or returns a
-        function as its output.
-      </p>
-      <p>Example:</p>
-      <ol>
-        <li>
-          <b>1st variable</b> is assigned an array: <span id="array"></span>
-        </li>
+      <div>
+        <h3>If else statement:</h3>
+        <p>
+          A variable called "p" has a value of: <span id="p-variable"></span>
+        </p>
+        <p>
+          Console.log: If p is > 14, the statement will read: "The number is
+          more than or equal to 14". Else: the opposite statemtent will show in
+          the console.
+        </p>
+      </div>
+
+      <div>
+        <h3>Using switch statements:</h3>
+        <p>
+          A variable called favouriteCar is assigned the value of:
+          <span id="switch-variable"></span>
+        </p>
+        <p>
+          The case statements include "Honda" and "Ford" with associated
+          console.log statements. In this case, the console reads: "Your
+          favourite car is a Ford".
+        </p>
+        <p>
+          If the value of favouriteCar is neither "Honda" nor "Ford", the
+          default statement would read: "No known car specified".
+        </p>
+      </div>
+
+      <div>
+        <h3>
+          Using template literals to insert certain object property values into
+          text:
+        </h3>
+        <p id="template-literal"></p>
+        <p>
+          The sentence above was created using an object called "animal",
+          containing three properties whose values were inserted into a template
+          literal.
+        </p>
+        <p>
+          The object: const animal = { type: "cat", color: "black", age: 3 };
+        </p>
+        <p>
+          The template literal: `I have a ${animal.color} ${animal.type} who is
+          ${animal.age} years old.`
+        </p>
+      </div>
+
+      <div>
+        <h3>Before template literals, there was string concatenation:</h3>
+        <p>It looks like this:</p>
+        <p>
+          "I have a " + animal.color + " " + animal.type + " who is " +
+          animal.age + " years old."
+        </p>
+        <p>It translates to this:</p>
+        <p id="string-concat"></p>
+      </div>
+
+      <div>
+        <h3>Creating arrays and looping through them:</h3>
+        <p id="fruits-list"></p>
+        <p>
+          A variable called "text" is assigned an empty string and then used
+          inside a "for let" loop. Each item in the fruits array goes inside the
+          string, separated by line breaks until it reaches the final value in
+          the array.
+        </p>
+      </div>
+
+      <div>
+        <h3>Classes as templates for objects:</h3>
+        <p>
+          A class called Person contains the properties: name, gender, age,
+          hairColor, job, hobby.
+        </p>
+        <p>Objects called player1 and player2 are made using class Person.</p>
+        <p>For example, the values of player1 are:</p>
+        <p id="player1"></p>
+        <p>
+          A console.log statement will show on the console to display the
+          properties and their values for player 1 using this statement:
+          console.log("Player 1:", player1);
+        </p>
+      </div>
+
+      <section>
+        <h3>Using querySelector method of document object to change CSS</h3>
+        <p>My text will have an orange border.</p>
+        <p>
+          The orange border is set using querySelector for the "section
+          p:first-of-type" (deriving from the external javascript file).
+        </p>
+      </section>
+
+      <div>
+        <h3>
+          Using getElementByTagName and using a loop to style each selected
+          element
+        </h3>
+        <p>
+          This was used to underline the h1 heading at the top of this page.
+        </p>
+        <p>
+          Other ways to select HTML include getElementsByClassName,
+          getElementsByName and getElementById.
+        </p>
+      </div>
+
+      <div class="class-list-toggle">
+        <h3>
+          Using classList toggle and eventlistener to click css on and off
+        </h3>
+        <p>Click this section to toggle the purple dotted border.</p>
+        <p>
+          The classList property includes the following methods: toggle, add and
+          remove.
+        </p>
+      </div>
+
+      <div id="set-attribute-section">
+        <h3>Adding attributes to elements using setAttribute</h3>
+        <p>
+          The above heading is in italics because its class was applied using
+          the setAttribute method.
+        </p>
+        <p>The opposite of setAttribute is removeAttribute.</p>
+        <p>
+          In the console, one can check an element's attributes and their values
+          using hasAttribute and getAttribute.
+        </p>
+        <p>
+          Although the setAttribute is useful for simple attributes (eg alt,
+          src, href, id, target, type, aria-role, placeholder, etc), classList
+          is better for adding classes to elements.
+        </p>
+      </div>
+
+      <div>
+        <h3>Creating a for loop on an array to find the sum and the average</h3>
+        <p id="values"></p>
+        <p id="sum"></p>
+        <p id="result"></p>
+      </div>
+
+      <div>
+        <h3>How callbacks and higher order functions work together</h3>
+        <p>
+          A callback is a function passed as an argument to another function.
+        </p>
+        <p>
+          A higher order function receives a function as an argument or returns
+          a function as its output.
+        </p>
         <br />
-        <li>
-          <b>2nd variable</b> is assigned a <b>callback function</b> (like
-          multiple a value by 2):
-          <span id="callback-function"></span>
-        </li>
+        <p>Example:</p>
         <br />
-        <li>
-          <b>3rd variable</b> is assigned a <b>higher order function</b>: the
-          array's map method has the callback function passed to it as an
-          argument (3rd variable = 1st variable.map(2nd variable)).
-        </li>
-        <br />
-        <li>
-          <b>The result</b> is an array then contains all the original values
-          multiplied by two: <span id="hof-result"></span>
-        </li>
-        <br />
-      </ol>
+        <ol>
+          <li>
+            <b>1st variable</b> is assigned an array: <span id="array"></span>
+          </li>
+          <br />
+          <li>
+            <b>2nd variable</b> is assigned a <b>callback function</b> (like
+            multiple a value by 2):
+            <span id="callback-function"></span>
+          </li>
+          <br />
+          <li>
+            <b>3rd variable</b> is assigned a <b>higher order function</b>: the
+            array's map method has the callback function passed to it as an
+            argument (3rd variable = 1st variable.map(2nd variable)).
+          </li>
+          <br />
+          <li>
+            <b>The result</b> is an array that contains all the original values
+            multiplied by two: <span id="hof-result"></span>
+          </li>
+        </ol>
+      </div>
     </div>
     <br /><br /><br /><br /><br /><br />
     <a href="./index.html">Other Projects</a>
