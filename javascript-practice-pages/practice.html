@@ -9,10 +9,14 @@
   </head>
   <body>
     <h1>Various Learning Exercises</h1>
-    <br />
+    <div id="home-link">
+      <a href="./index.html" target="_blank" rel="noopener">Other Projects</a>
+    </div>
+
     <div id="wrapper">
       <div>
         <h3>Using alert and console.log functions on window.onload:</h3>
+        <br />
         <p>
           The alert box shows and a message is logged to the console when page
           loads (temporarily disabled while I am regularly updating this page).
@@ -21,12 +25,15 @@
 
       <div>
         <h3>Using a button to change the text of an element:</h3>
+        <br />
         <h4 id="demo">Hello World</h4>
-        <button onclick="changeText()">Click Me</button>
+        <br />
+        <button id="demo-button" onclick="changeText()">Click Me</button>
       </div>
 
       <div>
         <h3>If else statement:</h3>
+        <br />
         <p>
           A variable called "p" has a value of: <span id="p-variable"></span>
         </p>
@@ -39,6 +46,7 @@
 
       <div>
         <h3>Using switch statements:</h3>
+        <br />
         <p>
           A variable called favouriteCar is assigned the value of:
           <span id="switch-variable"></span>
@@ -59,6 +67,7 @@
           Using template literals to insert certain object property values into
           text:
         </h3>
+        <br />
         <p id="template-literal"></p>
         <p>
           The sentence above was created using an object called "animal",
@@ -76,6 +85,7 @@
 
       <div>
         <h3>Before template literals, there was string concatenation:</h3>
+        <br />
         <p>It looks like this:</p>
         <p>
           "I have a " + animal.color + " " + animal.type + " who is " +
@@ -87,6 +97,7 @@
 
       <div>
         <h3>Creating arrays and looping through them:</h3>
+        <br />
         <p id="fruits-list"></p>
         <p>
           A variable called "text" is assigned an empty string and then used
@@ -98,6 +109,7 @@
 
       <div>
         <h3>Classes as templates for objects:</h3>
+        <br />
         <p>
           A class called Person contains the properties: name, gender, age,
           hairColor, job, hobby.
@@ -114,6 +126,7 @@
 
       <section>
         <h3>Using querySelector method of document object to change CSS</h3>
+        <br />
         <p>My text will have an orange border.</p>
         <p>
           The orange border is set using querySelector for the "section
@@ -126,6 +139,7 @@
           Using getElementByTagName and using a loop to style each selected
           element
         </h3>
+        <br />
         <p>
           This was used to underline the h1 heading at the top of this page.
         </p>
@@ -139,6 +153,7 @@
         <h3>
           Using classList toggle and eventlistener to click css on and off
         </h3>
+        <br />
         <p>Click this section to toggle the purple dotted border.</p>
         <p>
           The classList property includes the following methods: toggle, add and
@@ -148,6 +163,7 @@
 
       <div id="set-attribute-section">
         <h3>Adding attributes to elements using setAttribute</h3>
+        <br />
         <p>
           The above heading is in italics because its class was applied using
           the setAttribute method.
@@ -166,6 +182,7 @@
 
       <div>
         <h3>Creating a for loop on an array to find the sum and the average</h3>
+        <br />
         <p id="values"></p>
         <p id="sum"></p>
         <p id="result"></p>
@@ -173,6 +190,7 @@
 
       <div>
         <h3>How callbacks and higher order functions work together</h3>
+        <br />
         <p>
           A callback is a function passed as an argument to another function.
         </p>
@@ -207,7 +225,5 @@
         </ol>
       </div>
     </div>
-    <br /><br /><br /><br /><br /><br />
-    <a href="./index.html">Other Projects</a>
   </body>
 </html>
