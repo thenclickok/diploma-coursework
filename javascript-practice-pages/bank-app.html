@@ -3,64 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bank-app.css" />
     <script src="projects-logic/bank-app/main.js" type="module" defer></script>
     <title>Bank App</title>
   </head>
   <body>
     <h1>Welcome to the Bank App</h1>
     <br />
+    <div id="wrapper">
+      <div id="account-details">
+        <h2>Account details</h2>
+        <br />
+        <p>Account holder:</p>
+        <p id="account-holder"></p>
+        <br />
+        <p>Account number:</p>
+        <p id="account-number"></p>
+      </div>
 
-    <div id="account-details">
-      <h2>Account details</h2>
-      <p>Account holder:</p>
-      <p id="account-holder"></p>
-      <br />
-      <p>Account number:</p>
-      <p id="account-number"></p>
+      <div id="account-actions">
+        <h2>Account Options</h2>
+        <br />
+        <div id="balance-section">
+          <button id="check-balance">CHECK BALANCE</button>
+          <p>Account balance:</p>
+          <p id="balance"></p>
+        </div>
+        <br />
+
+        <div id="deposit-section">
+          <label for="deposit-input"
+            >Enter deposit amount, then click DEPOSIT</label
+          ><br />
+          <input
+            type="number"
+            id="deposit-input"
+            name="deposit-input"
+            min="1"
+            max="100"
+          />
+          <button type="submit" id="deposit-submit">DEPOSIT</button>
+        </div>
+        <br />
+
+        <div id="withdrawal-section">
+          <label for="withdrawal-input"
+            >Enter withdrawal amount, then click WITHDRAW</label
+          ><br />
+          <input
+            type="number"
+            id="withdrawal-input"
+            name="withdrawal-input"
+            min="1"
+            max="100"
+          />
+          <button type="submit" id="withdrawal-submit">WITHDRAW</button>
+        </div>
+        <br />
+        <p id="message"></p>
+      </div>
     </div>
-    <br />
-
-    <div id="account-actions">
-      <h2>Account Options</h2>
-      <div id="balance-section">
-        <button id="check-balance">CHECK BALANCE</button>
-        <p>Account balance:</p>
-        <p id="balance"></p>
-      </div>
-      <br />
-
-      <div id="deposit-section">
-        <label for="deposit-input"
-          >Enter deposit amount, then click DEPOSIT</label
-        >
-        <input
-          type="number"
-          id="deposit-input"
-          name="deposit-input"
-          min="1"
-          max="100"
-        />
-        <button type="submit" id="deposit-submit">DEPOSIT</button>
-      </div>
-      <br />
-
-      <div id="withdrawal-section">
-        <label for="withdrawal-input"
-          >Enter withdrawal amount, then click WITHDRAW</label
-        >
-        <input
-          type="number"
-          id="withdrawal-input"
-          name="withdrawal-input"
-          min="1"
-          max="100"
-        />
-        <button type="submit" id="withdrawal-submit">WITHDRAW</button>
-      </div>
-      <br />
-      <p id="message"></p>
+    <div id="home-link">
+      <a href="./index.html" target="_blank" rel="noopener">Other Projects</a>
     </div>
-    <br /><br /><br /><br /><br /><br />
-    <a href="./index.html">Other Projects</a>
   </body>
 </html>
