@@ -12,7 +12,8 @@ export function drawBall(ctx, x, y, radius) {
 export function drawUI(ctx) {
   ctx.fillStyle = "black";
   ctx.font = "30px Arial";
-  ctx.fillText("Ball Game", 10, 40);
+  ctx.fillText("", 10, 40); /*I can put text inside the string 
+  if I want text inside canvas*/
 }
 
 export function clearCanvas(ctx, width, height) {
