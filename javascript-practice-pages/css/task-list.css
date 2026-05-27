@@ -1,0 +1,125 @@
+ .henny-penny-font {
+        font-family: "Henny Penny", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+    .gluten-font {
+    font-family: "Gluten", cursive;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    }
+
+    body {
+    background-color: rgb(237, 224, 224);
+    }
+
+    #list-container {
+    text-align: center;
+    width: 80%;
+    }
+
+    h1 {
+    text-align: center;
+    font-size: 45px;
+    }
+
+    .checkbox {
+    transform: scale(2);
+    margin-right: 15px;
+    accent-color: green;
+    }
+
+    .list-item {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 40px auto;
+    border: 2px solid black;
+    height: 60px;
+    width: 70%;
+    max-width: 700px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(177, 218, 177);
+    }
+
+    .delete-box {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    border-left: 2px solid black;
+    height: 60px;
+    width: 25px;
+    font-size: 30px;
+    }
+
+    .delete-box:hover {
+    cursor: pointer;
+    color: rgb(108, 17, 17);
+    }
+
+    .green-plus {
+    font-size: 50px;
+    color: green;
+    height: 10px;
+    width: 10px;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .green-plus:hover {
+    cursor: pointer;
+    color: rgb(18, 90, 18);
+    }
+
+    #add-list-item {
+    margin-left: calc(50% - 30px);
+    border: 2px solid black;
+    background-color: rgb(177, 218, 177);
+    }
+
+    .text-box {
+    width: 70%;
+    height: 60%;
+    font-size: 25px;
+    padding-left: 10px;
+    border-radius: 4px;
+    }
+
+    .list-item input[type="checkbox"]:checked + .text-box {
+    text-decoration: line-through;
+    color: gray;
+    }
+
+    #other-projects {
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-size: 20px;
+    color: black;
+    background-color: rgb(241, 154, 154);
+    max-width: fit-content;
+    margin: auto;
+    display: block;
+    }
+
+    #other-projects:hover {
+    background-color: rgb(243, 97, 97);
+    }
+
+    @media only screen and (min-width: 470px) {
+    .text-box {
+        width: 80%;
+    }
+    }

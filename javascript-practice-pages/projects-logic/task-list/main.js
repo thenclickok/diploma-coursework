@@ -11,11 +11,13 @@ addButton.addEventListener("click", function addElement() {
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
+  checkbox.classList.add("checkbox");
 
   const text = document.createElement("input");
   text.type = "text";
   text.maxLength = 30;
   text.classList.add("text-box");
+  text.classList.add("gluten-font");
 
   const deleteButton = document.createElement("div");
   deleteButton.classList.add("delete-box");
