@@ -20,18 +20,19 @@
 h1 {
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 25px 0;
  }
 
 #home-link {
-   margin:auto;
+   margin:20px auto;
    text-align: center;
    width:fit-content;
    padding: 20px;
    a {
     text-decoration: none;
-    border: 2px solid black;
-    padding: 5px;
-    background-color: yellow;
+    border: 3px solid black;
+    padding: 5px 10px;
+    background-color: rgb(243, 243, 124);
     color: black;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,29 +41,37 @@ h1 {
 }
 
 #home-link:hover a {
-    background-color: rgb(240, 136, 194);
+    background-color: yellow;
+}
+
+#demo {
+    font-family:cursive;
+    letter-spacing: 5px;
+    font-size: 20px;
 }
 
 #demo-button {
     margin:auto;
     text-align: center;
     width:fit-content;
-    border: 2px solid black;
-    padding: 5px;
-    background-color: yellow;
+    border: 3px solid black;
+    padding: 5px 10px;
+    background-color: rgb(243, 243, 124);
     color: black;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 10px;
+    font-size: 16px;
 }
 
 #demo-button:hover {
-    background-color: rgb(240, 136, 194);
+    background-color: yellow;
 }
 
 h3 {
     text-align: center;
-    background-color: yellow;
+    background-color: rgb(138, 239, 227);
+    border: 1px solid black;
     border-radius: 10px;
     padding: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

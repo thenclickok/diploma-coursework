@@ -5,7 +5,7 @@
  } 
 
 #wrapper {
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -14,17 +14,29 @@
     margin: 20px auto;
     text-align: center;
     padding: 30px;
-    background-color: rgb(226, 187, 115);
+    background-color: rgb(246, 226, 189);
 }
 
 canvas {
     border: 2px solid black;
     border-radius: 10px;
     background-color: white;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 p {
     margin: 1.5em 0;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 #home-link {
@@ -35,15 +47,16 @@ p {
    a {
     text-decoration: none;
     border: 2px solid black;
-    padding: 5px;
-    background-color: rgb(65, 65, 244);
+    padding: 5px 10px;
+    background-color: rgb(74, 74, 210);
     color: white;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
     border-radius: 10px;
 }
 }
 
 #home-link:hover a {
-    background-color: rgb(48, 48, 175);
+    background-color: rgb(32, 32, 159);
 }

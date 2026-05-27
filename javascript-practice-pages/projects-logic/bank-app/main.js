@@ -26,7 +26,7 @@ depositSubmit.addEventListener("click", () => {
   if (amount > 0) {
     account1.deposit(amount);
     document.getElementById("balance").textContent = `£${account1.balance}`;
-    document.getElementById("message").textContent = `Deposited: £${amount};`;
+    document.getElementById("message").textContent = `Deposited: £${amount}`;
   }
 });
 

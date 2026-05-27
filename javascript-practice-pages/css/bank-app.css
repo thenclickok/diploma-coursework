@@ -22,6 +22,11 @@
 h1 {
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+ }
+
+ label, p {
+    font-weight: 600;
  }
 
 #home-link {
