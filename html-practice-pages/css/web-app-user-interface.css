@@ -8,13 +8,99 @@
 
 body {
     background-color:black;
-    color:white;
+    color: white;
+}
+
+img {
+    background-color: white;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 #container {
     display: grid;
 
 
+}
+
+/*logo*/
+
+#logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+#logo label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#music-logo {
+    background-color: hotpink;
+}
+
+#links {
+    display: flex;
+    align-items:flex-start;
+    flex-direction: column;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    a {
+        display: flex;
+        align-items: center;    
+        justify-content: center;
+        gap: 5px;}
+}
+
+.new-playlist {
+    border: 2px solid white; 
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    color: black;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+#playlist-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px; 
+}
+
+#playlists {
+    display: none;
+    margin-left: 20px;
+}
+
+#playlist-toggle:checked ~ #playlists {
+    display: block;
+}
+
+/*hover effects*/
+
+#hamburger-menu:hover{
+    background-color: rgb(0, 234, 255);
+}
+
+#links img:hover {
+    background-color: rgb(0, 234, 255);
+}
+
+.new-playlist:hover{
+    background-color: rgb(0, 234, 255);
 }
 
 @media only screen and (min-width: 700px) {
