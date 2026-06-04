@@ -77,7 +77,6 @@ platforms and devices.-->
             />Library</a
           >
         </div>
-        <hr />
         <input type="checkbox" id="playlist-toggle" />
         <div id="playlists">
           <a href="#" class="new-playlist"
@@ -131,35 +130,63 @@ platforms and devices.-->
             <li><a href="#">Sign Out</a></li>
           </ul>
         </div>
-        <a href="#" id="app">Install App</a>
         <a href="#" id="notification"
           ><img
             src="web-app-images/notification.svg"
             alt="notification"
             width="30"
             height="30"
-          /><span id="tool-tip">Click to subscribe</span></a
+          />
+          <p id="tool-tip">Click to subscribe</p></a
         >
+        <a href="#" id="app">Install App</a>
       </div>
-      <div id="buttons">
-        <div id="relax" class="dropdown-container">
+      <div id="button-group">
+        <div id="relax" class="button">
           <input type="checkbox" id="relax-toggle" class="toggle-checkbox" />
           <label for="relax-toggle" class="toggle-button">Relax</label>
           <div class="dropdown-menu">
             <a href="#relax-1" class="play-button"
               ><img src="web-app-images/play.svg" width="15" height="15" /> Last
-              Cappuccino in Rio by Chris Haugen</a
-            >
+              Cappuccino in Rio by Chris Haugen
+            </a>
+          </div>
+        </div>
+
+        <div id="energise" class="button">
+          <input type="checkbox" id="energise-toggle" class="toggle-checkbox" />
+          <label for="energise-toggle" class="toggle-button">Energise</label>
+          <div class="dropdown-menu">
+            <a href="#energise-1" class="play-button"
+              ><img src="web-app-images/play.svg" width="15" height="15" />
+              Club Love by Everet Almond
+            </a>
           </div>
         </div>
       </div>
     </div>
     <footer>
       <div id="relax-1" class="player-wrapper">
-        <span>Now Playing: Last Cappuccino in Rio by Chris Haugen</span>
+        <p>
+          Now Playing: <br />
+          Last Cappuccino in Rio by Chris Haugen
+        </p>
         <audio controls>
           <source
             src="assets/relax-1-last-cappuccino-in-rio-by-chris-haugen.mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+      </div>
+
+      <div id="energise-1" class="player-wrapper">
+        <p>
+          Now Playing: <br />
+          Club Love by Everet Almond
+        </p>
+        <audio controls>
+          <source
+            src="assets/energise-1-club-love-by-everet-almond.mp3"
             type="audio/mpeg"
           />
         </audio>

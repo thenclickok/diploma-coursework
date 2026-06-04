@@ -34,6 +34,11 @@ a {
 
 /*logo*/
 
+#menu { 
+    border-right: 2px solid hotpink;
+    border-bottom: 2px solid yellow;
+}
+
 #logo {
     position: relative;
     display: flex;
@@ -92,6 +97,7 @@ a {
 #playlists {
     display: none;
     margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 #playlist-toggle:checked ~ #playlists {
@@ -105,6 +111,7 @@ a {
    flex-direction: column;
    align-items: flex-end;
    justify-content: space-evenly;
+   margin-bottom: 40px;
 }
 
 #search {
@@ -149,12 +156,13 @@ a {
 }
 
 #profile-menu {
+    z-index: 20;
     display: none;
     position: absolute;
     top: 10px;
     right: 50px;
-  border-radius: 5px;
-  border: 2px solid black;
+    border-radius: 5px;
+    border: 2px solid black;
     background-color: rgb(50, 49, 49);
     padding: 5px;
     li {
@@ -197,6 +205,57 @@ a {
     border: 2px solid black;
 }
 
+/*buttons*/
+
+#button-group {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  overflow-x: auto;
+  white-space: nowrap; 
+}
+
+.button {
+  position: relative;
+  flex: 0 0 15%; 
+  padding: 5px;
+}
+
+.toggle-button {
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute; 
+    cursor: pointer;
+    top: 120%;
+    left: 50%;
+    border-radius: 5px;
+    background-color: rgb(50, 49, 49);
+    padding: 5px;
+}
+
+.play-button {
+    display: block;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.toggle-checkbox:checked ~ .dropdown-menu {
+    display: block;
+}
+
 /*footer (player)*/
 
 footer {
@@ -207,12 +266,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 /* Hide ALL players by default */
 .player-wrapper {
     display: none;
-    padding: 20px;
+    padding: 40px;
     justify-content: space-between;
     align-items: center;
 }
@@ -220,13 +280,8 @@ footer {
 /* ONLY show the player that matches the current URL hash */
 .player-wrapper:target {
   display: flex;
-}
-
-.toggle-checkbox {
-    position: absolute;
-    opacity: 0;
-    width: 1px;
-    height: 1px;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /*hover effects*/
@@ -235,7 +290,7 @@ footer {
     background-color: rgb(0, 234, 255);
 }
 
-#app:hover, #profile-menu a:hover {
+#app:hover, #profile-menu a:hover, #tool-tip:hover, .toggle-button:hover, .play-button:hover {
     background-color: rgb(0, 234, 255);
     color: black;
 }
@@ -263,10 +318,12 @@ footer {
     }
 
     #options {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: end;
-        justify-items: center;
-        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+    }
+
+    .player-wrapper:target {
+        flex-direction: row;
     }
 }
