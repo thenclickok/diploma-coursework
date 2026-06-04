@@ -28,27 +28,134 @@ platforms and devices.-->
     <div id="container">
       <div id="menu">
         <div id="logo">
-          <label for="playlist-toggle"><img src="web-app-images/hamburger.svg" alt="hamburger-menu" id="hamburger-menu" width="30" height="30"/></label>
-          <img src="web-app-images/music-logo.svg" alt="music-logo" width="30" height="30" id="music-logo"/>
-          <img src="web-app-images/top-hits.png" alt="top-hits" width="60" height="30"/>
+          <label for="playlist-toggle"
+            ><img
+              src="web-app-images/hamburger.svg"
+              alt="hamburger-menu"
+              id="hamburger-menu"
+              width="30"
+              height="30"
+          /></label>
+          <img
+            src="web-app-images/music-logo.svg"
+            alt="music-logo"
+            width="30"
+            height="30"
+            id="music-logo"
+          />
+          <img
+            src="web-app-images/top-hits.png"
+            alt="top-hits"
+            width="60"
+            height="30"
+            id="top-hits"
+          />
         </div>
         <div id="links">
-          <a href="#"><img src="web-app-images/home.svg" alt="home" width="30" height="30"/>Home</a><br/>
-          <a href="#explore"><img src="web-app-images/explore.svg" alt="explore" width="30" height="30"/>Explore</a><br/>
-          <a href="#"><img src="web-app-images/library.svg" alt="library" width="30" height="30"/>Library</a>
+          <a href="#"
+            ><img
+              src="web-app-images/home.svg"
+              alt="home"
+              width="30"
+              height="30"
+            />Home</a
+          ><br />
+          <a href="#explore"
+            ><img
+              src="web-app-images/explore.svg"
+              alt="explore"
+              width="30"
+              height="30"
+            />Explore</a
+          ><br />
+          <a href="#"
+            ><img
+              src="web-app-images/library.svg"
+              alt="library"
+              width="30"
+              height="30"
+            />Library</a
+          >
         </div>
-        <hr>
-        <input type="checkbox" id="playlist-toggle"/>
+        <hr />
+        <input type="checkbox" id="playlist-toggle" />
         <div id="playlists">
-          <a href="#" class="new-playlist"><img src="web-app-images/plus.svg" alt="plus" width="30" height="30"/>New Playlist</a><br/>
-          <a href="#">Liked Songs</a><br/>
-          <a href="#">Running Tracks</a><br/>
-          <a href="#">Dance Mix</a><br/>
-          <a href="#">Love Songs</a><br/>
-          <a href="#">Rock Hits</a><br/>
+          <a href="#" class="new-playlist"
+            ><img
+              src="web-app-images/plus.svg"
+              alt="plus"
+              width="30"
+              height="30"
+            />New Playlist</a
+          ><br />
+          <a href="#">Liked Songs</a><br />
+          <a href="#">Running Tracks</a><br />
+          <a href="#">Dance Mix</a><br />
+          <a href="#">Love Songs</a><br />
+          <a href="#">Rock Hits</a><br />
           <a href="#">Dinner Jazz</a>
         </div>
-        
+      </div>
+
+      <div id="options">
+        <div id="search">
+          <label for="search-toggle">
+            <img
+              src="web-app-images/search.svg"
+              alt="search"
+              width="30"
+              height="30"
+          /></label>
+          <input type="checkbox" id="search-toggle" />
+          <input
+            type="text"
+            placeholder="search song library"
+            id="search-input"
+          />
+        </div>
+        <div id="profile-dropdown">
+          <input type="checkbox" id="profile-toggle" />
+          <label for="profile-toggle">
+            <img
+              src="web-app-images/profile.svg"
+              alt="profile"
+              width="30"
+              height="30"
+              id="profile"
+          /></label>
+          <ul id="profile-menu">
+            <li><h3>Joe Bloggs</h3></li>
+            <li><h4>joe.bloggs@example.com</h4></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Sign Out</a></li>
+          </ul>
+        </div>
+        <a href="#" id="app">Install App</a>
+        <a href="#" id="notification"
+          ><img
+            src="web-app-images/notification.svg"
+            alt="notification"
+            width="30"
+            height="30"
+          /><span id="tool-tip">Click to subscribe</span></a
+        >
+      </div>
+      <div id="buttons">
+        <div id="relax" class="dropdown-container">
+          <input type="checkbox" id="relax-toggle" class="toggle-checkbox" />
+          <label for="relax-toggle" class="toggle-button">Relax</label>
+          <div class="dropdown-menu">
+            <p>Last Cappuccino in Rio by Chris Haugen</p>
+            <audio
+              controls
+              src="assets/relax-1-last-cappuccino-in-rio-by-chris-haugen.mp3"
+            >
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 
