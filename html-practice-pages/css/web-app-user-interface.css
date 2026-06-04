@@ -197,6 +197,38 @@ a {
     border: 2px solid black;
 }
 
+/*footer (player)*/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hide ALL players by default */
+.player-wrapper {
+    display: none;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ONLY show the player that matches the current URL hash */
+.player-wrapper:target {
+  display: flex;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
 /*hover effects*/
 
 #hamburger-menu:hover, #links img:hover, .new-playlist:hover, #search img:hover, #notification img:hover, #profile:hover{

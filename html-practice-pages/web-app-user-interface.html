@@ -146,17 +146,25 @@ platforms and devices.-->
           <input type="checkbox" id="relax-toggle" class="toggle-checkbox" />
           <label for="relax-toggle" class="toggle-button">Relax</label>
           <div class="dropdown-menu">
-            <p>Last Cappuccino in Rio by Chris Haugen</p>
-            <audio
-              controls
-              src="assets/relax-1-last-cappuccino-in-rio-by-chris-haugen.mp3"
+            <a href="#relax-1" class="play-button"
+              ><img src="web-app-images/play.svg" width="15" height="15" /> Last
+              Cappuccino in Rio by Chris Haugen</a
             >
-              Your browser does not support the audio element.
-            </audio>
           </div>
         </div>
       </div>
     </div>
+    <footer>
+      <div id="relax-1" class="player-wrapper">
+        <span>Now Playing: Last Cappuccino in Rio by Chris Haugen</span>
+        <audio controls>
+          <source
+            src="assets/relax-1-last-cappuccino-in-rio-by-chris-haugen.mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+      </div>
+    </footer>
   </body>
 
   <!--credits for images
