@@ -156,7 +156,7 @@ a {
 }
 
 #profile-menu {
-    z-index: 20;
+    z-index: 10;
     display: none;
     position: absolute;
     top: 10px;
@@ -213,6 +213,7 @@ a {
   padding: 20px;
   overflow-x: auto;
   white-space: nowrap; 
+  height: 150px;
 }
 
 .button {
@@ -340,17 +341,19 @@ footer {
 
 /*credits hidden div table*/
 
-#credits-button  {
+#credits {
+    position: relative;
+}
+
+#credits-button {
     border: 2px solid yellow;
+    background-color: black;
     border-radius: 5px;
     padding: 5px 10px; 
     text-align: center;
     width: fit-content;
-    z-index: 17;
-}
-
-#credits {
-    position: relative;
+    z-index: 25; /* Higher than the container to stay clickable */
+    position: relative; /* Keeps it on top of the stacking context */
 }
 
 #credits-toggle {
@@ -361,13 +364,21 @@ footer {
 }
 
 .photo-credits-container {
-  display: none;
-  width: 400px;
-  max-height: 400px;
-  position:absolute;
-  top: 0;
-  right: 0;
-  background-color: black;
+    display: none;
+    width: 450px;       /* Widened slightly to give the table text more breathing room */
+    max-height: 300px;  /* Set a fixed maximum height */
+    overflow-y: auto;   /* Enables the vertical scrollbar for hidden data */
+    
+    /* Using fixed positioning keeps it floating over the page relative to the viewport */
+    position: fixed;
+    bottom: 80px;       /* Sits just above your fixed footer */
+    right: 20px;        /* Tucked neatly into the bottom-right corner */
+    
+    background-color: rgb(30, 30, 30); /* Dark grey so it's readable over a black background */
+    border: 2px solid rgb(0, 234, 255); /* Cyan border matching your hover accent colors */
+    border-radius: 8px;
+    z-index: 20;        /* Sits cleanly on top of other content */
+    padding: 10px;
 }
 
 #credits-toggle:checked ~ .photo-credits-container {
@@ -378,19 +389,23 @@ footer {
   width: 100%;
   border-collapse: collapse;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 13px; /* Slightly scaled down text for a compact widget feel */
   text-align: left;
+  color: white;   /* Ensures data text is visible against the container background */
 }
 
 .photo-credits-table th, 
 .photo-credits-table td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #dddddd;
+  padding: 8px 10px;
+  border-bottom: 1px solid #444444; /* Darker border dividing the rows */
 }
 
 .photo-credits-table th {
-  background-color: #f4f4f4;
-  color: #333333;
+  background-color: #222222;
+  color: rgb(0, 234, 255); /* Header links match your theme accent */
+  position: sticky;
+  top: 0; /* Keeps table headers visible while scrolling through credits */
+  z-index: 21;
 }
 
 /*hover effects*/
