@@ -353,6 +353,15 @@ a {
     margin-bottom: 30px;
 }
 
+/*top*/
+
+#top-albums {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
 /*footer (player)*/
 
 footer {
