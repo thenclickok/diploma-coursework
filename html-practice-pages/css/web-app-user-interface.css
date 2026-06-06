@@ -9,6 +9,7 @@
 body {
     background-color:black;
     color: white;
+    overflow-y: auto;
 }
 
 img {
@@ -98,10 +99,15 @@ a {
     display: none;
     margin-left: 20px;
     margin-bottom: 20px;
+    a {
+        border-radius: 5px;
+        width: fit-content;
+    }
 }
 
 #playlist-toggle:checked ~ #playlists {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 /*options*/
@@ -138,6 +144,7 @@ a {
     display: none;
     border-radius: 5px;
     padding: 5px;
+    width: 130px;
 }
 
 #search-toggle:checked ~ #search-input {
@@ -209,8 +216,8 @@ a {
 
 #button-group {
   display: flex;
-  align-items: flex-start;
-  padding: 20px;
+  align-items: center;
+  padding: 0px;
   overflow-x: auto;
   white-space: nowrap; 
   height: 150px;
@@ -218,7 +225,6 @@ a {
 
 .button {
   position: relative;
-  flex: 0 0 15%; 
   padding: 5px;
 }
 
@@ -236,15 +242,26 @@ a {
     height: 1px;
 }
 
-.dropdown-menu {
+.dropdown-menu-1 {
     display: none;
     position: absolute; 
     cursor: pointer;
-    top: 120%;
+    top: 100%;
     left: 50%;
     border-radius: 5px;
     background-color: rgb(50, 49, 49);
     padding: 5px;
+}
+
+.dropdown-menu-2 {
+   display: none;
+    position: absolute; 
+    cursor: pointer;
+    top: 100%;
+    right: 50%;
+    border-radius: 5px;
+    background-color: rgb(50, 49, 49);
+    padding: 5px; 
 }
 
 .play-button {
@@ -253,7 +270,11 @@ a {
     padding: 5px;
 }
 
-.toggle-checkbox:checked ~ .dropdown-menu {
+.toggle-checkbox:checked ~ .dropdown-menu-1 {
+    display: block;
+}
+
+.toggle-checkbox:checked ~ .dropdown-menu-2 {
     display: block;
 }
 
@@ -261,6 +282,14 @@ a {
 
 .album-container {
     max-width: 100px;
+    position: relative;
+}
+
+.album-play-icon {
+    position: absolute;
+    left: 28%;
+    top: 22%;
+    border: 2px solid black;
 }
 
 /* This makes the single link cover the entire album container */
@@ -301,7 +330,10 @@ a {
 }
 
 #more-toggle:checked ~ #hidden-songs {
-    display: block;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
 }
 
 #more-button {
@@ -310,6 +342,15 @@ a {
     padding: 5px 10px; 
     text-align: center;
     width: fit-content;
+}
+
+/*history*/
+
+#history-in-view {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
 }
 
 /*footer (player)*/
@@ -367,7 +408,7 @@ footer {
 
 .photo-credits-container {
     display: none;
-    width: 450px;       /* Widened slightly to give the table text more breathing room */
+    width: 350px;       /* Widened slightly to give the table text more breathing room */
     max-height: 300px;  /* Set a fixed maximum height */
     overflow-y: auto;   /* Enables the vertical scrollbar for hidden data */
     
@@ -414,6 +455,11 @@ footer {
 
 #hamburger-menu:hover, #links img:hover, .new-playlist:hover, #search img:hover, #notification img:hover, #profile:hover{
     background-color: rgb(0, 234, 255);
+}
+
+#playlists a:hover {
+    background-color: rgb(0, 234, 255);
+    color: black;
 }
 
 #app:hover, #profile-menu a:hover, #tool-tip:hover, .toggle-button:hover, .play-button:hover, #more-button:hover, #credits-button:hover {
