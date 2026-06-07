@@ -505,9 +505,8 @@ footer {
     background-color: rgb(0, 234, 255);
 }
 
-#playlists a:hover {
-    background-color: pink;
-    color: black;
+details a:hover {
+    color: rgb(0, 234, 255)
 }
 
 #app:hover, #profile-menu a:hover, #tool-tip:hover, .toggle-button:hover, .play-button:hover, #more-button:hover, #credits-button:hover {
