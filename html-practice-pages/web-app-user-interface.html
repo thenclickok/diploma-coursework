@@ -2140,5 +2140,14 @@ platforms and devices.-->
         </div>
       </div>
     </footer>
+    <script>
+      window.addEventListener("hashchange", () => {
+        const allAudioPlayers = document.querySelectorAll("audio");
+        allAudioPlayers.forEach((player) => {
+          player.pause();
+          player.currentTime = 0;
+        });
+      });
+    </script>
   </body>
 </html>
