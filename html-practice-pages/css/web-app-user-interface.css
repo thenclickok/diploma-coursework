@@ -103,6 +103,9 @@ a {
         border-radius: 5px;
         width: fit-content;
     }
+    div p {
+        color: orange;
+    }
 }
 
 #playlist-toggle:checked ~ #playlists {
