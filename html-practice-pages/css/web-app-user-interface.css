@@ -103,9 +103,14 @@ a {
         border-radius: 5px;
         width: fit-content;
     }
-    div p {
-        color: orange;
-    }
+}
+
+details {
+    color: hotpink;
+     a {
+    font-size: 12px;
+    padding: 3px;
+}
 }
 
 #playlist-toggle:checked ~ #playlists {
@@ -501,7 +506,7 @@ footer {
 }
 
 #playlists a:hover {
-    background-color: rgb(0, 234, 255);
+    background-color: pink;
     color: black;
 }
 
