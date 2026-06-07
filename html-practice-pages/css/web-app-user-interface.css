@@ -427,6 +427,10 @@ footer {
   }
 }
 
+audio {
+    width: 300px;
+}
+
 /*credits hidden div table*/
 
 #credits {
@@ -547,6 +551,10 @@ details a:hover {
     .player-wrapper:target {
         flex-direction: row;
         margin-bottom: 10px;
+    }
+
+    audio {
+        width: 500px;
     }
 
     #credits-button {
