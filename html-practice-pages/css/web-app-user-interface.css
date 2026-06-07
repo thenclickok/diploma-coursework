@@ -290,7 +290,7 @@ details {
 /*albums*/
 
 .album-container {
-    max-width: 100px;
+    flex: 0 0 100px; /* Prevent shrinking, maintain fixed width layout */
     position: relative;
 }
 
@@ -357,52 +357,45 @@ details {
     width: fit-content;
 }
 
-/*history*/
+/*sections: history, top, acoustics, explore*/
 
-#history-in-view {
+#history-in-view, #top-albums, #acoustics-albums {
     display: flex;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: flex-start; /* Changed from space-evenly */
+    gap: 15px;                  /* Keep consistent spacing between items */
+    overflow-x: auto;           /* Allows swiping left/right on mobile */
+    padding-bottom: 10px;       /* Keeps scrollbar clear of the text */
     margin-bottom: 30px;
+    
+    /* Smooth scrolling on mobile devices */
+    -webkit-overflow-scrolling: touch;
 }
-
-/*top*/
-
-#top-albums {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
-}
-
-/*acoustics*/
-
-#acoustics-albums {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
-}
-
-/*explore: new releases*/
 
 #explore-albums {
-    display: flex;
+display: flex;
     align-items: flex-start;
-    justify-content: space-evenly;
-    margin-bottom: 150px;
+    justify-content: flex-start; /* Changed from space-evenly */
+    gap: 15px;                  /* Keep consistent spacing between items */
+    overflow-x: auto;           /* Allows swiping left/right on mobile */
+    padding-bottom: 10px;       /* Keeps scrollbar clear of the text */
+    margin-bottom: 100px;
+    
+    /* Smooth scrolling on mobile devices */
+    -webkit-overflow-scrolling: touch;
 }
 
 /*footer (player)*/
 
 footer {
     position: fixed;
-    bottom: 0;
-    left: 20%;
-    width: 60%;
-    height: 150px;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: auto;
     text-align: center;
     z-index: 15;
+    background-color: #444444;
 }
 
 /* Hide ALL players by default */
@@ -428,7 +421,8 @@ footer {
 }
 
 audio {
-    width: 300px;
+    width: 90%;
+    max-width: 300px;
 }
 
 /*credits hidden div table*/
@@ -458,9 +452,10 @@ audio {
 
 .photo-credits-container {
     display: none;
-    width: 350px;       /* Widened slightly to give the table text more breathing room */
-    max-height: 300px;  /* Set a fixed maximum height */
-    overflow-y: auto;   /* Enables the vertical scrollbar for hidden data */
+   width: calc(100% - 40px); /* Keeps a 20px margin on both sides */
+    max-width: 350px;         /* Prevents it from getting too large on desktop */
+    max-height: 300px; 
+    overflow-y: auto;
     
     /* Using fixed positioning keeps it floating over the page relative to the viewport */
     position: fixed;
@@ -555,6 +550,7 @@ details a:hover {
 
     audio {
         width: 500px;
+        max-width: none;
     }
 
     #credits-button {
@@ -562,7 +558,7 @@ details a:hover {
     }
 
     footer {
-        left: 0%;
+        left: 0;
         width: 100%;
     }
 }
