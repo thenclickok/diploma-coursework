@@ -285,10 +285,14 @@ a {
     position: relative;
 }
 
+.play-centering {
+    position: relative;
+}
+
 .album-play-icon {
     position: absolute;
     left: 28%;
-    top: 22%;
+    top: 35%;
     border: 2px solid black;
 }
 
@@ -362,6 +366,24 @@ a {
     margin-bottom: 30px;
 }
 
+/*acoustics*/
+
+#acoustics-albums {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+/*explore: new releases*/
+
+#explore-albums {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-bottom: 150px;
+}
+
 /*footer (player)*/
 
 footer {
@@ -388,6 +410,12 @@ footer {
   justify-content: center;
   gap: 10px;
   padding: 10px;
+  p {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;;
+  }
 }
 
 /*credits hidden div table*/
