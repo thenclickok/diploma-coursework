@@ -183,10 +183,16 @@ platforms and devices.-->
           <p id="tool-tip">Click to subscribe</p></a
         >
         <a href="#" id="app">Install App</a>
+        <a href="index.html" id="other-projects">Other Projects</a>
       </div>
       <div id="button-group">
         <div id="relax" class="button">
-          <input type="checkbox" id="relax-toggle" class="toggle-checkbox" />
+          <input
+            type="radio"
+            id="relax-toggle"
+            class="toggle-checkbox"
+            name="mood-dropdown"
+          />
           <label for="relax-toggle" class="toggle-button">Relax</label>
           <div class="dropdown-menu-1">
             <a href="#relax-1" class="play-button"
@@ -197,7 +203,12 @@ platforms and devices.-->
         </div>
 
         <div id="energise" class="button">
-          <input type="checkbox" id="energise-toggle" class="toggle-checkbox" />
+          <input
+            type="radio"
+            id="energise-toggle"
+            class="toggle-checkbox"
+            name="mood-dropdown"
+          />
           <label for="energise-toggle" class="toggle-button">Energise</label>
           <div class="dropdown-menu-1">
             <a href="#energise-1" class="play-button"
@@ -209,9 +220,10 @@ platforms and devices.-->
 
         <div id="feel-good" class="button">
           <input
-            type="checkbox"
+            type="radio"
             id="feel-good-toggle"
             class="toggle-checkbox"
+            name="mood-dropdown"
           />
           <label for="feel-good-toggle" class="toggle-button">Feel Good</label>
           <div class="dropdown-menu-1">
@@ -223,7 +235,12 @@ platforms and devices.-->
         </div>
 
         <div id="exercise" class="button">
-          <input type="checkbox" id="exercise-toggle" class="toggle-checkbox" />
+          <input
+            type="radio"
+            id="exercise-toggle"
+            class="toggle-checkbox"
+            name="mood-dropdown"
+          />
           <label for="exercise-toggle" class="toggle-button">Exercise</label>
           <div class="dropdown-menu-2">
             <a href="#exercise-1" class="play-button"
@@ -234,7 +251,12 @@ platforms and devices.-->
         </div>
 
         <div id="party" class="button">
-          <input type="checkbox" id="party-toggle" class="toggle-checkbox" />
+          <input
+            type="radio"
+            id="party-toggle"
+            class="toggle-checkbox"
+            name="mood-dropdown"
+          />
           <label for="party-toggle" class="toggle-button">Party</label>
           <div class="dropdown-menu-2">
             <a href="#party-1" class="play-button"
@@ -245,7 +267,12 @@ platforms and devices.-->
         </div>
 
         <div id="focus" class="button">
-          <input type="checkbox" id="focus-toggle" class="toggle-checkbox" />
+          <input
+            type="radio"
+            id="focus-toggle"
+            class="toggle-checkbox"
+            name="mood-dropdown"
+          />
           <label for="focus-toggle" class="toggle-button">Focus</label>
           <div class="dropdown-menu-2">
             <a href="#focus-1" class="play-button"
@@ -259,7 +286,12 @@ platforms and devices.-->
         </div>
 
         <div id="love" class="button">
-          <input type="checkbox" id="love-toggle" class="toggle-checkbox" />
+          <input
+            type="radio"
+            id="love-toggle"
+            class="toggle-checkbox"
+            name="mood-dropdown"
+          />
           <label for="love-toggle" class="toggle-button">Love</label>
           <div class="dropdown-menu-2">
             <a href="#love-1" class="play-button"
@@ -273,7 +305,12 @@ platforms and devices.-->
         </div>
 
         <div id="sad" class="button">
-          <input type="checkbox" id="sad-toggle" class="toggle-checkbox" />
+          <input
+            type="radio"
+            id="sad-toggle"
+            class="toggle-checkbox"
+            name="mood-dropdown"
+          />
           <label for="sad-toggle" class="toggle-button">Sad</label>
           <div class="dropdown-menu-2">
             <a href="#sad-1" class="play-button"
@@ -282,20 +319,28 @@ platforms and devices.-->
             </a>
           </div>
         </div>
+
+        <div id="clear-all" class="button">
+          <input
+            type="radio"
+            id="clear-toggle"
+            name="mood-dropdown"
+            class="toggle-checkbox"
+          />
+          <label for="clear-toggle" class="clear-button">Reset</label>
+        </div>
       </div>
 
       <div id="listen-again">
-        <div id="username">
-          <img
-            src="web-app-images/profile.svg"
-            width="60"
-            height="60"
-            alt="profile"
-          />
-          <div>
-            <h1>Joe Bloggs</h1>
-            <h3>Listen Again</h3>
-          </div>
+        <img
+          src="web-app-images/profile.svg"
+          width="60"
+          height="60"
+          alt="profile"
+        />
+        <div>
+          <h1>Joe Bloggs</h1>
+          <h3>Listen Again</h3>
         </div>
         <label for="more-toggle" id="more-button">More</label>
       </div>
@@ -1628,7 +1673,7 @@ platforms and devices.-->
     </div>
     <footer>
       <div id="relax-1" class="player-wrapper">
-        <p>Now Playing: Last Cappuccino in Rio by Chris Haugen</p>
+        <p>Click to Play: Last Cappuccino in Rio by Chris Haugen</p>
         <audio controls>
           <source
             src="assets/relax-1-last-cappuccino-in-rio-by-chris-haugen.mp3"
@@ -1638,7 +1683,7 @@ platforms and devices.-->
       </div>
 
       <div id="energise-1" class="player-wrapper">
-        <p>Now Playing: Club Love by Everet Almond</p>
+        <p>Click to Play: Club Love by Everet Almond</p>
         <audio controls>
           <source
             src="assets/energise-1-club-love-by-everet-almond.mp3"
@@ -1648,7 +1693,7 @@ platforms and devices.-->
       </div>
 
       <div id="feel-good-1" class="player-wrapper">
-        <p>Now Playing: A Sitar Story by Hanu Dixit</p>
+        <p>Click to Play: A Sitar Story by Hanu Dixit</p>
         <audio controls>
           <source
             src="assets/feel-good-1-a-sitar-story-by-hanu-dixit.mp3"
@@ -1658,7 +1703,7 @@ platforms and devices.-->
       </div>
 
       <div id="exercise-1" class="player-wrapper">
-        <p>Now Playing: Drum or Bass by Ryan Stasik</p>
+        <p>Click to Play: Drum or Bass by Ryan Stasik</p>
         <audio controls>
           <source
             src="assets/exercise-1-drum-or-bass-by-ryan-stasik.mp3"
@@ -1668,7 +1713,7 @@ platforms and devices.-->
       </div>
 
       <div id="party-1" class="player-wrapper">
-        <p>Now Playing: Goes Like This by The Everlove</p>
+        <p>Click to Play: Goes Like This by The Everlove</p>
         <audio controls>
           <source
             src="assets/party-1-goes-like-this-by-the-everlove.mp3"
@@ -1678,7 +1723,7 @@ platforms and devices.-->
       </div>
 
       <div id="focus-1" class="player-wrapper">
-        <p>Now Playing: Caverns by Density and Time</p>
+        <p>Click to Play: Caverns by Density and Time</p>
         <audio controls>
           <source
             src="assets/focus-1-caverns-by-density-and-time.mp3"
@@ -1688,7 +1733,7 @@ platforms and devices.-->
       </div>
 
       <div id="love-1" class="player-wrapper">
-        <p>Now Playing: Beautiful Wonderful You by Jason Fabus</p>
+        <p>Click to Play: Beautiful Wonderful You by Jason Fabus</p>
         <audio controls>
           <source
             src="assets/love-1-beautiful-wonderful-you-by-jason-fabus.mp3"
@@ -1698,7 +1743,7 @@ platforms and devices.-->
       </div>
 
       <div id="sad-1" class="player-wrapper">
-        <p>Now Playing: Lost Myself by Lalanne</p>
+        <p>Click to Play: Lost Myself by Lalanne</p>
         <audio controls>
           <source
             src="assets/sad-1-lost-myself-by-lalanne.mp3"
@@ -1708,7 +1753,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-1" class="player-wrapper">
-        <p>Now Playing: Cued for Liftoff by Dan Lebo Lebowitz, Tone Seeker</p>
+        <p>Click to Play: Cued for Liftoff by Dan Lebo Lebowitz, Tone Seeker</p>
         <audio controls>
           <source
             src="assets/history-1-cued-for-liftoff-by-dan-lebo-lebowitz-tone-seeker.mp3"
@@ -1718,7 +1763,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-2" class="player-wrapper">
-        <p>Now Playing: Hava Nagila by E's Jammy Jams</p>
+        <p>Click to Play: Hava Nagila by E's Jammy Jams</p>
         <audio controls>
           <source
             src="assets/history-2-hava-nagila-by-es-jammy-jams.mp3"
@@ -1728,7 +1773,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-3" class="player-wrapper">
-        <p>Now Playing: I Got You by Anno Domini Beats</p>
+        <p>Click to Play: I Got You by Anno Domini Beats</p>
         <audio controls>
           <source
             src="assets/history-3-i-got-you-by-anno-domini-beats.mp3"
@@ -1738,14 +1783,14 @@ platforms and devices.-->
       </div>
 
       <div id="history-4" class="player-wrapper">
-        <p>Now Playing: Lion by Dyalla</p>
+        <p>Click to Play: Lion by Dyalla</p>
         <audio controls>
           <source src="assets/history-4-lion-by-dyalla.mp3" type="audio/mpeg" />
         </audio>
       </div>
 
       <div id="history-5" class="player-wrapper">
-        <p>Now Playing: On the Beach by Telecasted</p>
+        <p>Click to Play: On the Beach by Telecasted</p>
         <audio controls>
           <source
             src="assets/history-5-on-the-beach-by-telecasted.mp3"
@@ -1755,7 +1800,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-6" class="player-wrapper">
-        <p>Now Playing: Slip Away by Blue Beat Review</p>
+        <p>Click to Play: Slip Away by Blue Beat Review</p>
         <audio controls>
           <source
             src="assets/history-6-slip-away-by-blue-beat-review.mp3"
@@ -1765,7 +1810,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-7" class="player-wrapper">
-        <p>Now Playing: So Sweet by Lish Grooves</p>
+        <p>Click to Play: So Sweet by Lish Grooves</p>
         <audio controls>
           <source
             src="assets/history-7-so-sweet-by-lish-grooves.mp3"
@@ -1775,7 +1820,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-8" class="player-wrapper">
-        <p>Now Playing: Speedy Gonzalo by Inaban</p>
+        <p>Click to Play: Speedy Gonzalo by Inaban</p>
         <audio controls>
           <source
             src="assets/history-8-speedy-gonzalo-by-inaban.mp3"
@@ -1785,7 +1830,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-9" class="player-wrapper">
-        <p>Now Playing: To Loom is to Love by the Mini Vandals</p>
+        <p>Click to Play: To Loom is to Love by the Mini Vandals</p>
         <audio controls>
           <source
             src="assets/history-9-to-loom-is-to-love-by-the-mini-vandals.mp3"
@@ -1795,7 +1840,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-10" class="player-wrapper">
-        <p>Now Playing: Tonight Again by Rod Kim, featuring Mostly Moss</p>
+        <p>Click to Play: Tonight Again by Rod Kim, featuring Mostly Moss</p>
         <audio controls>
           <source
             src="assets/history-10-tonight-again-by-rod-kim-featuring-mostly-moss.mp3"
@@ -1805,7 +1850,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-11" class="player-wrapper">
-        <p>Now Playing: Vaquero Perdido by The Mini Vandals</p>
+        <p>Click to Play: Vaquero Perdido by The Mini Vandals</p>
         <audio controls>
           <source
             src="assets/history-11-vaquero-perdido-by-the-mini-vandals.mp3"
@@ -1815,7 +1860,7 @@ platforms and devices.-->
       </div>
 
       <div id="history-12" class="player-wrapper">
-        <p>Now Playing: Wait Too Long by Anno Domini Beats</p>
+        <p>Click to Play: Wait Too Long by Anno Domini Beats</p>
         <audio controls>
           <source
             src="assets/history-12-wait-too-long-by-anno-domini-beats.mp3"
@@ -1825,7 +1870,7 @@ platforms and devices.-->
       </div>
 
       <div id="top-1" class="player-wrapper">
-        <p>Now Playing: Helium by Track Tribe</p>
+        <p>Click to Play: Helium by Track Tribe</p>
         <audio controls>
           <source
             src="assets/top-1-helium-by-track-tribe.mp3"
@@ -1835,7 +1880,7 @@ platforms and devices.-->
       </div>
 
       <div id="top-2" class="player-wrapper">
-        <p>Now Playing: Hope by Cumbria Deli</p>
+        <p>Click to Play: Hope by Cumbria Deli</p>
         <audio controls>
           <source
             src="assets/top-2-hope-by-cumbria-deli.mp3"
@@ -1845,14 +1890,14 @@ platforms and devices.-->
       </div>
 
       <div id="top-3" class="player-wrapper">
-        <p>Now Playing: Kurt by Cheel</p>
+        <p>Click to Play: Kurt by Cheel</p>
         <audio controls>
           <source src="assets/top-3-kurt-by-cheel.mp3" type="audio/mpeg" />
         </audio>
       </div>
 
       <div id="top-4" class="player-wrapper">
-        <p>Now Playing: Love Fast by Ryan Stasik and Kanika Moore</p>
+        <p>Click to Play: Love Fast by Ryan Stasik and Kanika Moore</p>
         <audio controls>
           <source
             src="assets/top-4-love-fast-by-ryan-stasik-and-kanika-moore.mp3"
@@ -1862,7 +1907,7 @@ platforms and devices.-->
       </div>
 
       <div id="top-5" class="player-wrapper">
-        <p>Now Playing: Never Coming Down by The Soundlings</p>
+        <p>Click to Play: Never Coming Down by The Soundlings</p>
         <audio controls>
           <source
             src="assets/top-5-never-coming-down-by-the-soundlings.mp3"
@@ -1872,7 +1917,7 @@ platforms and devices.-->
       </div>
 
       <div id="top-6" class="player-wrapper">
-        <p>Now Playing: Paradise by Anno Domini Beats</p>
+        <p>Click to Play: Paradise by Anno Domini Beats</p>
         <audio controls>
           <source
             src="assets/top-6-paradise-by-anno-domini-beats.mp3"
@@ -1882,7 +1927,7 @@ platforms and devices.-->
       </div>
 
       <div id="acoustics-1" class="player-wrapper">
-        <p>Now Playing: Lobe by The Mini Vandals</p>
+        <p>Click to Play: Lobe by The Mini Vandals</p>
         <audio controls>
           <source
             src="assets/acoustic-1-lobe-by-the-mini-vandals.mp3"
@@ -1892,7 +1937,7 @@ platforms and devices.-->
       </div>
 
       <div id="acoustics-2" class="player-wrapper">
-        <p>Now Playing: Mi Dispiace by The Mini Vandals</p>
+        <p>Click to Play: Mi Dispiace by The Mini Vandals</p>
         <audio controls>
           <source
             src="assets/acoustic-2-mi-dispiace-by-the-mini-vandals.mp3"
@@ -1902,7 +1947,7 @@ platforms and devices.-->
       </div>
 
       <div id="acoustics-3" class="player-wrapper">
-        <p>Now Playing: Portcullis by The Mini Vandals</p>
+        <p>Click to Play: Portcullis by The Mini Vandals</p>
         <audio controls>
           <source
             src="assets/acoustic-3-portcullis-by-the-mini-vandals.mp3"
@@ -1912,7 +1957,7 @@ platforms and devices.-->
       </div>
 
       <div id="acoustics-4" class="player-wrapper">
-        <p>Now Playing: Powdered Waltz by The Mini Vandals</p>
+        <p>Click to Play: Powdered Waltz by The Mini Vandals</p>
         <audio controls>
           <source
             src="assets/acoustic-4-powdered-waltz-by-the-mini-vandals.mp3"
@@ -1922,7 +1967,7 @@ platforms and devices.-->
       </div>
 
       <div id="acoustics-5" class="player-wrapper">
-        <p>Now Playing: Shadoma by The Mini Vandals</p>
+        <p>Click to Play: Shadoma by The Mini Vandals</p>
         <audio controls>
           <source
             src="assets/acoustic-5-shadoma-by-the-mini-vandals.mp3"
@@ -1933,7 +1978,8 @@ platforms and devices.-->
 
       <div id="acoustics-6" class="player-wrapper">
         <p>
-          Now Playing: The Girl From Saint Anne Des Plaines by The Mini Vandals
+          Click to Play: The Girl From Saint Anne Des Plaines by The Mini
+          Vandals
         </p>
         <audio controls>
           <source
@@ -1944,7 +1990,7 @@ platforms and devices.-->
       </div>
 
       <div id="new-1" class="player-wrapper">
-        <p>Now Playing: Chica Linda by Quincas Moreira</p>
+        <p>Click to Play: Chica Linda by Quincas Moreira</p>
         <audio controls>
           <source
             src="assets/new-1-chica-linda-by-quincas-moreira.mp3"
@@ -1954,7 +2000,7 @@ platforms and devices.-->
       </div>
 
       <div id="new-2" class="player-wrapper">
-        <p>Now Playing: Chosen by Anno Domini Beats</p>
+        <p>Click to Play: Chosen by Anno Domini Beats</p>
         <audio controls>
           <source
             src="assets/new-2-chosen-by-anno-domini-beats.mp3"
@@ -1964,7 +2010,7 @@ platforms and devices.-->
       </div>
 
       <div id="new-3" class="player-wrapper">
-        <p>Now Playing: Frailach 2 by E's Jammy Jams</p>
+        <p>Click to Play: Frailach 2 by E's Jammy Jams</p>
         <audio controls>
           <source
             src="assets/new-3-frailach-2-by-es-jammy-jams.mp3"
@@ -1974,7 +2020,7 @@ platforms and devices.-->
       </div>
 
       <div id="new-4" class="player-wrapper">
-        <p>Now Playing: Glacial Pace by Lish Grooves</p>
+        <p>Click to Play: Glacial Pace by Lish Grooves</p>
         <audio controls>
           <source
             src="assets/new-4-glacial-pace-by-lish-grooves.mp3"
@@ -1984,7 +2030,7 @@ platforms and devices.-->
       </div>
 
       <div id="new-5" class="player-wrapper">
-        <p>Now Playing: Higher Water by Blue Deer Studio</p>
+        <p>Click to Play: Higher Water by Blue Deer Studio</p>
         <audio controls>
           <source
             src="assets/new-5-higher-water-by-blue-deer-studio.mp3"
@@ -1994,7 +2040,7 @@ platforms and devices.-->
       </div>
 
       <div id="new-6" class="player-wrapper">
-        <p>Now Playing: Lazy Laura by Quincas Moreira</p>
+        <p>Click to Play: Lazy Laura by Quincas Moreira</p>
         <audio controls>
           <source
             src="assets/new-6-lazy-laura-by-quincas-moreira.mp3"
@@ -2004,7 +2050,7 @@ platforms and devices.-->
       </div>
 
       <div id="love-2" class="player-wrapper">
-        <p>Now Playing: Two Things by Anno Domini Beats</p>
+        <p>Click to Play: Two Things by Anno Domini Beats</p>
         <audio controls>
           <source
             src="assets/love-2-two-things-by-anno-domini-beats.mp3"
@@ -2014,7 +2060,7 @@ platforms and devices.-->
       </div>
 
       <div id="love-3" class="player-wrapper">
-        <p>Now Playing: Would It Matter? by Rose Campbell</p>
+        <p>Click to Play: Would It Matter? by Rose Campbell</p>
         <audio controls>
           <source
             src="assets/love-3-would-it-matter-by-rose-campbell.mp3"
@@ -2024,7 +2070,7 @@ platforms and devices.-->
       </div>
 
       <div id="dance-1" class="player-wrapper">
-        <p>Now Playing: Press Fuse by French Fuse</p>
+        <p>Click to Play: Press Fuse by French Fuse</p>
         <audio controls>
           <source
             src="assets/dance-1-press-fuse-by-french-fuse.mp3"
@@ -2034,7 +2080,9 @@ platforms and devices.-->
       </div>
 
       <div id="dance-2" class="player-wrapper">
-        <p>Now Playing: Saddle Up and Dance by Ryan Stasik and Kanika Moore</p>
+        <p>
+          Click to Play: Saddle Up and Dance by Ryan Stasik and Kanika Moore
+        </p>
         <audio controls>
           <source
             src="assets/dance-2-saddle-up-and-dance-by-ryan-stasik-and-kanika-moore.mp3"
@@ -2044,7 +2092,7 @@ platforms and devices.-->
       </div>
 
       <div id="dance-3" class="player-wrapper">
-        <p>Now Playing: Uwu Victory by Rod Kim</p>
+        <p>Click to Play: Uwu Victory by Rod Kim</p>
         <audio controls>
           <source
             src="assets/dance-3-uwu-victory-by-rod-kim.mp3"
@@ -2054,7 +2102,7 @@ platforms and devices.-->
       </div>
 
       <div id="relax-2" class="player-wrapper">
-        <p>Now Playing: Sleep Music Number One by Chris Haugen</p>
+        <p>Click to Play: Sleep Music Number One by Chris Haugen</p>
         <audio controls>
           <source
             src="assets/relax-2-sleep-music.number-one-by-chris-haugen.mp3"
@@ -2064,7 +2112,7 @@ platforms and devices.-->
       </div>
 
       <div id="relax-3" class="player-wrapper">
-        <p>Now Playing: The Dance Before by Nathan Moore</p>
+        <p>Click to Play: The Dance Before by Nathan Moore</p>
         <audio controls>
           <source
             src="assets/relax-3-the-dance-before-by-nathan-moore.mp3"
@@ -2074,7 +2122,7 @@ platforms and devices.-->
       </div>
 
       <div id="rock-1" class="player-wrapper">
-        <p>Now Playing: Overrated by The Soundlings</p>
+        <p>Click to Play: Overrated by The Soundlings</p>
         <audio controls>
           <source
             src="assets/rock-1-overrated-by-the-soundlings-featuring-ruby-jay.mp3"
@@ -2084,7 +2132,7 @@ platforms and devices.-->
       </div>
 
       <div id="rock-2" class="player-wrapper">
-        <p>Now Playing: Walking the Wire by National Sweetheart</p>
+        <p>Click to Play: Walking the Wire by National Sweetheart</p>
         <audio controls>
           <source
             src="assets/rock-2-walking-the-wire-by-national-sweetheart.mp3"
@@ -2095,7 +2143,7 @@ platforms and devices.-->
 
       <div id="rock-3" class="player-wrapper">
         <p>
-          Now Playing: Willow Gozilla by Zenith Bikini featuring Rusty James
+          Click to Play: Willow Gozilla by Zenith Bikini featuring Rusty James
           Miller
         </p>
         <audio controls>
@@ -2107,7 +2155,7 @@ platforms and devices.-->
       </div>
 
       <div id="jazz-1" class="player-wrapper">
-        <p>Now Playing: Orquidario by Quincas Moreira</p>
+        <p>Click to Play: Orquidario by Quincas Moreira</p>
         <audio controls>
           <source
             src="assets/jazz-1-orquidario-by-quincas-moreira.mp3"
@@ -2117,7 +2165,7 @@ platforms and devices.-->
       </div>
 
       <div id="jazz-2" class="player-wrapper">
-        <p>Now Playing: Song for Boggy by Karneef</p>
+        <p>Click to Play: Song for Boggy by Karneef</p>
         <audio controls>
           <source
             src="assets/jazz-2-song-for-boggy-by-karneef.mp3"
@@ -2127,7 +2175,7 @@ platforms and devices.-->
       </div>
 
       <div id="jazz-3" class="player-wrapper">
-        <p>Now Playing: What If So Then by Karneef</p>
+        <p>Click to Play: What If So Then by Karneef</p>
         <audio controls>
           <source
             src="assets/jazz-3-what-if-so-then-by-karneef.mp3"
