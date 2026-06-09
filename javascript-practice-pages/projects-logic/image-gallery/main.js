@@ -10,7 +10,7 @@ function addImage() {
     newImage.src = userInput;
     removeButton.textContent = "Remove";
     removeButton.classList.add("remove-button");
-    removeButton.onclick = () => display.removeChild(newDiv);
+    removeButton.addEventListener("click", () => display.removeChild(newDiv));
     newDiv.appendChild(newImage);
     newDiv.appendChild(removeButton);
     display.appendChild(newDiv);

@@ -1,13 +1,147 @@
-.gallery-item {
+/*page layout*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(244, 208, 244);
+}
+
+/*fonts*/
+
+.title-font {
+  font-family: "Fascinate Inline", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.other-font {
+  font-family: "Patrick Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*heading*/
+
+h1 {
+    font-size: 50px;
+}
+
+heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:antiquewhite;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+label{
+    font-size: 22px;
+}
+
+#image-url {
+    font-size: 20px;
+    width: 300px;
+    padding: 5px 10px;
+    border-radius: 5px;
     border: 2px solid black;
+}
+
+#add-button {
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: rgb(229, 138, 229);
+}
+
+/*image display area*/
+
+#image-display {
+    width: 100%;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    gap: 10px;
+}
+
+/*image and remove button*/
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid black;
     border-radius: 10px;
 }
 
 .remove-button {
-    border: 2px solid black;
-    color: black;
+    border: 2px solid white;
+    color: white;
     background-color: red;
     max-width: fit-content;
     padding: 5px 10px;
-    margin: auto;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/*footer*/
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#other-projects {
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color:antiquewhite;
+    color: black;
+    text-decoration: none;
+}
+
+/*hover effects*/
+
+.gallery-item:hover > .remove-button {
+    display: block;
+}
+
+#add-button:hover {
+    background-color: rgb(193, 95, 193);
+}
+
+#other-projects:hover {
+    background-color:rgb(211, 189, 158);
+}
+
+/*media query*/
+
+@media only screen and (min-width: 700px) {
+    #image-display {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #image-display {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
