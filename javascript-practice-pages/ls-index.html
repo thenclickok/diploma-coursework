@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="css/ls-index.css" />
     <script
       src="https://kit.fontawesome.com/ef92c49664.js"
       crossorigin="anonymous"
@@ -17,23 +17,16 @@
     <title>Home</title>
   </head>
   <body>
-    <!--font-family: 
-    
-    // <weight>: Use a value from 100 to 900
-// <uniquifier>: Use a unique and descriptive class name
-
-.inter-<uniquifier> {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
--->
     <header>
-      <p>My ITOL Vault</p>
+      <h3>My ITOL Vault</h3>
       <nav>
-        <a href="ls-new-entry.html" target="_blank" rel="noopener">New Entry</a>
+        <a
+          href="ls-new-entry.html"
+          target="_blank"
+          rel="noopener"
+          id="new-entry-button"
+          >New Entry</a
+        >
         <a href="ls-vault.html" target="_blank" rel="noopener"
           ><i class="fa-solid fa-circle-user"></i
         ></a>
@@ -42,6 +35,43 @@
     <main>
       <!--writing icon: <i class="fa-regular fa-pen-to-square"></i>
           -->
+      <div id="main-container">
+        <div id="main-title">
+          <h1>Daily Reflections</h1>
+          <p>
+            A sanctuary for your thoughts. Captured in the quiet moments between
+            the noise of the world.
+          </p>
+        </div>
+        <div id="card-container">
+          <div class="card-1">
+            <p>March 24, 2026</p>
+            <h2>
+              The silence of the early morning is where the best ideas are born.
+            </h2>
+            <p>
+              I woke up at 5am today. There is a specific kind of stillness that
+              exists before the city wakes up. It feels like the world is
+              holding its breath. I spent an hour just watching the light change
+              from a deep indigo to a soft, hazy gold...
+            </p>
+          </div>
+
+          <div class="card-2">
+            <p>December 25, 2025</p>
+            <h2>Rethinking the project architecture.</h2>
+            <p>
+              Spent the afternoon sketching out new user flows. Simplification
+              is harder than complexity.
+            </p>
+            <div class="tag-div">
+              <p class="tag">Work</p>
+              <p class="tag">Ideas</p>
+            </div>
+          </div>
+        </div>
+        <div id="feeling-inspired"></div>
+      </div>
     </main>
     <footer>
       <!--copyright icon:  <i class="fa-regular fa-copyright"></i>    

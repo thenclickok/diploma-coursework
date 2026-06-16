@@ -1,0 +1,22 @@
+/*page layout and font styles*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400; 
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h2 {
+  font-weight: 700; 
+}
