@@ -53,6 +53,7 @@ nav a {
 
 main {
   background-color: #f5f5f5;
+  padding-bottom: 30px;
 }
 
 #main-container {
@@ -90,6 +91,7 @@ main {
   gap: 20px;
   background-color: #ffffff;
   padding: 20px;
+  border-radius: 5px;
   p {
     font-size: 14px;
   }
@@ -104,6 +106,7 @@ main {
   gap: 20px;
   background-color: #f0f0f0;
   padding: 20px;
+  border-radius: 5px;
   h2 {
     font-size: 18px;
   }
@@ -122,4 +125,77 @@ main {
   background-color: #ffffff;
   border-radius: 5px;
   padding: 4px 8px;
+}
+
+/*feeling inspired*/
+
+#feeling-inspired {
+  border: 2px dotted rgb(202, 198, 198);
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  i {
+    font-size: 30px;
+    color: grey;
+  }
+   p { 
+    font-size: 12px;
+  }
+}
+
+#start-writing {
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  text-underline-offset: 8px;
+  margin-top: 15px;
+}
+
+/*footer*/
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  color: grey;
+  font-size: 12px;
+  color: rgb(177, 169, 169);
+  background-color: #f5fafa;
+  a {
+    color: rgb(177, 169, 169);
+  }
+}
+
+/*media query*/
+
+@media only screen and (max-width: 700px){
+  #main-container {
+    margin: 0 20px;
+  }
+
+  #main-title {
+    align-items: center;
+    p {
+      max-width: unset;
+      text-align: center;
+    }
+  }
+
+  #card-container {
+    grid-template-columns: 1fr;
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: column;
+    a {
+      padding: 5px;
+    }
+  }
 }
