@@ -1,0 +1,189 @@
+/*page layout and font styles*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400; 
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h3 {
+  font-weight: 700; 
+}
+
+/*header*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5fafa;
+  padding: 10px;
+  font-weight: 700;
+  nav i {
+    color: black;
+    font-size: 18px;
+  }
+}
+
+#nav-middle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#nav-middle a {
+  color: grey;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+#vault-page {
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  font-size: 12px;
+}
+
+#nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#profile-icon {
+  padding: 5px;
+  border-radius: 8px;
+}
+
+#new-entry-link {
+  background-color: black;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+main {
+  background-color: #f5f5f5;
+  padding-bottom: 30px;
+}
+
+#main-container {
+  margin: 0 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-title {
+  padding: 30px 0;
+  p {
+  font-size: 12px;
+  max-width: 60%;
+  padding: 10px 0;
+  line-height: 1.6;
+  }
+}
+
+#card-container {
+  position: relative;
+  i {
+     position: absolute;
+     top: 5px;
+     right: 5px;
+  }
+}
+
+.card {
+  background-color: #ffffff;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.card-date {
+  font-size: 12px;
+  padding: 10px 0;
+  color: grey;
+}
+
+.tag {
+  background-color: #e6dcdc;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin-left: 10px;
+}
+
+.card-title {
+  color: black;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+.card-content {
+  font-size: 14px;
+  color: grey;
+}
+
+
+/*footer*/
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  color: grey;
+  font-size: 12px;
+  color: rgb(177, 169, 169);
+  background-color: #f5fafa;
+  a {
+    color: rgb(177, 169, 169);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+
+/*hover effects*/
+
+#journal-link:hover, #collections-link:hover, #settings-link:hover, #profile-icon:hover {
+  background-color: rgb(238, 238, 100);
+}
+
+#new-entry-link:hover, footer a:hover {
+  background-color: rgb(238, 238, 100);
+  color: black;
+}
+
+/*media query*/
+
+@media only screen and (max-width: 700px) {
+  #nav-middle, #nav-right {
+    flex-direction: column;
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: column;
+    a {
+      padding: 5px;
+    }
+  }
+}
