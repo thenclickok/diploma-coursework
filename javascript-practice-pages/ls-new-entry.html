@@ -23,10 +23,8 @@
         <a href="ls-vault.html" target="_blank" rel="noopener" id="archive-link"
           >Archive</a
         >
-        <a href="#" target="_blank" rel="noopener" id="new-entry-link"
-          >New Entry</a
-        >
-        <a href="ls-index.html" target="_blank" rel="noopener"
+        <span id="new-entry-page">New Entry</span>
+        <a href="ls-index.html" target="_blank" rel="noopener" id="profile-icon"
           ><i class="fa-solid fa-circle-user"></i
         ></a>
       </nav>
@@ -38,9 +36,36 @@
       </div>
       <div class="tag-div">
         <div class="tag"><i class="fa-solid fa-face-grin"></i>Thoughtful</div>
-        <button id="add-tag">+ Add Tag</button>
+        <button type="button" id="add-tag">+ Add Tag</button>
       </div>
-      <div></div>
+      <div id="reflection-div">
+        <p id="side-note">
+          DEPTH INSIGHT <br /><br />
+          <i
+            >Write without judgment. The velium only remembers what you choose
+            to ink.</i
+          >
+        </p>
+        <textarea
+          id="reflection"
+          rows="10"
+          cols="40"
+          placeholder="Begin your reflection..."
+        ></textarea>
+      </div>
+      <div id="options">
+        <div id="options-left">
+          <button type="button" id="memory-button">
+            <i class="fa-solid fa-image"></i><span> Insert Memory</span></button
+          ><button type="button" id="private-button">
+            <i class="fa-solid fa-lock"></i><span> Private</span>
+          </button>
+        </div>
+        <div id="options-right">
+          <button type="button" id="discard-button">Discard</button
+          ><button type="button" id="save-entry-button">Save Entry</button>
+        </div>
+      </div>
     </main>
     <footer>
       <div id="copyright">
