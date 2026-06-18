@@ -100,24 +100,21 @@ main {
   }
 }
 
-#card-container {
-  position: relative;
-  i {
-     position: absolute;
-     top: 5px;
-     right: 5px;
-  }
-}
-
 .card {
+  position: relative;
   background-color: #ffffff;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-.card-date {
+.card i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.card-date-tag {
   font-size: 12px;
   padding: 10px 0;
   color: grey;
@@ -136,11 +133,19 @@ main {
   padding: 10px 0;
 }
 
-.card-content {
+.card-content, .more-content {
   font-size: 14px;
   color: grey;
 }
 
+.more-content {
+  display: none;
+}
+
+.more-content.is-open {
+  display: block;
+  margin-top: 10px;
+}
 
 /*footer*/
 
