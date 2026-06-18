@@ -24,18 +24,30 @@
           >Archive</a
         >
         <span id="new-entry-page">New Entry</span>
-        <a href="ls-index.html" target="_blank" rel="noopener"
-          ><i class="fa-solid fa-circle-user"></i
+        <a
+          href="ls-index.html"
+          target="_blank"
+          rel="noopener"
+          id="profile-icon"
+          aria-label="profile"
+          ><i class="fa-solid fa-circle-user" aria-hidden="true"></i
         ></a>
       </nav>
     </header>
     <main>
       <div id="new-entry-title">
-        <p id="date-today"></p>
-        <h2 id="untitled-reflection">Untitled Reflection</h2>
+        <p id="date-today">Wednesday May 22, 2022</p>
+        <input
+          type="text"
+          id="untitled-reflection"
+          placeholder="Untitled Reflection"
+          required
+        />
       </div>
       <div class="tag-div">
-        <div class="tag"><i class="fa-solid fa-face-grin"></i>Thoughtful</div>
+        <div class="tag">
+          <i class="fa-solid fa-face-grin" aria-hidden="true"></i>Thoughtful
+        </div>
         <button type="button" id="add-tag">+ Add Tag</button>
       </div>
       <div id="reflection-div">
@@ -56,9 +68,11 @@
       <div id="options">
         <div id="options-left">
           <button type="button" id="memory-button">
-            <i class="fa-solid fa-image"></i><span> Insert Memory</span></button
+            <i class="fa-solid fa-image" aria-hidden="true"></i
+            ><span> Insert Memory</span></button
           ><button type="button" id="private-button">
-            <i class="fa-solid fa-lock"></i><span> Private</span>
+            <i class="fa-solid fa-lock" aria-hidden="true"></i
+            ><span> Private</span>
           </button>
         </div>
         <div id="options-right">
@@ -69,7 +83,7 @@
     </main>
     <footer>
       <div id="copyright">
-        <i class="fa-regular fa-copyright"></i
+        <i class="fa-regular fa-copyright" aria-hidden="true"></i
         ><span>2026 My ITOL Vault. Designesd for reflection.</span>
       </div>
       <nav>
