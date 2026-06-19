@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/ef92c49664.js"
       crossorigin="anonymous"
     ></script>
+    <script src="projects-logic/local-storage/new-entry.js" defer></script>
     <title>Editor</title>
   </head>
   <body>
@@ -35,51 +36,67 @@
       </nav>
     </header>
     <main>
-      <div id="new-entry-title">
-        <p id="date-today">Wednesday May 22, 2022</p>
-        <input
-          type="text"
-          id="untitled-reflection"
-          placeholder="Untitled Reflection"
-          required
-        />
-      </div>
-      <div class="tag-div">
-        <div class="tag">
-          <i class="fa-solid fa-face-grin" aria-hidden="true"></i>Thoughtful
+      <form id="entry-form">
+        <div id="new-entry-title">
+          <p id="date-today"></p>
+          <input type="hidden" id="hidden-date-input" name="entryDate" />
+          <input
+            type="text"
+            id="untitled-reflection"
+            name="title"
+            placeholder="Untitled Reflection"
+            minlength="3"
+            maxlength="25"
+            required
+          />
         </div>
-        <button type="button" id="add-tag">+ Add Tag</button>
-      </div>
-      <div id="reflection-div">
-        <p id="side-note">
-          DEPTH INSIGHT <br /><br />
-          <i
-            >Write without judgment. The velium only remembers what you choose
-            to ink.</i
-          >
-        </p>
-        <textarea
-          id="reflection"
-          rows="10"
-          cols="40"
-          placeholder="Begin your reflection..."
-        ></textarea>
-      </div>
-      <div id="options">
-        <div id="options-left">
-          <button type="button" id="memory-button">
-            <i class="fa-solid fa-image" aria-hidden="true"></i
-            ><span> Insert Memory</span></button
-          ><button type="button" id="private-button">
-            <i class="fa-solid fa-lock" aria-hidden="true"></i
-            ><span> Private</span>
-          </button>
+        <div class="tag-div">
+          <div class="tag">
+            <i class="fa-solid fa-face-grin" aria-hidden="true"></i>Thoughtful
+          </div>
+          <button type="button" id="add-tag">+ Add Tag</button
+          ><input
+            type="text"
+            id="tag-input"
+            name="custom-tag"
+            maxlength="10"
+            placeholder="New tag..."
+          />
         </div>
-        <div id="options-right">
-          <button type="button" id="discard-button">Discard</button
-          ><button type="button" id="save-entry-button">Save Entry</button>
+        <div id="reflection-div">
+          <p id="side-note">
+            DEPTH INSIGHT <br /><br />
+            <i
+              >Write without judgment. The velium only remembers what you choose
+              to ink.</i
+            >
+          </p>
+          <textarea
+            id="reflection"
+            name="reflection-content"
+            rows="10"
+            cols="40"
+            minlength="5"
+            maxlength="75"
+            placeholder="Begin your reflection..."
+          ></textarea>
         </div>
-      </div>
+        <div id="options">
+          <div id="options-left">
+            <button type="button" id="memory-button">
+              <i class="fa-solid fa-image" aria-hidden="true"></i
+              ><span> Insert Memory</span></button
+            ><button type="button" id="private-button">
+              <i class="fa-solid fa-lock" aria-hidden="true"></i
+              ><span> Private</span>
+            </button>
+          </div>
+          <div id="options-right">
+            <button type="reset" id="discard-button">Discard</button
+            ><button type="submit" id="save-entry-button">Save Entry</button>
+          </div>
+        </div>
+      </form>
     </main>
     <footer>
       <div id="copyright">

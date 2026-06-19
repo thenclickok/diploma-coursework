@@ -131,6 +131,20 @@ main {
   cursor: pointer;
 }
 
+#tag-input {
+  border-radius: 5px;
+  padding: 4px;
+  border: 1px solid rgb(211, 204, 204);
+  outline-color: black;
+  display: none;
+}
+
+.display-input {
+  display: block !important;
+}
+
+
+
 /*reflection*/
 
 #reflection-div {
