@@ -1,6 +1,7 @@
 //getting the stored entry data from localStorage
 
-const savedEntries = JSON.parse(localStorage.getItem("entries")) || [];
+const savedEntries =
+  JSON.parse(localStorage.getItem("entries")).slice(0, 5) || [];
 
 //using the data to create blog entries for the home page
 

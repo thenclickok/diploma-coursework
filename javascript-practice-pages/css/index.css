@@ -27,7 +27,8 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80vh;
+    min-height: 80vh;
+    padding: 20px 0;
     gap: 10px;
 }
 
@@ -77,6 +78,26 @@ footer {
 
     
 /*media queries*/
+
+/* Adjustments for mobile landscape / short screens */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        background-image: url("../images/index-large-background.jpg"); /* Switch to horizontal background */
+    }
+
+    h1 {
+        font-size: 1.8rem; 
+    }
+
+    li {
+        font-size: 1.1rem;
+        padding: 2px;
+    }
+    
+    nav {
+        padding: 10px;
+    }
+}
 
 @media (min-width: 1024px) {
     body {
