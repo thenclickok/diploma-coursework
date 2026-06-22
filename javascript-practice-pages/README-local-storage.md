@@ -30,3 +30,5 @@ The pages each have their own CSS file and JS file.
 ##MDN documentation for localStorage
 
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+![Alternative text](javascript-practice-pages.netlify.app/images/ls-screenshot.png)
