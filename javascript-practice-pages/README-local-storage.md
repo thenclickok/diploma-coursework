@@ -10,7 +10,7 @@ There are three HTML pages (Home, All Entries and Editor) linked together.
 
 The pages each have their own CSS file and JS file.
 
-## Files
+## Files:
 
 - Home: ls-index.html / ls-index.css / index.js
 - All Entries: ls-vault.html / ls-vault.css / vault.js
@@ -27,8 +27,10 @@ The pages each have their own CSS file and JS file.
 - .slice() to access only a selection of the array items (5 most recent entries) for display on the home page
 - document.createElement and innerHTML to create the card templates
 
-## MDN documentation for localStorage
+## MDN documentation for localStorage:
 
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+## Screenshot of website:
 
 ![Alternative text](https://javascript-practice-pages.netlify.app/images/ls-screenshot.png)
