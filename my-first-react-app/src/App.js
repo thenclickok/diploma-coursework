@@ -4,6 +4,7 @@ import ProfileCard from "./ProfileCard";
 import woman1 from "./woman1.jpg";
 import man1 from "./man1.jpg";
 import woman2 from "./woman2.jpg";
+import VariableDisplay from "./VariableDisplay";
 
 function App() {
   const profiles = [
@@ -45,6 +46,7 @@ function App() {
           />
         ))}
       </div>
+      <VariableDisplay />
     </div>
   );
 }
