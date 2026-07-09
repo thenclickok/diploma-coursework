@@ -45,7 +45,7 @@
 .profile-card p {
   font-family:Georgia, 'Times New Roman', Times, serif;
   max-width:70%;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 
 .profile-card ul {
