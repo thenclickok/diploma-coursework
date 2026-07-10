@@ -75,6 +75,35 @@
   height: 50%;
 }
 
+.variable-display {
+  padding: 10px;
+  background-color: grey;
+  padding-top: 80px;
+  h1 { 
+    text-align: center;
+  }
+}
+
+.variable-display-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px auto;
+  box-shadow: 5px 5px 5px black;
+  p{
+    text-align: left;
+    width: 100%;
+  }
+  ol {
+    width:fit-content;
+    text-align:left;
+  }
+}
+
 @media only screen and (min-width: 700px) {
   .profile-cards-container {
     grid-template-columns: 1fr 1fr;

@@ -5,7 +5,7 @@ function Header() {
     <header className="App-header">
       <img src={myLogo} className="App-logo" alt="logo" />
       <h1>Welcome to My First React App</h1>
-      <p>The possibilities are endless</p>
+      <p>Check out my Profile and Variable Display sections below!</p>
     </header>
   );
 }
