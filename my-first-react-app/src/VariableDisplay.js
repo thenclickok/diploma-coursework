@@ -14,7 +14,7 @@ function VariableDisplay() {
       return (
         <div>
           <h1 style={{ color: "red" }}>{stringVar}</h1>
-          <p>
+          <p style={{ fontWeight: "bold" }}>
             The title above is red because the number below is greater than 10.
           </p>
         </div>
@@ -23,7 +23,7 @@ function VariableDisplay() {
       return (
         <div>
           <h1 style={{ color: "green" }}>{stringVar}</h1>
-          <p>
+          <p style={{ fontWeight: "bold" }}>
             The title above is green because the number below is ten or less.
           </p>
         </div>
@@ -39,22 +39,24 @@ function VariableDisplay() {
     <div className="variable-display">
       <div className="variable-display-container">
         {renderTitleAndMessage()}
-        <p>Number: {numberVar}</p>
-        <p>Boolean: {booleanVar}</p>
-        <p>
-          The boolean value above is blank because a boolean value cannot be
+        <p style={{ marginLeft: "20px" }}>Number: {numberVar}</p>
+        <p style={{ fontWeight: "bold" }}>
+          The boolean value below is blank because a boolean value cannot be
           displayed as text.
         </p>
-        <p>The list below is created from the array values.</p>
-        <p>It uses the map method to create list items:</p>
+        <p style={{ marginLeft: "20px" }}>Boolean: {booleanVar}</p>
+        <p style={{ fontWeight: "bold" }}>
+          The list below is created from the array values. It uses the map
+          method to create list items:
+        </p>
         <ol>
           {arrayVar.map((item, index) => (
             <ArrayItem item={item} key={index} />
           ))}
         </ol>
-        <p>Here's an object and it's values: </p>
-        <p>
-          name:{objectVar.name}, age:{objectVar.age}, role:
+        <p style={{ fontWeight: "bold" }}>Here's an object and its values:</p>
+        <p style={{ marginLeft: "20px" }}>
+          Name: {objectVar.name} <br /> Age: {objectVar.age} <br /> Role:{" "}
           {objectVar.role}
         </p>
       </div>
