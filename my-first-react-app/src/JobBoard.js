@@ -21,7 +21,7 @@ const JobBoard = () => {
   };
 
   return (
-    <div>
+    <div className="JobBoard">
       <h1>{companyName}</h1>
       <p>{getJobMessage()}</p>
       <p>Expected number of jobs next week: {expectedJobs()}</p>
