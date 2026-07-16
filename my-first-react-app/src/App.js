@@ -4,6 +4,7 @@ import JobBoard from "./JobBoard";
 import ProfileDisplay from "./ProfileDisplay";
 import StyledButton from "./StyledButton";
 import VariableDisplay from "./VariableDisplay";
+import JobCounter from "./JobCounter";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <VariableDisplay />
       <JobBoard />
       <StyledButton />
+      <JobCounter />
     </div>
   );
 }
