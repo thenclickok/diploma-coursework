@@ -1,4 +1,3 @@
-import "./App.css";
 import Header from "./Header";
 import JobBoard from "./JobBoard";
 import ProfileDisplay from "./ProfileDisplay";
