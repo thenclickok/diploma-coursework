@@ -5,6 +5,7 @@ import StyledButton from "./StyledButton";
 import VariableDisplay from "./VariableDisplay";
 import JobCounter from "./JobCounter";
 import AdvancedJobCounter from "./AdvancedJobCounter";
+import DynamicForm from "./DynamicForm";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <StyledButton />
       <JobCounter />
       <AdvancedJobCounter />
+      <DynamicForm />
     </div>
   );
 }

@@ -221,6 +221,73 @@
   margin: 20px auto;
 }
 
+/*dynamic form commponent*/
+
+.dynamic-form {
+  border: 2px solid black;
+  width: fit-content;
+  margin: 20px auto;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: white;
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    li {
+      text-align: start;
+      margin: 0 30px;
+    }
+  }
+}
+
+.input-submit-div {
+  border: 2px solid black;
+  width: fit-content;
+  margin: 20px auto;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+  input {
+    min-height: 20px;
+    border-radius: 3px;
+  }
+  button {
+    border-radius: 3px;
+    background-color: rgb(234, 87, 111);
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px grey;
+  }
+  button:hover {
+      background-color: rgb(171, 57, 74);
+    }
+}
+
+.p-tag {
+  border: 2px solid black;
+  border-radius: 5px;
+  min-height: 20px;
+  width: 90%;
+  max-width: 200px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.submitted-list {
+  min-height: 20px;
+  width: 20px auto;
+  max-width: 200px;
+  word-wrap: break-word;
+  gap: 20px;
+}
 
 /*media queries*/
 
