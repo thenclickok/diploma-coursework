@@ -6,6 +6,7 @@ import VariableDisplay from "./VariableDisplay";
 import JobCounter from "./JobCounter";
 import AdvancedJobCounter from "./AdvancedJobCounter";
 import DynamicForm from "./DynamicForm";
+import BotListManager from "./BotListManager";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <JobCounter />
       <AdvancedJobCounter />
       <DynamicForm />
+      <BotListManager />
     </div>
   );
 }
