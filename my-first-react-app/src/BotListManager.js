@@ -24,6 +24,13 @@ const BotListManager = () => {
       );
     });
   };
+
+  const statusColors = {
+    Running: "green",
+    Completed: "blue",
+    Stopped: "red",
+  };
+
   return (
     <div className="bot-list-manager">
       <h1>Bot List Manager</h1>
@@ -31,7 +38,12 @@ const BotListManager = () => {
         {bots.map((bot) => (
           <li key={bot.id}>
             <h2>{bot.name}</h2>
-            <p>Status: {bot.status}</p>
+            <p>
+              Status:{" "}
+              <span style={{ color: statusColors[bot.status] }}>
+                {bot.status}
+              </span>
+            </p>
             <p>Task: {bot.task}</p>
             <button onClick={() => triggerJob(bot.id)}>Trigger Job</button>
           </li>
