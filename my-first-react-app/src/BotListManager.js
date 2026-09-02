@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const BotListManager = () => {
   const [bots, setBots] = useState([
@@ -78,60 +78,69 @@ const BotListManager = () => {
   return (
     <div className="bot-list-manager">
       <h1>Bot List Manager</h1>
-      <ul>
-        {filteredBots.map((bot) => (
-          <li key={bot.id}>
-            <h2>{bot.name}</h2>
-            <p>
-              Status:{" "}
-              <span style={{ color: statusColors[bot.status] }}>
-                {bot.status}
-              </span>
-            </p>
-            <p>Task: {bot.task}</p>
-            <button onClick={() => triggerJob(bot.id)}>Trigger Job</button>
-            <button onClick={() => deleteBot(bot.id)}>Delete Bot</button>
-          </li>
-        ))}
-      </ul>
-      <form onSubmit={handleSubmit}>
-        <h2>Add New Bot</h2>
-        <input
-          type="text"
-          placeholder="Bot Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          onBlur={() => setName(name.trim())} // Trim whitespace when user leaves the input field
-          required
-        />
-        <select value={status} onChange={(e) => setStatus(e.target.value)}>
-          <option value="Running">Running</option>
-          <option value="Completed">Completed</option>
-          <option value="Stopped">Stopped</option>
-        </select>
+      <div className="bot-box">
+        <div>
+          <form onSubmit={handleSubmit} className="add-new-bot">
+            <h2>Add New Bot</h2>
+            <input
+              type="text"
+              placeholder="Bot Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              onBlur={() => setName(name.trim())} // Trim whitespace when user leaves the input field
+              required
+            />
+            <select value={status} onChange={(e) => setStatus(e.target.value)}>
+              <option value="Running">Running</option>
+              <option value="Completed">Completed</option>
+              <option value="Stopped">Stopped</option>
+            </select>
 
-        <input
-          type="text"
-          placeholder="Task Description"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          onBlur={() => setTask(task.trim())} // Trim whitespace when user leaves the input field
-          required
-        />
-        <button type="submit">Submit new bot</button>
-      </form>
-      <div>
-        <h2>Filter Bots by Status</h2>
-        <button onClick={() => setFilterStatus("Running")}>
-          Show Running Bots
-        </button>
-        <button onClick={() => setFilterStatus("Stopped")}>
-          Show Stopped Bots
-        </button>
-        <button onClick={() => setFilterStatus("Completed")}>
-          Show Completed Bots
-        </button>
-        <button onClick={() => setFilterStatus("All")}>Show All Bots</button>
+            <input
+              type="text"
+              placeholder="Task Description"
+              value={task}
+              onChange={(e) => setTask(e.target.value)}
+              onBlur={() => setTask(task.trim())} // Trim whitespace when user leaves the input field
+              required
+            />
+            <button type="submit">Submit new bot</button>
+          </form>
+          <div className="filter-buttons">
+            <h2>Filter Bots by Status</h2>
+            <button onClick={() => setFilterStatus("Running")}>
+              Show Running Bots
+            </button>
+            <button onClick={() => setFilterStatus("Stopped")}>
+              Show Stopped Bots
+            </button>
+            <button onClick={() => setFilterStatus("Completed")}>
+              Show Completed Bots
+            </button>
+            <button onClick={() => setFilterStatus("All")}>
+              Show All Bots
+            </button>
+          </div>
+        </div>
+        <ul>
+          <h2>Current Bots:</h2>
+          {filteredBots.map((bot) => (
+            <li key={bot.id}>
+              <h2>{bot.name}</h2>
+              <p>
+                Status:{" "}
+                <span style={{ color: statusColors[bot.status] }}>
+                  {bot.status}
+                </span>
+              </p>
+              <p>Task: {bot.task}</p>
+              <button onClick={() => triggerJob(bot.id)}>
+                Trigger Job
+              </button>{" "}
+              <button onClick={() => deleteBot(bot.id)}>Delete Bot</button>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
