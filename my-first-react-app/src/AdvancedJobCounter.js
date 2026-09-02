@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const AdvancedJobCounter = () => {
   const [environment, setEnvironment] = useState("Production");
@@ -23,7 +23,7 @@ const AdvancedJobCounter = () => {
   };
 
   const handleResetJobs = () => {
-    updateJobCount((jobCount) => 0);
+    updateJobCount(0);
     console.log("Jobs: 0");
   };
 
