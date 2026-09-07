@@ -7,6 +7,7 @@ import JobCounter from "./JobCounter";
 import AdvancedJobCounter from "./AdvancedJobCounter";
 import DynamicForm from "./DynamicForm";
 import BotListManager from "./BotListManager";
+import DynamicBotManager from "./DynamicBotManager";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <AdvancedJobCounter />
       <DynamicForm />
       <BotListManager />
+      <DynamicBotManager />
     </div>
   );
 }
