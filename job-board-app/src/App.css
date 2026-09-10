@@ -1,1 +1,85 @@
+/*page layout*/
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*Header*/
+
+header {
+    text-align: center;
+    background-color: rgb(237, 231, 231);
+    padding: 10px;
+}
+
+.toggle-button {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    background-color: rgb(250, 250, 109);
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    box-shadow: 4px 4px black;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toggle-button:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px;
+}
+
+/*Job Item*/
+
+.job-item {
+    margin: 10px;
+    ul {
+        padding: 10px;
+       li {
+        list-style-type: none;
+       }
+    }
+}
+
+/*The statuses are capitalised in the jobs object. 
+Alternative is to use toLowerCase() in the className template literal (in JobItem.js).*/
+.job-item.Running {
+    color: blue;
+    border-left: 4px solid blue;
+}
+
+.job-item.Completed {
+    color: green;
+    border-left: 4px solid green;
+}
+
+.job-item.Pending {
+    color: orange;
+    border-left: 4px solid orange;
+}
+
+/*Job List*/
+
+.content-container {
+    flex: 1; /*pushes header and footer to top and bottom
+    - only possible because I used diplay flex on .App*/
+}
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/*Footer*/
+
+footer {
+    text-align: center;
+    background-color: rgb(237, 231, 231);
+    padding: 10px;
+}
 
