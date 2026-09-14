@@ -1,5 +1,7 @@
-const JobItem = ({ job }) => {
+//the onDeleteJob is a prop of JobList
+const JobItem = ({ job, onDeleteJob }) => {
   //implement conditional rendering based on job status
+
   return (
     <div className={`job-item ${job.status}`}>
       <ul>
@@ -7,6 +9,7 @@ const JobItem = ({ job }) => {
         <li>Status: {job.status}</li>
         <li>ID: {job.id}</li>
       </ul>
+      <button onClick={() => onDeleteJob(job.id)}>Delete Job</button>
     </div>
   );
 };

@@ -63,6 +63,12 @@ function App() {
     }
   };
 
+  const deleteJob = (id) => {
+    setJobs((prevJobs) => {
+      return prevJobs.filter((job) => job.id !== id);
+    });
+  };
+
   return (
     <div className="App">
       <Header />
@@ -97,6 +103,7 @@ function App() {
           type="number"
           name="id"
           value={id}
+          //valueAsNumber changes the default string into a number so "5" becomes the number 5
           onChange={(e) => setId(e.target.valueAsNumber || "")}
           placeholder=" Job ID"
           required
@@ -108,11 +115,16 @@ function App() {
       </form>
 
       <main className="content-container">
-        {showJobs && <JobList jobs={jobs} />}
+        {showJobs && <JobList jobs={jobs} onDeleteJob={deleteJob} />}
       </main>
       <Footer />
     </div>
   );
 }
+
+/*App.js gets the deleteJob function, 
+then its JobList gets the onDeleteJob prop which takes the above function.
+Then the onDeleteJob prop is passed to the JobList component 
+and then to the JobItem component.*/
 
 export default App;
