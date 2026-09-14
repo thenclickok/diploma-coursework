@@ -13,6 +13,7 @@ header {
     text-align: center;
     background-color: rgb(237, 231, 231);
     padding: 10px;
+    border-bottom: 1px solid black;
 }
 
 /*Toggle button*/
@@ -67,6 +68,9 @@ header {
 
 .job-item {
     margin: 10px;
+    border: 3px solid black;
+    border-radius: 8px;
+    background-color: white;
     ul {
         padding: 10px;
        li {
@@ -79,17 +83,14 @@ header {
 Alternative is to use toLowerCase() in the className template literal (in JobItem.js).*/
 .job-item.Running {
     color: blue;
-    border-left: 4px solid blue;
 }
 
 .job-item.Completed {
     color: green;
-    border-left: 4px solid green;
 }
 
 .job-item.Pending {
     color: orange;
-    border-left: 4px solid orange;
 }
 
 /*Job List*/
@@ -98,6 +99,7 @@ Alternative is to use toLowerCase() in the className template literal (in JobIte
     border: 2px solid black;
     border-radius: 8px;
     margin: 10px;
+    background-color: rgb(237, 231, 231);
     flex: 1; /*pushes header and footer to top and bottom
     - only possible because I used diplay flex on .App*/
 }
@@ -113,9 +115,11 @@ Alternative is to use toLowerCase() in the className template literal (in JobIte
 
 footer {
     text-align: center;
-    background-color: rgb(237, 231, 231);
+    background-color: rgb(130, 128, 128);
+    color: white;
     padding: 10px;
     position: sticky;
     bottom: 0;
+    border-top: 1px solid white;
 }
 

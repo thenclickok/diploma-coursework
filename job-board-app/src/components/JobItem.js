@@ -9,7 +9,9 @@ const JobItem = ({ job, onDeleteJob }) => {
         <li>Status: {job.status}</li>
         <li>ID: {job.id}</li>
       </ul>
-      <button onClick={() => onDeleteJob(job.id)}>Delete Job</button>
+      <button className="button" onClick={() => onDeleteJob(job.id)}>
+        Delete Job
+      </button>
     </div>
   );
 };
