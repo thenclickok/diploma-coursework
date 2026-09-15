@@ -16,7 +16,7 @@ function App() {
       id: 2,
       name: "Data Analyser",
       status: "Completed",
-      details: "Cleans and standardizes raw CSV data",
+      details: "Cleans and standardises raw CSV data",
     },
     {
       id: 3,
