@@ -3,7 +3,9 @@ const JobItem = ({ job, onDeleteJob }) => {
   //implement conditional rendering based on job status
 
   return (
-    <div className={`job-item ${job.status}`}>
+    /*toLowerCase() means the className in the stylesheet 
+    can be lowercase as per convention*/
+    <div className={`job-item ${job.status.toLowerCase()}`}>
       <ul>
         <li>
           <b>Name:</b> {job.name}

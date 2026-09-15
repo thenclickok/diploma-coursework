@@ -120,11 +120,17 @@ function App() {
           />
 
           <select
+            name="status"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
             required
           >
-            <option value="" disabled>
+            <option
+              value=""
+              disabled
+              hidden
+              //hidden takes away the Job Status text from options when user clicks dropdown, reduce clutter
+            >
               Job Status
             </option>
             <option value="Running">Running</option>
