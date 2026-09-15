@@ -6,10 +6,30 @@ import Footer from "./components/Footer";
 
 function App() {
   const [jobs, setJobs] = useState([
-    { id: 1, name: "Email Extractor", status: "Running" },
-    { id: 2, name: "Data Analyser", status: "Completed" },
-    { id: 3, name: "Report Generator", status: "Running" },
-    { id: 4, name: "Stats Compiler", status: "Pending" },
+    {
+      id: 1,
+      name: "Email Extractor",
+      status: "Running",
+      details: "Extracts daily lead emails",
+    },
+    {
+      id: 2,
+      name: "Data Analyser",
+      status: "Completed",
+      details: "Cleans and standardizes raw CSV data",
+    },
+    {
+      id: 3,
+      name: "Report Generator",
+      status: "Running",
+      details: "Compiles weekly client PDF report",
+    },
+    {
+      id: 4,
+      name: "Stats Compiler",
+      status: "Pending",
+      details: "Calculates conversion rates",
+    },
   ]);
 
   const [showJobs, setShowJobs] = useState(true);
@@ -21,6 +41,7 @@ function App() {
   (this stops user having trouble submitting a partially empty form)*/
   const [status, setStatus] = useState("");
   const [id, setId] = useState("");
+  const [details, setDetails] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
   const addJob = (newJob) => {
@@ -39,6 +60,7 @@ function App() {
         name: newJob.name,
         status: newJob.status,
         id: newJob.id,
+        details: newJob.details,
       },
     ]);
 
@@ -53,7 +75,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const success = addJob({ name, status, id });
+    const success = addJob({ name, status, id, details });
 
     //only reset form if job was added (because success = true)
 
@@ -61,6 +83,7 @@ function App() {
       setName("");
       setStatus("");
       setId("");
+      setDetails("");
     }
   };
 
@@ -118,6 +141,13 @@ function App() {
             placeholder=" Job ID"
             required
           />
+
+          <textarea
+            name="details"
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            placeholder="Job Details"
+          ></textarea>
 
           <button type="submit" className="button">
             Submit New Job

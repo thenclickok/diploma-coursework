@@ -62,13 +62,13 @@ header {
     padding: 10px;
     margin: 10px auto;
     background-color: rgb(237, 231, 231);
-    input, select, button {
+    input, select, button, textarea {
         width: 200px;
         border: 1px solid black;
         border-radius: 5px;
         padding: 3px;
     }
-    input::placeholder{
+    input::placeholder, textarea::placeholder{
         color: black;
     }
 }
@@ -95,15 +95,15 @@ header {
 
 /*The statuses are capitalised in the jobs object. 
 Alternative is to use toLowerCase() in the className template literal (in JobItem.js).*/
-.job-item.Running {
+.job-item.Running span {
     color: blue;
 }
 
-.job-item.Completed {
+.job-item.Completed span {
     color: green;
 }
 
-.job-item.Pending {
+.job-item.Pending span{
     color: orange;
 }
 
