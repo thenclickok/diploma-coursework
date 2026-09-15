@@ -40,12 +40,21 @@ header {
     background-color: yellowgreen;
 }
 
-/*Add Job Form*/
+/*Options Container*/
 
-.new-job-container {
+.options-container {
+    display: flex;
+    align-items: center;
+}
+
+/*Add Job Form (and Filter Jobs By Name*/
+
+.new-job-container, .filter-jobs {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content:space-around;
+    min-height: 220px;
     gap: 10px;
     border: 2px solid black;
     border-radius: 8px;
@@ -62,6 +71,11 @@ header {
     input::placeholder{
         color: black;
     }
+}
+
+.filter-jobs input {
+    padding: 10px;
+    font-size: 16px;
 }
 
 /*Job Item*/

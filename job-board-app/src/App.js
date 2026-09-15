@@ -21,6 +21,7 @@ function App() {
   (this stops user having trouble submitting a partially empty form)*/
   const [status, setStatus] = useState("");
   const [id, setId] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const addJob = (newJob) => {
     //jobs.some() checks if ID already exists and if it does, user gets alerted
@@ -69,53 +70,74 @@ function App() {
     });
   };
 
+  const filteredJobs = jobs.filter((job) => {
+    const query = searchTerm.trim().toLowerCase();
+
+    if (!query) return true; //if search field is empty return whole jobs array
+
+    return job.name.toLowerCase().includes(query);
+  });
+
   return (
     <div className="App">
       <Header />
       <button onClick={handleToggle} className="button">
         {showJobs ? "Hide Jobs" : "Show Jobs"}{" "}
       </button>
-      <form onSubmit={handleSubmit} className="new-job-container">
-        <h2>Add Job</h2>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder=" Job Name"
-          required
-        />
+      <div className="options-container">
+        <form onSubmit={handleSubmit} className="new-job-container">
+          <h2>Add Job</h2>
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder=" Job Name"
+            required
+          />
 
-        <select
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-          required
-        >
-          <option value="" disabled>
-            Job Status
-          </option>
-          <option value="Running">Running</option>
-          <option value="Completed">Completed</option>
-          <option value="Pending">Pending</option>
-        </select>
+          <select
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+            required
+          >
+            <option value="" disabled>
+              Job Status
+            </option>
+            <option value="Running">Running</option>
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+          </select>
 
-        <input
-          type="number"
-          name="id"
-          value={id}
-          //valueAsNumber changes the default string into a number so "5" becomes the number 5
-          onChange={(e) => setId(e.target.valueAsNumber || "")}
-          placeholder=" Job ID"
-          required
-        />
+          <input
+            type="number"
+            name="id"
+            value={id}
+            //valueAsNumber changes the default string into a number so "5" becomes the number 5
+            onChange={(e) => setId(e.target.valueAsNumber || "")}
+            placeholder=" Job ID"
+            required
+          />
 
-        <button type="submit" className="button">
-          Submit New Job
-        </button>
-      </form>
+          <button type="submit" className="button">
+            Submit New Job
+          </button>
+        </form>
+        <div className="filter-jobs">
+          <h2>
+            Filter Jobs <br /> by Name
+          </h2>
+          <input
+            type="text"
+            placeholder="Enter Job Name"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          ></input>
+        </div>
+      </div>
 
       <main className="content-container">
-        {showJobs && <JobList jobs={jobs} onDeleteJob={deleteJob} />}
+        {showJobs && <JobList jobs={filteredJobs} onDeleteJob={deleteJob} />}
       </main>
       <Footer />
     </div>
