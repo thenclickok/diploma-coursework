@@ -153,6 +153,7 @@ function App() {
             value={details}
             onChange={(e) => setDetails(e.target.value)}
             placeholder="Job Details"
+            maxLength={100}
           ></textarea>
 
           <button type="submit" className="button">
