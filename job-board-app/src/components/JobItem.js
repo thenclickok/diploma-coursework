@@ -1,5 +1,15 @@
+import { useState } from "react"; //required for the edit option
+
 //the onDeleteJob is a prop of JobList
-const JobItem = ({ job, onDeleteJob }) => {
+const JobItem = ({ job, onDeleteJob, onUpdateJob }) => {
+  //isEditing state is switched off by default
+  const [isEditing, setIsEditing] = useState(false);
+
+  //I need the editing form to show what values already exist before user attempts to change them
+  const [name, setName] = useState(job.name);
+  const [status, setStatus] = useState(job.status);
+  const [details, setDetails] = useState(job.details);
+
   if (!job) {
     return <div className="job-item">Job data unavailable.</div>;
   }
@@ -16,6 +26,77 @@ const JobItem = ({ job, onDeleteJob }) => {
     }
   };
 
+  //switch job to edit mode by switching on setIsEditing
+  const handleStartEdit = () => {
+    setIsEditing(true);
+  };
+
+  //user decides not to edit so all fields go back to original job data values
+  const handleCancel = () => {
+    setName(job.name);
+    setStatus(job.status);
+    setDetails(job.details);
+    setIsEditing(false);
+  };
+
+  const handleSave = () => {
+    if (typeof onUpdateJob === "function") {
+      onUpdateJob({
+        ...job, // preserves original job.id
+        name,
+        status,
+        details,
+      });
+      setIsEditing(false);
+    } else {
+      console.warn(
+        "onUpdateJob is not a function; unable to save changes in JobItem.",
+      );
+    }
+  };
+
+  // --- EDIT MODE VIEW ---
+  if (isEditing) {
+    return (
+      <div className={`job-item ${status}`}>
+        <div className="edit-form">
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            aria-label="Edit Job Name"
+          />
+
+          <select
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+            aria-label="Edit Job Status"
+          >
+            <option value="Running">Running</option>
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+          </select>
+
+          <textarea
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            aria-label="Edit Job Details"
+          />
+
+          <div className="button-group">
+            <button className="button" onClick={handleSave}>
+              Save
+            </button>
+            <button className="button button-secondary" onClick={handleCancel}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // --- STANDARD READ-ONLY VIEW ---
   return (
     //conditional rendering based on job status below (see stylesheet)
     /*toLowerCase() means the className in the stylesheet 
@@ -36,6 +117,9 @@ const JobItem = ({ job, onDeleteJob }) => {
           <b>Details:</b> {job.details}
         </li>
       </ul>
+      <button className="button" onClick={handleStartEdit}>
+        Edit
+      </button>
       <button className="button" onClick={handleDelete}>
         Delete Job
       </button>

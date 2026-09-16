@@ -101,6 +101,13 @@ function App() {
     return job.name.toLowerCase().includes(query);
   });
 
+  const updateJob = (updatedJob) => {
+    //allows user to edit a job
+    setJobs((prevJobs) =>
+      prevJobs.map((job) => (job.id === updatedJob.id ? updatedJob : job)),
+    );
+  };
+
   return (
     <div className="App">
       <Header />
@@ -174,7 +181,13 @@ function App() {
       </div>
 
       <main className="content-container">
-        {showJobs && <JobList jobs={filteredJobs} onDeleteJob={deleteJob} />}
+        {showJobs && (
+          <JobList
+            jobs={filteredJobs}
+            onDeleteJob={deleteJob}
+            onUpdateJob={updateJob}
+          />
+        )}
       </main>
       <Footer />
     </div>
