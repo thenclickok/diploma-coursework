@@ -42,41 +42,127 @@ header {
 
 /*Options Container*/
 
+/* Container: clean gap and stretch so all 3 cards can align cleanly */
 .options-container {
     display: flex;
+    justify-content: center;
+    align-items: stretch; /* Cards stretch to equal height if desired, or use 'center' */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Base Card Styling applied across all three children */
+.filter-jobs,
+.status-board,
+.new-job-container {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 0; /* Remove auto margins that warp flex positioning */
+    box-sizing: border-box;
+}
+
+/* Left Card: Filter */
+.filter-jobs {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+
+.filter-jobs input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 10px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/*Status Board Container*/
+
+/* Center Card: Status Board (given more visual weight) */
+.status-board {
+    flex: 2;
+    min-width: 320px;
+    display: flex;
+    text-align: center;
+    gap: 10px;
+}
+
+.status-board p {
+    padding: 10px;
+    margin: 0;
+}
+
+.ticket-info {
+    flex: 1;
+    border-radius: 8px;
+    padding: 12px 6px;
+}
+
+.ticket-info.completed {
+    background-color: green;
+    color: white;
+}
+
+.ticket-info.in-progress {
+    background-color: yellow;
+    border-radius: 8px;
+}
+
+.ticket-info.failed {
+    background-color: red;
+    color: white;
 }
 
 /*Add Job Form (and Filter Jobs By Name*/
 
-.new-job-container, .filter-jobs {
+/* Right Card: New Job Form */
+.new-job-container {
+    flex: 1;
+    min-width: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-around;
-    min-height: 220px;
     gap: 10px;
+    background-color: rgb(237, 231, 231);
+}
+
+.new-job-container input,
+.new-job-container select,
+.new-job-container button,
+.new-job-container textarea {
+    width: 100%;
+    max-width: 220px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.new-job-container input::placeholder,
+.new-job-container textarea::placeholder {
+    color: #555;
+}
+
+.filter-jobs {
     border: 2px solid black;
     border-radius: 8px;
-    width: fit-content;
     padding: 10px;
-    margin: 10px auto;
-    background-color: rgb(237, 231, 231);
-    input, select, button, textarea {
-        width: 200px;
-        border: 1px solid black;
+    text-align: center;
+    input {
         border-radius: 5px;
-        padding: 3px;
-    }
-    input::placeholder, textarea::placeholder{
-        color: black;
+        padding: 5px;
+        margin-top: 10px;
     }
 }
 
-.filter-jobs input {
-    padding: 10px;
-    font-size: 16px;
-}
 
 /*Job Item*/
 

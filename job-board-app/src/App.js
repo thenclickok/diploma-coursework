@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header";
 import JobList from "./components/JobList";
+import StatusBoard from "./components/StatusBoard";
 import Footer from "./components/Footer";
 
 function App() {
@@ -115,6 +116,18 @@ function App() {
         {showJobs ? "Hide Jobs" : "Show Jobs"}{" "}
       </button>
       <div className="options-container">
+        <div className="filter-jobs">
+          <h2>
+            Filter Jobs <br /> by Name
+          </h2>
+          <input
+            type="text"
+            placeholder="Enter Job Name"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          ></input>
+        </div>
+        <StatusBoard />
         <form onSubmit={handleSubmit} className="new-job-container">
           <h2>Add Job</h2>
           <input
@@ -167,19 +180,7 @@ function App() {
             Submit New Job
           </button>
         </form>
-        <div className="filter-jobs">
-          <h2>
-            Filter Jobs <br /> by Name
-          </h2>
-          <input
-            type="text"
-            placeholder="Enter Job Name"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          ></input>
-        </div>
       </div>
-
       <main className="content-container">
         {showJobs && (
           <JobList
