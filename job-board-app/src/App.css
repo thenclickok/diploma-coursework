@@ -189,8 +189,8 @@ Alternative is to use toLowerCase() in the className template literal (in JobIte
     color: green;
 }
 
-.job-item.pending span{
-    color: orange;
+.job-item.failed span{
+    color: red;
 }
 
 /*Job List*/

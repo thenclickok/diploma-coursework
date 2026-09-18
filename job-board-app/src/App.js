@@ -28,7 +28,7 @@ function App() {
     {
       id: 4,
       name: "Stats Compiler",
-      status: "Pending",
+      status: "Failed",
       details: "Calculates conversion rates",
     },
   ]);
@@ -127,7 +127,7 @@ function App() {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
         </div>
-        <StatusBoard />
+        <StatusBoard jobs={jobs} />
         <form onSubmit={handleSubmit} className="new-job-container">
           <h2>Add Job</h2>
           <input
@@ -155,7 +155,7 @@ function App() {
             </option>
             <option value="Running">Running</option>
             <option value="Completed">Completed</option>
-            <option value="Pending">Pending</option>
+            <option value="Failed">Failed</option>
           </select>
 
           <input
