@@ -12,7 +12,7 @@ const StatusBoard = ({ jobs = [] }) => {
   //render the details list (hidden list in each ticket info commponent)
   const renderDetails = (jobList) => {
     if (jobList.length === 0) {
-      return <p>No ticket details</p>;
+      return <p className="no-data">No tickets to display</p>;
     }
     return (
       <ul>
