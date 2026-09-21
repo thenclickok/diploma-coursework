@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
 }
 
 /*Header*/
@@ -60,8 +59,6 @@ header {
     border: 2px solid black;
     border-radius: 8px;
     padding: 16px;
-    margin: 0; /* Remove auto margins that warp flex positioning */
-    box-sizing: border-box;
 }
 
 /* Left Card: Filter */
@@ -73,6 +70,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(237, 231, 231);
 }
 
 .filter-jobs input {
@@ -81,12 +79,11 @@ header {
     padding: 8px;
     margin-top: 10px;
     width: 90%;
-    box-sizing: border-box;
 }
 
 /*Status Board Container*/
 
-/* Center Card: Status Board (given more visual weight) */
+/* Center Card: Status Board */
 .status-board {
     flex: 2;
     min-width: 320px;
@@ -97,7 +94,6 @@ header {
 
 .status-board p {
     padding: 10px;
-    margin: 0;
 }
 
 .ticket-info {
@@ -109,19 +105,36 @@ header {
 .ticket-info.completed {
     background-color: green;
     color: white;
+    cursor: pointer;
 }
 
 .ticket-info.in-progress {
     background-color: yellow;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .ticket-info.failed {
     background-color: red;
     color: white;
+    cursor: pointer;
 }
 
-/*Add Job Form (and Filter Jobs By Name*/
+.ticket-details {
+    ul {
+       border: 2px solid black;
+       border-radius: 5px; 
+       background-color: white;
+       color: black;
+    }
+    li {
+        list-style-type: none;
+        padding: 5px;
+        text-align: left;
+    }
+}
+
+/*Add Job Form*/
 
 /* Right Card: New Job Form */
 .new-job-container {
@@ -143,26 +156,12 @@ header {
     border: 1px solid black;
     border-radius: 5px;
     padding: 6px;
-    box-sizing: border-box;
 }
 
 .new-job-container input::placeholder,
 .new-job-container textarea::placeholder {
     color: #555;
 }
-
-.filter-jobs {
-    border: 2px solid black;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    input {
-        border-radius: 5px;
-        padding: 5px;
-        margin-top: 10px;
-    }
-}
-
 
 /*Job Item*/
 
@@ -215,7 +214,7 @@ Alternative is to use toLowerCase() in the className template literal (in JobIte
 
 footer {
     text-align: center;
-    background-color: rgb(130, 128, 128);
+    background-color: black;
     color: white;
     padding: 10px;
     position: sticky;
