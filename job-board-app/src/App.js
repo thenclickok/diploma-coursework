@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import JobList from "./components/JobList";
 import StatusBoard from "./components/StatusBoard";
+import TaskForm from "./components/TaskForm";
 import Footer from "./components/Footer";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
   const [id, setId] = useState("");
   const [details, setDetails] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [tasks, setTasks] = useState([]);
 
   const addJob = (newJob) => {
     //jobs.some() checks if ID already exists and if it does, user gets alerted
@@ -107,6 +109,10 @@ function App() {
     setJobs((prevJobs) =>
       prevJobs.map((job) => (job.id === updatedJob.id ? updatedJob : job)),
     );
+  };
+
+  const addTask = (newTask) => {
+    setTasks((prevTasks) => [...prevTasks, { ...newTask, id: Date.now() }]);
   };
 
   return (
@@ -190,6 +196,21 @@ function App() {
           />
         )}
       </main>
+      <div className="task-list-container">
+        <TaskForm onAddTask={addTask} />
+        {/*addTask function added as prop so TaskForm can send data to App.js*/}
+
+        <div className="task-list">
+          <h2>My To Do List</h2>
+          <ol>
+            {tasks.map((item) => (
+              <li key={item.id}>
+                <strong>{item.name}</strong> - {item.type} ({item.status})
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
       <Footer />
     </div>
   );
