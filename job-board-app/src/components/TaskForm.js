@@ -17,11 +17,22 @@ const TaskForm = ({ onAddTask }) => {
       return;
     }
 
-    onAddTask({
+    console.log("Submitted Task Data:", {
       name: taskName,
       type: taskType,
       status: taskStatus,
     });
+
+    /*by putting if(onAddTask), it prevents an error if 
+    I forget to put the onAddTask as a prop in a TaskForm component
+    because that would make onAddTask undefined and page would crash)*/
+    if (onAddTask) {
+      onAddTask({
+        name: taskName,
+        type: taskType,
+        status: taskStatus,
+      });
+    }
 
     //reset inputs
     setTaskName("");
