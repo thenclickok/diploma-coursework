@@ -1,0 +1,37 @@
+.job-item {
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: white;
+    ul {
+        padding: 10px;
+    }
+       li {
+        list-style-type: none;
+       }
+}
+
+/*The statuses are capitalised in the jobs object. 
+Alternative is to use toLowerCase() in the className template literal (in JobItem.js).*/
+.job-item.running span {
+    color: blue;
+}
+
+.job-item.completed span {
+    color: green;
+}
+
+.job-item.failed span{
+    color: red;
+}
+
+.button-group {
+    border: 2px solid black;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 10px;
+}

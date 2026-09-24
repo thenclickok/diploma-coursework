@@ -1,0 +1,41 @@
+.ticket-info {
+    flex: 1;
+    border-radius: 8px;
+    padding: 12px 6px;
+}
+
+.ticket-info.completed {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.ticket-info.in-progress {
+    background-color: yellow;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ticket-info.failed {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.ticket-info.status-pop {
+  animation: cardPop 0.5s ease-in-out;
+}
+
+.ticket-details {
+    ul {
+       border: 2px solid black;
+       border-radius: 5px; 
+       background-color: white;
+       color: black;
+    }
+    li {
+        list-style-type: none;
+        padding: 5px;
+        text-align: left;
+    }
+}

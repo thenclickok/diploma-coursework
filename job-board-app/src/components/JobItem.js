@@ -1,4 +1,5 @@
 import { useState } from "react"; //required for the edit option
+import "./JobItem.css";
 
 //the onDeleteJob is a prop of JobList
 const JobItem = ({ job, onDeleteJob, onUpdateJob }) => {
@@ -83,11 +84,11 @@ const JobItem = ({ job, onDeleteJob, onUpdateJob }) => {
             aria-label="Edit Job Details"
           />
 
-          <div className="button-group">
+          <div>
             <button className="button" onClick={handleSave}>
               Save
             </button>
-            <button className="button button-secondary" onClick={handleCancel}>
+            <button className="button" onClick={handleCancel}>
               Cancel
             </button>
           </div>

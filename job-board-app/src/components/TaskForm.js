@@ -1,6 +1,7 @@
 /* for module 5.1 I used TaskForm instead of JobForm to add component 
 to current React page which already has a component for adding jobs*/
 import { useState } from "react";
+import "./TaskForm.css";
 
 //onAddTask comes from the prop in the TaskForm component in App.js
 const TaskForm = ({ onAddTask }) => {
@@ -52,7 +53,6 @@ const TaskForm = ({ onAddTask }) => {
           onChange={(e) => {
             setTaskName(e.target.value);
           }}
-          className="task-input"
           placeholder="Enter a new task"
           aria-label="Enter task name"
           required
@@ -84,7 +84,6 @@ const TaskForm = ({ onAddTask }) => {
           </button>
         </div>
         <select
-          className="task-status"
           value={taskStatus}
           onChange={(e) => {
             setTaskStatus(e.target.value);

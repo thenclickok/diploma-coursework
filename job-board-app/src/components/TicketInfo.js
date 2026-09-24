@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import "./TicketInfo.css";
 
 const TicketInfo = ({ result, image, count, children, details }) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -43,7 +44,7 @@ const TicketInfo = ({ result, image, count, children, details }) => {
     >
       <img src={image} alt={result} width="50" height="50" />
       {children}
-      <p className="ticket-count">{count}</p>
+      <p>{count}</p>
       {showDetails && <div className="ticket-details">{details}</div>}
     </div>
   );

@@ -2,6 +2,7 @@ import TicketInfo from "./TicketInfo";
 import completedImage from "../images/completed.svg";
 import inProgressImage from "../images/in-progress.svg";
 import failedImage from "../images/failed.svg";
+import "./StatusBoard.css";
 
 const StatusBoard = ({ jobs = [] }) => {
   //filter actual list of jobs for each of the three statuses

@@ -1,4 +1,5 @@
 import JobItem from "./JobItem";
+import "./JobList.css";
 
 const JobList = ({ jobs = [], onDeleteJob, onUpdateJob }) => {
   //error handling if jobs is undefined because parent component calls JobList without jobs prop for example: assign jobs prop to an empty array

@@ -1,0 +1,23 @@
+.status-board {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 16px;
+    flex: 2;
+    min-width: 320px;
+    display: flex;
+    text-align: center;
+    gap: 10px;
+}
+
+.status-board p {
+    padding: 10px;
+}
+
+.no-data {
+    font-size: small;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    text-align: left;
+}
