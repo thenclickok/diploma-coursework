@@ -22,45 +22,32 @@
     cursor: pointer;
 }
 
-.button:active {
-    transform: translateY(2px);
-    box-shadow: 1px 1px;
+.button.active { /* Persistent selected state when clicked */
+  transform: translateY(2px);
+  box-shadow: 1px 1px;
+  background-color: #ffd700; /* slightly deeper yellow/gold to show selection */
 }
 
 .button:hover {
     background-color: yellowgreen;
 }
 
-/* Persistent selected state when clicked */
-.button.active {
-  transform: translateY(2px);
-  box-shadow: 1px 1px black;
-  background-color: #ffd700; /* slightly deeper yellow/gold to show selection */
-}
-
 /*Options Container*/
 
-/* Container: clean gap and stretch so all 3 cards can align cleanly */
 .options-container {
     display: flex;
     justify-content: center;
     align-items: stretch; /* Cards stretch to equal height */
-    gap: 20px;
+    gap: 20px; /* Clean gap between three cards */
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Base Card Styling applied across all three children (.status-board located in its own css file) */
-.filter-jobs,
-.new-job-container {
+.filter-jobs {
     border: 2px solid black;
     border-radius: 8px;
     padding: 16px;
-}
-
-/* Left Card: Filter */
-.filter-jobs {
     flex: 1;
     min-width: 200px;
     text-align: center;
@@ -79,25 +66,10 @@
     width: 90%;
 }
 
-/*Animation to TicketInfo component when its count changes*/
-
-@keyframes cardPop {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.06);
-        background-color: #fff3cd; /*highlight part of animation*/
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/*Add Job Form*/
-
-/* Right Card: New Job Form */
 .new-job-container {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 16px;
     flex: 1;
     min-width: 220px;
     display: flex;

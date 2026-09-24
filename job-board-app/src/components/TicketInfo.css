@@ -22,10 +22,6 @@
     cursor: pointer;
 }
 
-.ticket-info.status-pop {
-  animation: cardPop 0.5s ease-in-out;
-}
-
 .ticket-details {
     ul {
        border: 2px solid black;
@@ -39,3 +35,23 @@
         text-align: left;
     }
 }
+
+/*Animation to TicketInfo component when its count changes*/
+
+@keyframes cardPop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+        background-color: #fff3cd; /*highlight part of animation*/
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ticket-info.status-pop {
+  animation: cardPop 0.5s ease-in-out;
+}
+

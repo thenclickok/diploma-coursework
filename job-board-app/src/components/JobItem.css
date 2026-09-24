@@ -35,3 +35,52 @@ Alternative is to use toLowerCase() in the className template literal (in JobIte
     margin: 0 auto;
     padding: 0 10px;
 }
+
+/*Edit mode*/
+
+.edit-form {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 16px 0;
+    align-items: center;
+    max-width: fit-content;
+    margin: 10px auto;
+    label {
+        color: green;
+    }
+    input, select, textarea {
+        border: 2px solid green;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+.edit-buttons { /*this needs to go against the above grid-template-columns values in the edit-form section*/
+    grid-column: 1 / -1; /*this is short hand for saying start at begining and end at end no matter the column width*/
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    button {
+        background-color: green;
+        color: white;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-weight: bold;
+        box-shadow: 4px 4px black;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+    }
+}
+
+.edit-buttons button:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px;
+    background-color: rgb(3, 60, 3);
+}
+
+.edit-buttons button:hover {
+    background-color: rgb(89, 166, 89);
+    color: black;
+}
+

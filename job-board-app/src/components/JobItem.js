@@ -61,36 +61,34 @@ const JobItem = ({ job, onDeleteJob, onUpdateJob }) => {
     return (
       <div className={`job-item ${status}`}>
         <div className="edit-form">
+          <label htmlFor="edit-name">Edit Name: </label>
           <input
+            id="edit-name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            aria-label="Edit Job Name"
           />
 
+          <label htmlFor="edit-status">Edit Status: </label>
           <select
+            id="edit-status"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            aria-label="Edit Job Status"
           >
             <option value="Running">Running</option>
             <option value="Completed">Completed</option>
             <option value="Pending">Pending</option>
           </select>
 
+          <label htmlFor="edit-details">Edit Details:</label>
           <textarea
+            id="edit-details"
             value={details}
             onChange={(e) => setDetails(e.target.value)}
-            aria-label="Edit Job Details"
           />
-
-          <div>
-            <button className="button" onClick={handleSave}>
-              Save
-            </button>
-            <button className="button" onClick={handleCancel}>
-              Cancel
-            </button>
+          <div className="edit-buttons">
+            <button onClick={handleSave}>Save</button>
+            <button onClick={handleCancel}>Cancel</button>
           </div>
         </div>
       </div>
