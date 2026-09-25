@@ -4,3 +4,9 @@
     gap: 20px;
     margin-top: 20px;
 }
+
+.no-jobs {
+    font-size: large;
+    color: red;
+    padding: 20px;
+}

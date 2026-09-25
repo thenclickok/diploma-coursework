@@ -6,7 +6,7 @@ const JobList = ({ jobs = [], onDeleteJob, onUpdateJob }) => {
   //error handling if jobs doesn't exist or is empty: see if statement below
   //FYI I can set onDeleteJob to a function if I don't use the error handling in Job Item (ie onDeleteJob = ()=>{})
   if (!jobs || jobs.length === 0) {
-    return <p>No jobs available.</p>;
+    return <p className="no-jobs">No jobs available.</p>;
   }
   return (
     <div className="job-list">
