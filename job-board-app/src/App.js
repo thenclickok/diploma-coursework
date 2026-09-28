@@ -209,15 +209,17 @@ function App() {
           </button>
         </form>
       </div>
-      <main className="content-container">
-        {showJobs && (
+
+      {showJobs && (
+        <main className="content-container">
           <JobList
             jobs={filteredJobs}
             onDeleteJob={deleteJob}
             onUpdateJob={updateJob}
           />
-        )}
-      </main>
+        </main>
+      )}
+
       <div className="task-list-container">
         <TaskForm onAddTask={addTask} />
         {/*addTask function added as prop so TaskForm can send data to App.js*/}
