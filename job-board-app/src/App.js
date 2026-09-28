@@ -56,16 +56,19 @@ function App() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(jobs));
   }, [jobs]);
 
+  //this variable is for the toggle button to hide/show the jobs list
   const [showJobs, setShowJobs] = useState(true);
 
-  //form state variables get useState()
-  const [name, setName] = useState("");
-  /*if i left status empty at start, user might think Running is selected 
-  but status is still "" until user actually chooses one 
-  (this stops user having trouble submitting a partially empty form)*/
-  const [status, setStatus] = useState("");
-  const [id, setId] = useState("");
-  const [details, setDetails] = useState("");
+  /*these four state variables got combined into one formData state 
+  to swap expressions with the handleInputChange function*/
+  const [formData, setFormData] = useState({
+    name: "",
+    status: "",
+    id: "",
+    details: "",
+  });
+
+  //these are for the search form and the To Do List add task
   const [searchTerm, setSearchTerm] = useState("");
   const [tasks, setTasks] = useState([]);
 
@@ -97,18 +100,29 @@ function App() {
     setShowJobs((prev) => !prev);
   };
 
+  const handleInputChange = (e) => {
+    const { name, value, type, valueAsNumber } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "number" ? valueAsNumber || "" : value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const success = addJob({ name, status, id, details });
+    const success = addJob(formData);
 
     //only reset form if job was added (because success = true)
 
     if (success) {
-      setName("");
-      setStatus("");
-      setId("");
-      setDetails("");
+      setFormData({
+        name: "",
+        status: "",
+        id: "",
+        details: "",
+      });
     }
   };
 
@@ -153,7 +167,7 @@ function App() {
             placeholder="Enter Job Name"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-          ></input>
+          />
         </div>
         <StatusBoard jobs={jobs} />
         <form onSubmit={handleSubmit} className="new-job-container">
@@ -161,16 +175,16 @@ function App() {
           <input
             type="text"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={formData.name}
+            onChange={handleInputChange}
             placeholder=" Job Name"
             required
           />
 
           <select
             name="status"
-            value={status}
-            onChange={(e) => setStatus(e.target.value)}
+            value={formData.status}
+            onChange={handleInputChange}
             required
           >
             <option
@@ -189,17 +203,17 @@ function App() {
           <input
             type="number"
             name="id"
-            value={id}
+            value={formData.id}
             //valueAsNumber changes the default string into a number so "5" becomes the number 5
-            onChange={(e) => setId(e.target.valueAsNumber || "")}
+            onChange={handleInputChange}
             placeholder=" Job ID"
             required
           />
 
           <textarea
             name="details"
-            value={details}
-            onChange={(e) => setDetails(e.target.value)}
+            value={formData.details}
+            onChange={handleInputChange}
             placeholder="Job Details"
             maxLength={100}
           ></textarea>
