@@ -1,38 +1,60 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import JobList from "./components/JobList";
 import StatusBoard from "./components/StatusBoard";
 import TaskForm from "./components/TaskForm";
 import Footer from "./components/Footer";
 
+// storage key just references the string given to identify the item in local storage
+// these variables are outside of App() so they only get instantiated onnce when file loads instead of every single render
+const STORAGE_KEY = "jobs_list";
+const DEFAULT_JOBS = [
+  {
+    id: 1,
+    name: "Email Extractor",
+    status: "Running",
+    details: "Extracts daily lead emails",
+  },
+  {
+    id: 2,
+    name: "Data Analyser",
+    status: "Completed",
+    details: "Cleans and standardises raw CSV data",
+  },
+  {
+    id: 3,
+    name: "Report Generator",
+    status: "Running",
+    details: "Compiles weekly client PDF report",
+  },
+  {
+    id: 4,
+    name: "Stats Compiler",
+    status: "Failed",
+    details: "Calculates conversion rates",
+  },
+];
+
 function App() {
-  const [jobs, setJobs] = useState([
-    {
-      id: 1,
-      name: "Email Extractor",
-      status: "Running",
-      details: "Extracts daily lead emails",
-    },
-    {
-      id: 2,
-      name: "Data Analyser",
-      status: "Completed",
-      details: "Cleans and standardises raw CSV data",
-    },
-    {
-      id: 3,
-      name: "Report Generator",
-      status: "Running",
-      details: "Compiles weekly client PDF report",
-    },
-    {
-      id: 4,
-      name: "Stats Compiler",
-      status: "Failed",
-      details: "Calculates conversion rates",
-    },
-  ]);
+  // Get jobs from localStorage, if no localstorage just use default jobs above
+
+  const [jobs, setJobs] = useState(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (error) {
+        console.error("Error reading localStorage:", error);
+      }
+    }
+    return DEFAULT_JOBS;
+  });
+
+  //Automatically save to local storage whenever jobs changes (add, delete, update)
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(jobs));
+  }, [jobs]);
 
   const [showJobs, setShowJobs] = useState(true);
 
