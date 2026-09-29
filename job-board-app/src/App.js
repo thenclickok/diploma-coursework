@@ -35,6 +35,8 @@ const DEFAULT_JOBS = [
     details: "Calculates conversion rates",
   },
 ];
+//statuses below taken out of options elements in the add job form to streamline JSX
+const JOB_STATUSES = ["Running", "Completed", "Failed"];
 
 function App() {
   // Get jobs from localStorage, if no localstorage just use default jobs above
@@ -195,9 +197,14 @@ function App() {
             >
               Job Status
             </option>
-            <option value="Running">Running</option>
-            <option value="Completed">Completed</option>
-            <option value="Failed">Failed</option>
+
+            {JOB_STATUSES.map((status) => (
+              /*originally, I had three options elements but swapped it out for map() 
+              to streamine JSX and I put each options value in an array constant above*/
+              <option key={status} value={status}>
+                {status}
+              </option>
+            ))}
           </select>
 
           <input
