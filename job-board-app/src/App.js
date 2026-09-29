@@ -114,6 +114,8 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log("Submitted job details:", formData);
+
     const success = addJob(formData);
 
     //only reset form if job was added (because success = true)
