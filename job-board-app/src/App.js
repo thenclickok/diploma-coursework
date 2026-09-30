@@ -40,7 +40,6 @@ const JOB_STATUSES = ["Running", "Completed", "Failed"];
 
 function App() {
   // Get jobs from localStorage, if no localstorage just use default jobs above
-
   const [jobs, setJobs] = useState(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
@@ -57,6 +56,9 @@ function App() {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(jobs));
   }, [jobs]);
+
+  //error handling in case add job form is missing any data when user submits
+  const [errors, setErrors] = useState({}); //errors is an empty object
 
   //this variable is for the toggle button to hide/show the jobs list
   const [showJobs, setShowJobs] = useState(true);
@@ -98,6 +100,28 @@ function App() {
     and can clear the form for the next user input*/
   };
 
+  const validateForm = () => {
+    const newErrors = {}; //created this variable to hold any errors, then this is passed to the errors object that React watches for changes using setError()
+    if (!formData.name.trim() || formData.name.trim().length < 3) {
+      newErrors.name = "Job name must be at least 3 characters long.";
+    }
+
+    if (!formData.status) {
+      newErrors.status = "Please select a job status.";
+    }
+
+    if (!formData.id || Number(formData.id) <= 0) {
+      newErrors.id = "Job ID must be a positive number.";
+    }
+
+    if (!formData.details.trim()) {
+      newErrors.details = "Job details cannot be empty.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; //returns true if no errors
+  };
+
   const handleToggle = () => {
     setShowJobs((prev) => !prev);
   };
@@ -109,12 +133,23 @@ function App() {
       ...prev,
       [name]: type === "number" ? valueAsNumber || "" : value,
     }));
+
+    //clear any error as user begins to edit field
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log("Submitted job details:", formData);
+
+    /*if there are errors in the error object, validateForm returns false, 
+    so !validateForm is true, therefore it stops (returns) the handleSubmit before any new job can be added*/
+    if (!validateForm()) {
+      return;
+    }
 
     const success = addJob(formData);
 
@@ -127,6 +162,7 @@ function App() {
         id: "",
         details: "",
       });
+      setErrors({}); //clear any lingering errors when new job is added
     }
   };
 
@@ -182,14 +218,13 @@ function App() {
             value={formData.name}
             onChange={handleInputChange}
             placeholder=" Job Name"
-            required
           />
+          {errors.name && <p className="error-text">{errors.name}</p>}
 
           <select
             name="status"
             value={formData.status}
             onChange={handleInputChange}
-            required
           >
             <option
               value=""
@@ -199,7 +234,6 @@ function App() {
             >
               Job Status
             </option>
-
             {JOB_STATUSES.map((status) => (
               /*originally, I had three options elements but swapped it out for map() 
               to streamine JSX and I put each options value in an array constant above*/
@@ -208,16 +242,16 @@ function App() {
               </option>
             ))}
           </select>
+          {errors.status && <p className="error-text">{errors.status}</p>}
 
           <input
             type="number"
             name="id"
             value={formData.id}
-            //valueAsNumber changes the default string into a number so "5" becomes the number 5
             onChange={handleInputChange}
             placeholder=" Job ID"
-            required
           />
+          {errors.id && <p className="error-text">{errors.id}</p>}
 
           <textarea
             name="details"
@@ -226,6 +260,7 @@ function App() {
             placeholder="Job Details"
             maxLength={100}
           ></textarea>
+          {errors.details && <p className="error-text">{errors.details}</p>}
 
           <button type="submit" className="button">
             Submit New Job

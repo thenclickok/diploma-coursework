@@ -95,6 +95,12 @@
     color: #555;
 }
 
+.error-text {
+    color: red;
+    font-size: 12px;
+    text-align: center;
+}
+
 /*Job List*/
 
 .content-container {
