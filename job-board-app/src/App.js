@@ -287,7 +287,11 @@ function App() {
           <ol>
             {tasks.map((item) => (
               <li key={item.id}>
-                <strong>{item.name}</strong> - {item.type} ({item.status})
+                <strong>{item.name}</strong> -{" "}
+                {item.categories && item.categories.length > 0
+                  ? item.categories.join(", ")
+                  : "No category"}{" "}
+                ({item.status})
               </li>
             ))}
           </ol>

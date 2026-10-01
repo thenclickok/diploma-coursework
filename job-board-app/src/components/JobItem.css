@@ -3,6 +3,9 @@
     border: 2px solid black;
     border-radius: 8px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     ul {
         padding: 10px;
     }

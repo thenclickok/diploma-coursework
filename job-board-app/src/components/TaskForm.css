@@ -1,19 +1,23 @@
 .task-form {
     border: 2px solid black;
     border-radius: 8px;
-    padding: 10px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    max-width: 420px;
+    margin: 0 auto;
     background-color: rgb(237, 231, 231);
 }
 
-.button-group {
-    border: 2px solid black;
-    border-radius: 8px;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 0 10px;
+.category-display {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    font-style: italic;
+    font-size: small;
+    margin: 10px 0;
+    background-color: rgb(245, 236, 236);
 }
+
+
+
