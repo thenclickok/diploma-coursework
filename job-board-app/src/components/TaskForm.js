@@ -61,7 +61,9 @@ const TaskForm = ({ onAddTask }) => {
       <form onSubmit={handleSubmit} className="task-form">
         <h2>To Do List: </h2>
         <h3>Add Task</h3>
+        <label htmlFor="task-name-input">Enter Task Name:</label>
         <input
+          id="task-name-input"
           type="text"
           value={taskName}
           onChange={(e) => {
@@ -74,8 +76,11 @@ const TaskForm = ({ onAddTask }) => {
 
         <div
           className="button-group"
+          role="group"
+          //screen readers ignore aria-label on generic div (role="group" is announced when user tabs into cluster)
           aria-label="Select at least one task category"
         >
+          <h4>Select at least one category:</h4>
           {/*for className I needed either .button or .button.active
             so I had to put a template literal around the code identifying 
             which button was clicked*/}
@@ -94,8 +99,13 @@ const TaskForm = ({ onAddTask }) => {
             );
           })}
 
-          {/*this section shows what categories the user has selected*/}
-          <div className="category-display">
+          {/*this section shows what categories the user has selected and uses aria to 
+          wait until selection is made before summarising the selections*/}
+          <div
+            className="category-display"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             <p>
               <b>Selected Categories:</b>
             </p>
@@ -117,7 +127,9 @@ const TaskForm = ({ onAddTask }) => {
           </div>
         </div>
 
+        <label htmlFor="task-status-select">Enter Task Status:</label>
         <select
+          id="task-status-select"
           value={taskStatus}
           onChange={(e) => {
             setTaskStatus(e.target.value);

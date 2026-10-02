@@ -195,6 +195,13 @@ function App() {
     });
   };
 
+  const deleteTask = (idToDelete) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== idToDelete));
+    /*for each task in the tasks array, make sure the task id 
+    is NOT the same as the list item that needs deleting 
+    (filter KEEPS everything that doesn't match the one to delete)*/
+  };
+
   return (
     <div className="App">
       <Header />
@@ -295,7 +302,15 @@ function App() {
                 {item.categories && item.categories.length > 0
                   ? item.categories.join(", ")
                   : "No category"}{" "}
-                ({item.status})
+                ({item.status}){" "}
+                <button
+                  type="button"
+                  className="clear-button"
+                  onClick={() => deleteTask(item.id)}
+                  aria-label={`Delete task ${item.name}`}
+                >
+                  Delete Task
+                </button>
               </li>
             ))}
           </ol>
