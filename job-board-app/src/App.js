@@ -188,7 +188,11 @@ function App() {
   };
 
   const addTask = (newTask) => {
-    setTasks((prevTasks) => [...prevTasks, { ...newTask, id: Date.now() }]);
+    setTasks((prevTasks) => {
+      const updated = [...prevTasks, { ...newTask, id: Date.now() }];
+      console.log(updated);
+      return updated; //return statement required because this block is inside curly braces
+    });
   };
 
   return (

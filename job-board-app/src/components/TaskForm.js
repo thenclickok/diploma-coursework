@@ -30,7 +30,7 @@ const TaskForm = ({ onAddTask }) => {
     e.preventDefault();
 
     //alert if form submitted without a category selected
-    if (taskCategories === 0) {
+    if (taskCategories.length === 0) {
       alert("Please select at least one task category.");
       return;
     }
@@ -103,6 +103,16 @@ const TaskForm = ({ onAddTask }) => {
               taskCategories.map((category) => <p key={category}>{category}</p>)
             ) : (
               <p>None</p>
+            )}
+
+            {taskCategories.length > 0 && (
+              <button
+                className="clear-button"
+                type="button"
+                onClick={() => setTaskCategories([])}
+              >
+                Clear Categories
+              </button>
             )}
           </div>
         </div>
