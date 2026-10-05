@@ -10,6 +10,15 @@ const TaskForm = ({ onAddTask }) => {
   const [taskStatus, setTaskStatus] = useState("");
 
   const categoryOptions = ["Code Review", "UI Refinement", "Bug Fixing"];
+
+  //dynamic inline CSS for buttons in task category selected by user
+  const categoryStyles = {
+    "Code Review": { backgroundColor: "mediumorchid" },
+    "UI Refinement": { backgroundColor: "violet" },
+    "Bug Fixing": { backgroundColor: "plum" },
+    default: { backgroundColor: "rgb(250, 250, 109)" },
+  };
+
   const statusOptions = [
     { value: "started", label: "Task Started" },
     { value: "in-progress", label: "Task In-Progress" },
@@ -81,16 +90,18 @@ const TaskForm = ({ onAddTask }) => {
           aria-label="Select at least one task category"
         >
           <h4>Select at least one category:</h4>
-          {/*for className I needed either .button or .button.active
-            so I had to put a template literal around the code identifying 
-            which button was clicked*/}
+
           {categoryOptions.map((category) => {
             const isSelected = taskCategories.includes(category);
+
             return (
               <button
                 key={category}
                 type="button"
-                className={`button ${isSelected ? "active" : ""}`}
+                className="button"
+                style={
+                  isSelected ? categoryStyles[category] : categoryStyles.default
+                }
                 onClick={() => handleCategoryToggle(category)}
                 aria-pressed={isSelected}
               >

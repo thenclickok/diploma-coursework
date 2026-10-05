@@ -18,14 +18,13 @@
     padding: 5px 10px;
     font-weight: bold;
     box-shadow: 4px 4px black;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
     cursor: pointer;
 }
 
-.button.active { /* Persistent selected state when clicked */
-  transform: translateY(2px);
-  box-shadow: 1px 1px;
-  background-color: #ffd700; /* slightly deeper yellow/gold to show selection */
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px;
 }
 
 .button:hover {
