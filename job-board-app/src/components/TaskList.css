@@ -7,7 +7,11 @@
 
 .task-list {
     flex: 1;
-    h2, h3 {
+    h2 {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    h3 {
         padding-bottom: 10px;
         text-align: center;
     }
@@ -35,10 +39,10 @@
 }
 
 .task-column {
-  background: #f8f9fa;
+  background: white;
   border-radius: 8px;
   padding: 16px;
-  border: 1px solid #e9ecef;
+  border: 1px solid black;
 }
 
 .task-column h3 {
@@ -47,6 +51,8 @@
   font-size: 1rem;
   letter-spacing: 0.05em;
   color: #495057;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .task-column ol {
