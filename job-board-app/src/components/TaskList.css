@@ -1,0 +1,40 @@
+.task-list {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(237, 231, 231);
+}
+
+.task-list {
+    flex: 1;
+    h2, h3 {
+        padding-bottom: 10px;
+        text-align: center;
+    }
+ ol {
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 100%;
+    background-color: white;
+    margin: 0;
+    padding: 15px 15px 15px 35px; 
+    text-align: left;
+  }
+  li {
+    background-color: white;
+    padding: 6px 0;
+    margin: 4px 0;
+  }
+}
+
+.task-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+
+

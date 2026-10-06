@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import JobList from "./components/JobList";
 import StatusBoard from "./components/StatusBoard";
-import TaskForm from "./components/TaskForm";
+import TaskManager from "./components/TaskManager";
 import Footer from "./components/Footer";
 
 // storage key just references the string given to identify the item in local storage
@@ -72,9 +72,8 @@ function App() {
     details: "",
   });
 
-  //these are for the search form and the To Do List add task
+  //search form state
   const [searchTerm, setSearchTerm] = useState("");
-  const [tasks, setTasks] = useState([]);
 
   const addJob = (newJob) => {
     //jobs.some() checks if ID already exists and if it does, user gets alerted
@@ -187,21 +186,6 @@ function App() {
     );
   };
 
-  const addTask = (newTask) => {
-    setTasks((prevTasks) => {
-      const updated = [...prevTasks, { ...newTask, id: Date.now() }];
-      console.log(updated);
-      return updated; //return statement required because this block is inside curly braces
-    });
-  };
-
-  const deleteTask = (idToDelete) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== idToDelete));
-    /*for each task in the tasks array, make sure the task id 
-    is NOT the same as the list item that needs deleting 
-    (filter KEEPS everything that doesn't match the one to delete)*/
-  };
-
   return (
     <div className="App">
       <Header />
@@ -289,33 +273,7 @@ function App() {
         </main>
       )}
 
-      <div className="task-list-container">
-        <TaskForm onAddTask={addTask} />
-        {/*addTask function added as prop so TaskForm can send data to App.js*/}
-
-        <div className="task-list">
-          <h2>My To Do List</h2>
-          <ol>
-            {tasks.map((item) => (
-              <li key={item.id}>
-                <strong>{item.name}</strong> -{" "}
-                {item.categories && item.categories.length > 0
-                  ? item.categories.join(", ")
-                  : "No category"}{" "}
-                ({item.status}){" "}
-                <button
-                  type="button"
-                  className="clear-button"
-                  onClick={() => deleteTask(item.id)}
-                  aria-label={`Delete task ${item.name}`}
-                >
-                  Delete Task
-                </button>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
+      <TaskManager />
       <Footer />
     </div>
   );
