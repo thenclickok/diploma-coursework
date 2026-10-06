@@ -1,4 +1,5 @@
 import "./TaskList.css";
+import TaskColumn from "./TaskColumn";
 
 const TaskList = ({ tasks, onDeleteTask }) => {
   const STATUSES = ["started", "in-progress", "completed", "paused"];
@@ -8,30 +9,12 @@ const TaskList = ({ tasks, onDeleteTask }) => {
       <h2>My To Do List</h2>
       <div className="task-list-grid">
         {STATUSES.map((status) => (
-          <div key={status} className="task-column">
-            <ol>
-              <h3>{status}</h3>
-              {tasks
-                .filter((item) => item.status === status)
-                .map((item) => (
-                  <li key={item.id}>
-                    <strong>{item.name}</strong> -{" "}
-                    {item.categories && item.categories.length > 0
-                      ? item.categories.join(", ")
-                      : "No category"}{" "}
-                    ({item.status}){" "}
-                    <button
-                      type="button"
-                      className="clear-button"
-                      onClick={() => onDeleteTask(item.id)}
-                      aria-label={`Delete task ${item.name}`}
-                    >
-                      Delete Task
-                    </button>
-                  </li>
-                ))}
-            </ol>
-          </div>
+          <TaskColumn
+            key={status}
+            status={status}
+            tasks={tasks}
+            onDeleteTask={onDeleteTask}
+          />
         ))}
       </div>
     </div>
