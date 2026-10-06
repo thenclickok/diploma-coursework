@@ -42,13 +42,27 @@
 
 .task-form label {
     text-align: left;
-    
     margin-top: 15px;
     font-weight: bold;
 }
 
 .task-form input {
-    margin-bottom: 20px;
+    margin: 7px 0 20px 0;
+}
+
+.task-form select {
+    margin: 7px 0 20px 0;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.task-form input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
 }
 
 
