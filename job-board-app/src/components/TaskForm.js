@@ -3,7 +3,7 @@ to current React page which already has a component for adding jobs*/
 import { useState } from "react";
 import "./TaskForm.css";
 
-//onAddTask comes from the prop in the TaskForm component in App.js
+//onAddTask comes from the prop in the TaskForm component in TaskManager.js
 const TaskForm = ({ onAddTask }) => {
   const [taskName, setTaskName] = useState("");
   const [taskCategories, setTaskCategories] = useState([]); //array allows multiple categories to be selected
