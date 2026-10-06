@@ -7,29 +7,34 @@
 
 .task-list {
     flex: 1;
-    h2 {
-        padding-bottom: 20px;
-        text-align: center;
-    }
-    h3 {
-        padding-bottom: 10px;
-        text-align: center;
-    }
-    ol {
+}
+
+.task-list h2 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+    
+.task-list h3 {
+    padding-bottom: 10px;
+    text-align: center;
+}
+    
+.task-list ol {
     border-radius: 8px;
     height: 100%;
     background-color: white;
     margin: 0;
     padding: 15px; 
     text-align: left;
-    }
-    li {
+}
+    
+.task-list li {
     background-color: white;
     padding: 6px 0;
     margin: 4px 0;
     border-bottom: 1px solid #ccc;
     }
-}
+
 
 .task-list-grid {
   display: grid;
@@ -58,10 +63,12 @@
 .task-column ol {
   padding-left: 20px;
   margin: 0;
-  li {
-    margin-left: 15px;
-  }
 }
+  
+.task-columnli {
+    margin-left: 15px;
+}
+
 
 .task-card {
   margin-bottom: 10px;
