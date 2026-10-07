@@ -111,6 +111,9 @@ const JobItem = ({ job, onDeleteJob, onUpdateJob }) => {
         </li>
         <li>
           <b>ID:</b> {job.id ?? "N/A"}
+          {/*if logical OR operator used and id was 0, 
+          it would display "N/A" instead of 0 
+          so I need the nullish ?? coalescing operator instead*/}
         </li>
         <li>
           <b>Details:</b> {job.details}
