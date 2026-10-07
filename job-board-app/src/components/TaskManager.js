@@ -1,9 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
+const STORAGE_KEY = "tasks_list"; //key for local storage
+const DEFAULT_TASKS = [];
+
 const TaskManager = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (error) {
+        console.error("Error reading localStorage:", error);
+      }
+    }
+    return DEFAULT_TASKS;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (newTask) => {
     setTasks((prevTasks) => {
