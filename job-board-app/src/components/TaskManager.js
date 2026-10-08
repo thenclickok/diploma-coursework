@@ -40,7 +40,7 @@ const TaskManager = () => {
   return (
     <div className="task-list-container">
       <TaskForm onAddTask={addTask} />
-      {/*addTask function added as prop so TaskForm can send data to TaskManger.js*/}
+      {/*addTask function added as prop so TaskForm can send data to TaskManager.js*/}
       <TaskList tasks={tasks} onDeleteTask={deleteTask} />
       {/*deleteTask function added as prop so TaskList can send data to TaskManager.js*/}
     </div>

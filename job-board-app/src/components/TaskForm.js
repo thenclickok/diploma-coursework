@@ -48,6 +48,7 @@ const TaskForm = ({ onAddTask }) => {
       name: taskName,
       categories: taskCategories,
       status: taskStatus,
+      createdAt: new Date().toISOString(), //adds the timestamp when task is created (doesn't change so I don't use useState)
     };
 
     console.log("Submitted Task Data:", newTask);
