@@ -1,8 +1,8 @@
 const Card = ({ title, description, buttonText, imageUrl }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-3 bg-blue-100 hover:bg-blue-200">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-3 bg-blue-100 hover:bg-blue-200 flex flex-col">{/*flex-col to make the button stay at the bottom of the card*/}
       <img className="w-full h-36 object-cover p-2" src={imageUrl} alt={title} />
-      <div className="px-6 py-4">
+      <div className="px-6 py-4 flex-1">{/*flex-1 to make the content take up the remaining space*/}
         <div className="font-bold text-xl mb-2 dark:text-slate-900">{title}</div>
         <p className="text-gray-700 text-base">{description}</p>
       </div>
