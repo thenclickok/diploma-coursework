@@ -1,5 +1,6 @@
-import Header from './components/Header.jsx'
-import './App.css'
+import Header from './components/Header.jsx';
+import UserInput from './components/UserInput.jsx';
+import './App.css';
 
 function App() {
   const title = 'Investment Calculator';
@@ -7,9 +8,9 @@ function App() {
   return (
     <>
       <Header title={title} subtitle={subtitle} />
-      {/* additional components goes here */}
+      <UserInput />
     </>
   )
 }
 
-export default App
+export default App;
