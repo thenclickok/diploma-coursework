@@ -10,6 +10,7 @@ const INITIAL_USER_INPUT = {
 
 const UserInput = () => {
   const [ userInput, setUserInput ] = useState(INITIAL_USER_INPUT);
+  const [ currency, setCurrency ] = useState("£");
 
   /*I used propertyKey instead of inputIdentifier because the first argument in handleChange is the property key from userInput eg 'initialInvestment'*/
   const handleChange = (propertyKey, newValue) => {
@@ -29,18 +30,38 @@ const UserInput = () => {
 
   const handleReset = () => {
     setUserInput(INITIAL_USER_INPUT);
+    setCurrency("£");
   };
 
   return(
     <section id="user-input">
       <form>
-        <div className="currency-selection"><p>Select Currency:</p></div>
+        <div className="currency-selection">
+          <p>Select Currency:</p>
+          <div className="segmented-control">{/*this div will have CSS to look like a pill which hides the standard tiny radio buttons*/}
+            <label className="segment-item">{/*hidden inputs (inside labels) all have same name (but different values) so only one radio button by that name can be checked at a time*/}
+              <input type="radio" name="currency" value="$" checked={currency === "$"} onChange={(e) => setCurrency(e.target.value)}/>
+              <span className="segment-button">USD ($)</span>{/*what the user sees as a selection*/}
+            </label>
+
+            <label className="segment-item">
+              <input type="radio" name="currency" value="£" checked={currency === "£"} onChange={(e) => setCurrency(e.target.value)}/>
+              <span className="segment-button">GBP (£)</span>
+            </label>
+
+            <label className="segment-item">
+              <input type="radio" name="currency" value="€" checked={currency === "€"} onChange={(e) => setCurrency(e.target.value)}/>
+              <span className="segment-button">EUR (€)</span>
+            </label>
+          </div>
+        </div>
+
         <div className="input-group">
-          <label htmlFor='initialInvestment'>Initial Investment ($)</label> 
+          <label htmlFor='initialInvestment'>Initial Investment ({currency})</label> 
           <input value={userInput.initialInvestment} id='initialInvestment' type='number' onChange={(e) => handleChange('initialInvestment', e.target.value)} required/>
         </div>
         <div className="input-group">
-          <label htmlFor='annualInvestment'>Annual Investment ($)</label> 
+          <label htmlFor='annualInvestment'>Annual Investment ({currency})</label> 
           <input value={userInput.annualInvestment} id='annualInvestment' type='number' onChange={(e) => handleChange('annualInvestment', e.target.value)} required/>
         </div>
         <div className="input-group">

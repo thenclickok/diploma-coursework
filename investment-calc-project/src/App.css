@@ -1,6 +1,12 @@
 body{
   background-color: #5f5f5f;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* Header component */
+
 #header {
   text-align: center;
   margin: 3rem auto;
@@ -16,6 +22,8 @@ body{
 #header h1 {
   font-size: 1.5rem;
 }
+
+/* UserInput component */
 
 #user-input {
   padding: 1rem;
@@ -49,6 +57,73 @@ body{
   font-style: italic;
 }
 
+/* Pill currency div with hidden radio buttons inputs */
+
+.currency-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.currency-selection p {
+  font-weight: bold;
+}
+
+.segmented-control {
+  display: inline-flex;
+  width: fit-content;
+  background-color:#969696;
+  padding: 6px;
+  border-radius: 20px;
+  user-select: none;
+}
+
+.segment-item {
+  cursor: pointer;
+}
+
+.segment-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.segment-button {
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  color: #4b5563;
+}
+
+.segment-item:hover .segment-button {
+  color: #111827;
+  font-weight: 600;
+}
+
+.segment-item input[type="radio"]:checked + .segment-button {
+  background-color: #ffffff;
+}
+
+/* For keyboard users, show outline when in focus */
+
+.segment-item input[type="radio"]:focus-visible + .segment-button {
+  outline: 3px solid blue;
+  outline-offset: 0px;
+}
+
+button:focus-visible {
+  outline: 3px solid blue;
+  outline-offset: 3px;
+}
+
+input:focus-visible {
+  outline: 3px solid blue;
+  outline-offset: 0px;
+}
+
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -75,6 +150,8 @@ tr:nth-child(even) {
   margin:10px auto;
 }
 
+/* Button styling */
+
 button{
   height: 30px;
   width: 200px;
@@ -97,3 +174,4 @@ button:active{
   transform: translateY(3px);
   box-shadow: 2px 2px;
 }
+
