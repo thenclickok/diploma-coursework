@@ -123,11 +123,13 @@ input:focus-visible {
   outline-offset: 0px;
 }
 
+/* OutputData */
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
+  margin-bottom: 6rem;
 }
 
 th, td {

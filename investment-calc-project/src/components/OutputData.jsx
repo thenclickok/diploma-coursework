@@ -1,8 +1,18 @@
-import { calculateInvestmentResults } from "../util/investment.js";
+import { calculateInvestmentResults } from "../util/investments.js";
 
-const OutputData = ({ inputValue }) => {
+const OutputData = ({ inputValue, isValid }) => {
+    /*isValid is a prop whose function lives in App.jsx & ensures every 
+    value of userInput is more than zero*/
+
+    /*before any data is entered into the maths function below, this check 
+    ensures all values are actual numbers, and if not, no maths carried out*/
+
+    if (!isValid) {
+        return null;
+    };
+
     /*put all the customer inputs into the external function to get the output*/
-  const resultData = calculateInvestmentResults(
+    const resultData = calculateInvestmentResults(
         {
             initialInvestment: +inputValue.initialInvestment,
             annualInvestment: +inputValue.annualInvestment,
@@ -10,6 +20,8 @@ const OutputData = ({ inputValue }) => {
             duration: +inputValue.duration
         }
     );
+
+    const currentYear = new Date().getFullYear();
 
   return (
     <table>{/*table to display results*/}
@@ -25,7 +37,7 @@ const OutputData = ({ inputValue }) => {
         <tbody>{/*for each year, map a new row with all that year's properties*/}
             {resultData.map((yearData, index) => (
                 <tr key={index}>
-                    <td>{yearData.year}</td>
+                    <td>{currentYear + index}</td>
                     <td>{yearData.investmentValue.toFixed(2)}</td>
                     <td>{yearData.interest.toFixed(2)}</td>
                     <td>{yearData.totalInterest.toFixed(2)}</td>
