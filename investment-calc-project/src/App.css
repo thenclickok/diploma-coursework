@@ -123,6 +123,15 @@ input:focus-visible {
   outline-offset: 0px;
 }
 
+/* Graph */
+
+.graph {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+}
+
 /* OutputData */
 
 table {

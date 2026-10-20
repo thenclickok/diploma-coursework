@@ -2,6 +2,8 @@ import { useState } from "react";
 import Header from './components/Header.jsx';
 import UserInput from './components/UserInput.jsx';
 import OutputData from './components/OutputData.jsx';
+import InvestmentChart from './components/InvestmentChart.jsx';
+import { calculateInvestmentResults } from "./util/investments.js";
 import './App.css';
 
 //initial input values separated out so I can use these for the reset button in UserInput component
@@ -35,13 +37,24 @@ function App() {
     setUserInput(INITIAL_USER_INPUT);
   };
 
+  /*before any data is entered into the maths function below, this check 
+    ensures all values are actual numbers greater than zero, and if not, no maths carried out*/
+
   const isInputValid = Object.values(userInput).every((value) => value !== "" && !Number.isNaN(+value) && +value > 0);
+
+  const resultData = isInputValid ? calculateInvestmentResults({
+    initialInvestment: +userInput.initialInvestment,
+    annualInvestment: +userInput.annualInvestment,
+    expectedReturn: +userInput.expectedReturn,
+    duration: +userInput.duration,
+  }) : [];
 
   return (
     <>
       <Header title={title} subtitle={subtitle} />
       <UserInput userInput={userInput} onChangeInput={handleChange} onReset={handleReset} isValid={isInputValid}/>
-      <OutputData inputValue={userInput} isValid={isInputValid} />
+      <InvestmentChart data={resultData} />
+      <OutputData data={resultData}/>
     </>
   )
 }
