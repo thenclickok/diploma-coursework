@@ -1,4 +1,6 @@
-const OutputData = ({ data }) => {
+import { formatCurrency } from "../util/investments";
+
+const OutputData = ({ data, currency }) => {
 
   if (!data || data.length === 0) {
     return null;
@@ -19,12 +21,12 @@ const OutputData = ({ data }) => {
         </thead>
         <tbody>{/*for each year, map a new row with all of that year's properties*/}
             {data.map((yearData, index) => (
-                <tr key={index}>
+                <tr key={currentYear + index}>
                     <td>{currentYear + index}</td>
-                    <td>{yearData.investmentValue.toFixed(2)}</td>
-                    <td>{yearData.interest.toFixed(2)}</td>
-                    <td>{yearData.totalInterest.toFixed(2)}</td>
-                    <td>{yearData.investedCapital.toFixed(2)}</td>
+                    <td>{formatCurrency(yearData.investmentValue, currency)}</td>
+                    <td>{formatCurrency(yearData.interest, currency)}</td>
+                    <td>{formatCurrency(yearData.totalInterest, currency)}</td>
+                    <td>{formatCurrency(yearData.investedCapital, currency)}</td>
                 </tr>
             ))}
         </tbody>

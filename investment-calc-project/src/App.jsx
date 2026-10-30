@@ -17,7 +17,7 @@ const INITIAL_USER_INPUT = {
 function App() {
   const title = 'Investment Calculator';
   const subtitle = 'Every penny counts.';
-
+  const [currency, setCurrency] = useState('£');
   const [userInput, setUserInput] = useState(INITIAL_USER_INPUT);
 
     /*I used propertyKey instead of inputIdentifier because the first argument in handleChange is the property key from userInput eg 'initialInvestment'*/
@@ -35,6 +35,7 @@ function App() {
 
    const handleReset = () => {
     setUserInput(INITIAL_USER_INPUT);
+    setCurrency('£'); //resets currency back to default value
   };
 
   /*before any data is entered into the maths function below, this check 
@@ -52,9 +53,9 @@ function App() {
   return (
     <>
       <Header title={title} subtitle={subtitle} />
-      <UserInput userInput={userInput} onChangeInput={handleChange} onReset={handleReset} isValid={isInputValid}/>
+      <UserInput userInput={userInput} onChangeInput={handleChange} onReset={handleReset} isValid={isInputValid} currency={currency} onCurrencyChange={setCurrency}/>
       <InvestmentChart data={resultData} />
-      <OutputData data={resultData}/>
+      <OutputData data={resultData} currency={currency}/>
     </>
   )
 }

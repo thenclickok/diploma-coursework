@@ -1,20 +1,9 @@
-import { useState } from 'react';
-
-
-const UserInput = ({ userInput, onChangeInput, onReset, isValid }) => {
-  const [ currency, setCurrency ] = useState("£");
+const UserInput = ({ userInput, onChangeInput, onReset, isValid, currency, onCurrencyChange, }) => {
 
 /*isValid is a prop whose function lives in App.jsx & ensures every value of 
 userInput is more than zero, otherwise the user gets an error message*/
  
-/*onReset is a propr whose function lives in App.jsx to return the userInput to its default values
- but this page's reset button also needs the setCurrency default value
- so the two are combined into handleInputReset which is passed into the RESET 
- button's onClick attribute */
-  const handleInputReset = () => {
-    onReset();
-    setCurrency("£");
-  };
+/*onReset is a prop whose function lives in App.jsx to return the userInput to its default values */
 
   return(
     <section id="user-input">
@@ -23,17 +12,17 @@ userInput is more than zero, otherwise the user gets an error message*/
           <p>Select Currency:</p>
           <div className="segmented-control">{/*this div will have CSS to look like a pill which hides the standard tiny radio buttons*/}
             <label className="segment-item">{/*hidden inputs (inside labels) all have same name (but different values) so only one radio button by that name can be checked at a time*/}
-              <input type="radio" name="currency" value="$" checked={currency === "$"} onChange={(e) => setCurrency(e.target.value)}/>
+              <input type="radio" name="currency" value="$" checked={currency === "$"} onChange={(e) => onCurrencyChange(e.target.value)}/>
               <span className="segment-button">USD ($)</span>{/*what the user sees as a selection*/}
             </label>
 
             <label className="segment-item">
-              <input type="radio" name="currency" value="£" checked={currency === "£"} onChange={(e) => setCurrency(e.target.value)}/>
+              <input type="radio" name="currency" value="£" checked={currency === "£"} onChange={(e) => onCurrencyChange(e.target.value)}/>
               <span className="segment-button">GBP (£)</span>
             </label>
 
             <label className="segment-item">
-              <input type="radio" name="currency" value="€" checked={currency === "€"} onChange={(e) => setCurrency(e.target.value)}/>
+              <input type="radio" name="currency" value="€" checked={currency === "€"} onChange={(e) => onCurrencyChange(e.target.value)}/>
               <span className="segment-button">EUR (€)</span>
             </label>
           </div>
@@ -63,7 +52,7 @@ userInput is more than zero, otherwise the user gets an error message*/
         )}
         <div>
           <p>To reset all fields back to their original values, select RESET</p>
-          <button type='button' onClick={handleInputReset}>RESET</button>
+          <button type='button' onClick={onReset}>RESET</button>
         </div>
       </form>
     </section>

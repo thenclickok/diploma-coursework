@@ -24,3 +24,20 @@ export function calculateInvestmentResults({
   }
   return annualData;
 }
+
+const currencyCodeMap = {
+  "£": { locale: "en-GB", currency: "GBP" },
+  $: { locale: "en-US", currency: "USD" },
+  "€": { locale: "de-DE", currency: "EUR" },
+};
+
+export function formatCurrency(value, currencySymbol = "£") {
+  const config = currencyCodeMap[currencySymbol] || currencyCodeMap["£"];
+
+  return new Intl.NumberFormat(config.locale, {
+    style: "currency",
+    currency: config.currency,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(value);
+}
