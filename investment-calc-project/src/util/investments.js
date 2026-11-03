@@ -27,7 +27,12 @@ export function calculateInvestmentResults({
 
 const currencyCodeMap = {
   "£": { locale: "en-GB", currency: "GBP" },
-  $: { locale: "en-US", currency: "USD" },
+  $: {
+    locale: "en-US",
+    currency: "USD",
+  } /*VS Code is showing $ without quotes as it is a 
+  valid identifier character even though Gemini suggests 
+  including quotes for visual symmetry*/,
   "€": { locale: "de-DE", currency: "EUR" },
 };
 
