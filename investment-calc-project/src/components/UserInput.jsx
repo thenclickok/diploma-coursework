@@ -52,7 +52,7 @@ userInput is more than zero, otherwise the user gets an error message*/
         )}
         <div>
           <p>To reset all fields back to their original values, select RESET</p>
-          <button type='button' onClick={onReset}>RESET</button>
+          <button className="button" type='button' onClick={onReset}>RESET</button>
         </div>
       </form>
     </section>

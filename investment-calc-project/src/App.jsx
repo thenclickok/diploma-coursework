@@ -19,6 +19,7 @@ function App() {
   const subtitle = 'Every penny counts.';
   const [currency, setCurrency] = useState('£');
   const [userInput, setUserInput] = useState(INITIAL_USER_INPUT);
+  const [timeframe, setTimeframe] = useState("yearly");
 
     /*I used propertyKey instead of inputIdentifier because the first argument in handleChange is the property key from userInput eg 'initialInvestment'*/
   const handleChange = (propertyKey, newValue) => {
@@ -48,14 +49,22 @@ function App() {
     annualInvestment: +userInput.annualInvestment,
     expectedReturn: +userInput.expectedReturn,
     duration: +userInput.duration,
+    timeframe: timeframe,
   }) : [];
 
   return (
     <>
       <Header title={title} subtitle={subtitle} />
       <UserInput userInput={userInput} onChangeInput={handleChange} onReset={handleReset} isValid={isInputValid} currency={currency} onCurrencyChange={setCurrency}/>
-      <InvestmentChart data={resultData} />
-      <OutputData data={resultData} currency={currency}/>
+      {/*Segmented toggle control for monthly vs yearly option*/}
+      <div className="view-toggle-container">
+        <div className="view-toggle">
+          <button type="button" className={timeframe === "yearly" ? "active" : ""} onClick={() => setTimeframe("yearly")}>Yearly View</button> 
+          <button type="button" className={timeframe === "monthly" ? "active" : ""} onClick={() => setTimeframe("monthly")}>Monthly View</button>
+        </div>
+      </div>
+      <OutputData data={resultData} currency={currency} timeframe={timeframe}/>
+      <InvestmentChart data={resultData} timeframe={timeframe}/>
     </>
   )
 }

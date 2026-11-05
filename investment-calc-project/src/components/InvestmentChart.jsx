@@ -23,13 +23,25 @@ ChartJS.register(
   Legend
 );
 
-const InvestmentChart = ({ data }) => {
+const InvestmentChart = ({ data, timeframe = "yearly" }) => {
   if (!data || data.length === 0) {
     return null;
   }
 
-  // Extract labels (years) and series from resultData
-  const labels = data.map((item) => `Year ${item.year}`);
+  const currentYear = new Date().getFullYear();
+  const isMonthly = timeframe === "monthly";
+  
+  // Create labels based on the timeframe whether monthly or yearly
+  const labels = data.map((_, index) => {
+    if (isMonthly) {
+      const date = new Date(currentYear, index);
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      return `${year}-${month}`; // Format as "YYYY-MM"
+    }
+    return String(currentYear + index); // For yearly, just use the year
+  });
+  
   const investmentValues = data.map((item) => item.investmentValue);
   const investedCapitals = data.map((item) => item.investedCapital);
 
@@ -79,7 +91,7 @@ const InvestmentChart = ({ data }) => {
 
   return (
     <div className="graph">
-      <Line data={chartData} options={options} />
+      <Line data={chartData} options={options}/>
     </div>
   );
 };

@@ -123,13 +123,42 @@ input:focus-visible {
   outline-offset: 0px;
 }
 
-/* Graph */
+/* Toggle buttons - monthly vs yearly view */
 
-.graph {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+.view-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.view-toggle {
+  display: inline-flex;
   background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 20px; 
+}
+
+.view-toggle button {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  color: darkgray;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-toggle button.active {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* :not(.active) selector ensures that the active button does not change color on hover */
+
+.view-toggle button:not(.active):hover {
+  color: rgb(71, 69, 69);
 }
 
 /* OutputData */
@@ -161,9 +190,25 @@ tr:nth-child(even) {
   margin:10px auto;
 }
 
-/* Button styling */
+#summary-row {
+  background-color: #1d4ed8;
+  color: white;
+  position: sticky;
+  bottom: 0;
+}
 
-button{
+/* Graph */
+
+.graph {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+}
+
+/* Button styling (readymade coursework CSS option */
+
+.button{
   height: 30px;
   width: 200px;
   background-color: #363636;
@@ -176,12 +221,12 @@ button{
   transition: transform 0.1s ease;
 }
 
-button:hover{
+.button:hover{
   background-color: #969696;
   color:#363636;
 }
 
-button:active{
+.button:active{
   transform: translateY(3px);
   box-shadow: 2px 2px;
 }

@@ -3,26 +3,40 @@ export function calculateInvestmentResults({
   annualInvestment,
   expectedReturn,
   duration,
+  timeframe = "yearly",
 }) {
-  const annualData = [];
+  /*Adding the monthly vs yearly option required some variable renaming 
+  and new variables to be created. I also added a ternary expression to 
+  the for loop to determine whether to use the monthly or yearly values 
+  for interest, investment, and duration.*/
+  const isMonthly = timeframe === "monthly";
+  const totalPeriods = isMonthly ? duration * 12 : duration;
+  const periodicRate = isMonthly
+    ? expectedReturn / 12 / 100
+    : expectedReturn / 100;
+  const periodicInvestment = isMonthly
+    ? annualInvestment / 12
+    : annualInvestment;
+
+  const results = [];
   let investmentValue = initialInvestment;
   let totalInterest = 0;
   let investedCap = initialInvestment;
 
-  for (let i = 0; i < duration; i++) {
-    const interestEarnedInYear = investmentValue * (expectedReturn / 100);
-    totalInterest += interestEarnedInYear;
-    investedCap += annualInvestment;
-    investmentValue += interestEarnedInYear + annualInvestment;
-    annualData.push({
-      year: i + 1,
-      interest: interestEarnedInYear,
+  for (let i = 0; i < totalPeriods; i++) {
+    const interestEarnedInPeriod = investmentValue * periodicRate;
+    totalInterest += interestEarnedInPeriod;
+    investedCap += periodicInvestment;
+    investmentValue += interestEarnedInPeriod + periodicInvestment;
+    results.push({
+      period: i + 1,
+      interest: interestEarnedInPeriod,
       investmentValue: investmentValue,
       totalInterest: totalInterest,
       investedCapital: investedCap,
     });
   }
-  return annualData;
+  return results;
 }
 
 const currencyCodeMap = {
