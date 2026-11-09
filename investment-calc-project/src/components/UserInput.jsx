@@ -8,7 +8,7 @@ userInput is more than zero, otherwise the user gets an error message*/
   return(
     <section id="user-input">
       <form>
-        <div className="currency-selection">
+        <div className="currency-selection center">
           <p>Select Currency:</p>
           <div className="segmented-control">{/*this div will have CSS to look like a pill which hides the standard tiny radio buttons*/}
             <label className="segment-item">{/*hidden inputs (inside labels) all have same name (but different values) so only one radio button by that name can be checked at a time*/}
@@ -46,11 +46,11 @@ userInput is more than zero, otherwise the user gets an error message*/
         </div>
 
         {!isValid && (
-          <p className="error-message">
+          <p className="error-message center">
             All fields must contain positive numbers.
           </p>
         )}
-        <div>
+        <div className="center">
           <p>To reset all fields back to their original values, select RESET</p>
           <button className="button" type='button' onClick={onReset}>RESET</button>
         </div>

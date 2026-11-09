@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Header from './components/Header.jsx';
 import UserInput from './components/UserInput.jsx';
 import OutputData from './components/OutputData.jsx';
 import InvestmentChart from './components/InvestmentChart.jsx';
 import { calculateInvestmentResults } from "./util/investments.js";
+import { generatepdf } from "./util/generatereport.js";
 import './App.css';
 
 //initial input values separated out so I can use these for the reset button in UserInput component
@@ -21,7 +22,7 @@ function App() {
   const [userInput, setUserInput] = useState(INITIAL_USER_INPUT);
   const [timeframe, setTimeframe] = useState("yearly");
 
-    /*I used propertyKey instead of inputIdentifier because the first argument in handleChange is the property key from userInput eg 'initialInvestment'*/
+  /*I used propertyKey instead of inputIdentifier because the first argument in handleChange is the property key from userInput eg 'initialInvestment'*/
   const handleChange = (propertyKey, newValue) => {
     setUserInput((prevUserInput) => { 
       return {
@@ -44,13 +45,20 @@ function App() {
 
   const isInputValid = Object.values(userInput).every((value) => value !== "" && !Number.isNaN(+value) && +value > 0);
 
-  const resultData = isInputValid ? calculateInvestmentResults({
+  /*useMemo calculates investment results only when the numbers or validity changes 
+   (and not for example, a change to currency), to stop it recalculating on every render*/
+  
+  const resultData = useMemo(() => {
+    if (!isInputValid) return [];
+
+    return calculateInvestmentResults({
     initialInvestment: +userInput.initialInvestment,
     annualInvestment: +userInput.annualInvestment,
     expectedReturn: +userInput.expectedReturn,
     duration: +userInput.duration,
     timeframe: timeframe,
-  }) : [];
+  });
+}, [userInput, isInputValid, timeframe]);
 
   return (
     <>
@@ -64,6 +72,7 @@ function App() {
         </div>
       </div>
       <OutputData data={resultData} currency={currency} timeframe={timeframe}/>
+      {resultData.length > 0 && (<button type="button" className="button center" onClick={() => generatepdf({ ...userInput, results: resultData, currency })}>Download PDF</button>) }
       <InvestmentChart data={resultData} timeframe={timeframe}/>
     </>
   )

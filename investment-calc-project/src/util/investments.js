@@ -21,19 +21,19 @@ export function calculateInvestmentResults({
   const results = [];
   let investmentValue = initialInvestment;
   let totalInterest = 0;
-  let investedCap = initialInvestment;
+  let investedCapital = initialInvestment;
 
   for (let i = 0; i < totalPeriods; i++) {
     const interestEarnedInPeriod = investmentValue * periodicRate;
     totalInterest += interestEarnedInPeriod;
-    investedCap += periodicInvestment;
+    investedCapital += periodicInvestment;
     investmentValue += interestEarnedInPeriod + periodicInvestment;
     results.push({
       period: i + 1,
       interest: interestEarnedInPeriod,
       investmentValue: investmentValue,
       totalInterest: totalInterest,
-      investedCapital: investedCap,
+      investedCapital: investedCapital,
     });
   }
   return results;

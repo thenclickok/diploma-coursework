@@ -167,7 +167,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
 }
 
 th, td {
@@ -188,6 +188,7 @@ tr:nth-child(even) {
 .center{
   display: block;
   margin:10px auto;
+  text-align: center;
 }
 
 #summary-row {
@@ -201,7 +202,7 @@ tr:nth-child(even) {
 
 .graph {
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   padding: 1rem;
   background-color: white;
 }
