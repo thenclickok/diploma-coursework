@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import Header from './components/Header.jsx';
 import UserInput from './components/UserInput.jsx';
 import OutputData from './components/OutputData.jsx';
@@ -21,9 +21,21 @@ function App() {
   const [currency, setCurrency] = useState('£');
   const [userInput, setUserInput] = useState(INITIAL_USER_INPUT);
   const [timeframe, setTimeframe] = useState("yearly");
+  const [isLoading, setIsLoading] = useState(false);
+  const loadingTimerRef = useRef(null);
+
 
   /*I used propertyKey instead of inputIdentifier because the first argument in handleChange is the property key from userInput eg 'initialInvestment'*/
   const handleChange = (propertyKey, newValue) => {
+    /*trigger simultated loading state when user changes input*/
+    /*clear any existing timer to prevent multiple timers running at once*/
+    if (loadingTimerRef.current) {
+      clearTimeout(loadingTimerRef.current);
+    }
+    //start loading
+    setIsLoading(true); 
+    
+    //update user input state with new value
     setUserInput((prevUserInput) => { 
       return {
       ...prevUserInput, 
@@ -34,6 +46,11 @@ function App() {
       };
     });
   };
+
+  //simulate calculation delay then turn loading off  
+  loadingTimerRef.current = setTimeout(() => {
+    setIsLoading(false);
+  }, 1000);
 
    const handleReset = () => {
     setUserInput(INITIAL_USER_INPUT);
@@ -71,11 +88,17 @@ function App() {
           <button type="button" className={timeframe === "monthly" ? "active" : ""} onClick={() => setTimeframe("monthly")}>Monthly View</button>
         </div>
       </div>
+
+      {isLoading ? (
+        <p className="center">Calculating Results</p>) : (
+      <>
       <OutputData data={resultData} currency={currency} timeframe={timeframe}/>
       {resultData.length > 0 && (<button type="button" className="button center" onClick={() => generatepdf({ ...userInput, results: resultData, currency })}>Download PDF</button>) }
       <InvestmentChart data={resultData} timeframe={timeframe}/>
+      </>
+      )}
     </>
-  )
+  );
 }
 
 export default App;
