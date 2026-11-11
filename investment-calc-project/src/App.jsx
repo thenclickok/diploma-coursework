@@ -90,7 +90,7 @@ function App() {
       </div>
 
       {isLoading ? (
-        <p className="center">Calculating Results</p>) : (
+        <div className="spinner-container" role="status" aria-live="polite"><div className="spinner"/><p className="spinner-text">Calculating Results</p></div>) : (
       <>
       <OutputData data={resultData} currency={currency} timeframe={timeframe}/>
       {resultData.length > 0 && (<button type="button" className="button center" onClick={() => generatepdf({ ...userInput, results: resultData, currency })}>Download PDF</button>) }
