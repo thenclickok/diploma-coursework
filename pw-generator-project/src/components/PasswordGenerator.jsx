@@ -20,7 +20,8 @@ const PasswordGenerator = () => {
   }; 
 
   /*useCallback "wraps" the handleGeneratePassword function. It saves this function in memory so it's not re-created
-  on every render, only when its dependencies change*/
+  on every render, only when its dependencies change. This feature is more useful when changes are frequent like when the 
+  generated password changes with a slider or input field rather than the user clicking a button to generate a new one*/
   const handleGeneratePassword = useCallback(() => {
     let generatedPassword = ''; 
     let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
