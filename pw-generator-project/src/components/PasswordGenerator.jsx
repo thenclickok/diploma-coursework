@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 const PasswordGenerator = () => {
   const [length, setLength] = useState(10);
@@ -19,8 +19,9 @@ const PasswordGenerator = () => {
     }, 2000);
   }; 
 
-
-  const handleGeneratePassword = () => {
+  /*useCallback "wraps" the handleGeneratePassword function. It saves this function in memory so it's not re-created
+  on every render, only when its dependencies change*/
+  const handleGeneratePassword = useCallback(() => {
     let generatedPassword = ''; 
     let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
      if (numberAllowed) {
@@ -35,7 +36,7 @@ const PasswordGenerator = () => {
     };
     setPassword(generatedPassword);
     setCopied(false); //reset copied state when a new password is generated
-  };
+  }, [length, numberAllowed, characterAllowed]);
 
   return (
     <div className="container mx-auto mt-8">
