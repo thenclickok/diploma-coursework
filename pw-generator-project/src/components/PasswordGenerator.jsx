@@ -39,6 +39,37 @@ const PasswordGenerator = () => {
     setCopied(false); //reset copied state when a new password is generated
   }, [length, numberAllowed, characterAllowed]);
 
+  const getPasswordStrength = () => {
+    let score = 0;
+
+    if (length >= 8) score += 1;
+    if (length >= 12) score += 1;
+    if (numberAllowed) score += 1;
+    if (characterAllowed) score += 1;
+
+    if (score <= 1) {
+        return {
+            label: "Weak",
+            tip: "Try increasing the length to at least 8 characters and adding numbers or symbols.",
+            color: "text-red-500"
+        };
+    }
+    if (score <= 3) {
+        return {
+            label: "Medium",
+            tip: "Good start! Adding more characters, numbers or symbols can make it stronger.",
+            color: "text-yellow-500"
+        };
+    }
+    return {
+        label: "Strong",
+        tip: "Great job! Your password is strong.",
+        color: "text-green-500"
+    };
+  };
+
+  const strength = getPasswordStrength();
+
   return (
     <div className="container mx-auto mt-8">
       <h1 className="text-4xl font-bold text-center mb-8">Password Generator</h1>
@@ -61,6 +92,7 @@ const PasswordGenerator = () => {
             </div>
           </div>
           <div className="mb-4">
+            <p title={strength.tip} className={`mb-3 cursor-help font-bold ${strength.color}`}>Password Strength: {strength.label} ⓘ</p>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="length">
               Password Length: {length}
             </label>
