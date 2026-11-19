@@ -1,20 +1,19 @@
-import { useState } from 'react'
-
-import './App.css'
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import './App.css';
 
 function App() {
 
   return (
-    <div>
-      <nav className="nav-bar">
-        <div className="nav-content">Navbar Content</div>
-      </nav>
+    <div className="wrapper" >
+      <Header />
       <main className="main-content">
-        <h1>Movie Review App</h1>
-        <p>This is the main content area for our movie review application.</p>
+        <h1>Featured Films</h1>
+        <p>This section will show the film list.</p>
       </main>
+      <Footer />
     </div>
   )
-}
+};
 
-export default App
+export default App;
