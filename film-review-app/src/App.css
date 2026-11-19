@@ -22,10 +22,6 @@
   color: var(--text-on-accent);
 }
 
-.nav-logo:hover {
-  background-color: var(--accent-hover);
-}
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -36,19 +32,19 @@
 
 .nav-links li {
   font-size: 14px;
-  border: 2px solid black;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background-color: var(--accent-color);
 }
 
 .nav-links a {
+  display: inline-block; /* Allows padding and border to wrap the link cleanly */
+  border: 2px solid black;
+  padding: 5px 10px;
+  border-radius: 20px;
   background-color: var(--accent-color);
   color: var(--text-on-accent);
   text-decoration: none;
 }
 
-.nav-links li:hover {
+.nav-links a:hover {
   background-color: var(--accent-hover);
 }
 

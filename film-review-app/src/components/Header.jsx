@@ -1,7 +1,7 @@
 const Header = () => {
   return (
      <nav className="nav-bar">
-        <a href="#" className="nav-logo">&#9829; Film Favourites &#9829;</a>
+        <p className="nav-logo">&#9829; Film Favourites &#9829;</p>
       
         <ul className="nav-links">
             <li><a href="#" >Home</a></li>
