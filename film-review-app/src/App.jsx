@@ -1,4 +1,5 @@
 import Header from "./components/Header.jsx";
+import FilmList from "./components/FilmList.jsx";
 import Footer from "./components/Footer.jsx";
 import './App.css';
 
@@ -9,7 +10,7 @@ function App() {
       <Header />
       <main className="main-content">
         <h1>Featured Films</h1>
-        <p>This section will show the film list.</p>
+        <FilmList />
       </main>
       <Footer />
     </div>
