@@ -8,11 +8,13 @@ const FilmCard = ( {film} ) => {
         <p>{film.overview}</p>
         <p>{film.vote_average}</p>
     </div>
-  )
-}
+  );
+};
 
-//PropTypes is a built-in Object used to define what properties will be required from the fetched data
-FilmCard.propTypes = {
+
+/* PropTypes is an external library used to validate the data types 
+(and required status) of props passed into this component*/
+FilmCard.propTypes = { 
     film: PropTypes.shape({
         id: PropTypes.number.isRequired,
         original_title: PropTypes.string.isRequired,
