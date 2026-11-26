@@ -9,7 +9,7 @@ function App() {
     <div className="wrapper" >
       <Header />
       <main className="main-content">
-        <h1>Featured Films</h1>
+        <h1>&#9733; Featured Films &#9733;</h1>
         <FilmList />
       </main>
       <Footer />

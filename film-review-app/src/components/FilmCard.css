@@ -1,0 +1,54 @@
+.film-container {
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.film-container h3 {
+    padding: 40px 0 10px 0;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.poster-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.film-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.film-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.7); /*let a little of poster image show through but mostly black background*/
+    color: #ffffff;
+    text-align: left;
+    max-height: 50%; /*don't cover top half of image with text*/
+    overflow-y: auto; /*scrollbar only if overview is too long*/
+}
+
+.film-stats p {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.film-stats p:last-child {
+    margin-bottom: 0;
+}
+
+.stat-label {
+    /*block makes the span elements have their own line*/
+    display: block;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
